@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 655793353707240a195aee929b80d41a
+timeCreated: 1521058274
+licenseType: Pro
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - FrameLowerLeft: {fileID: 190766, guid: 75c27bf47f501a74fa5723911612c226, type: 2}
+  - FrameLowerRight: {fileID: 190766, guid: 75c27bf47f501a74fa5723911612c226, type: 2}
+  - FrameUpperLeft: {fileID: 190766, guid: 75c27bf47f501a74fa5723911612c226, type: 2}
+  - FrameUpperRight: {fileID: 190766, guid: 75c27bf47f501a74fa5723911612c226, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

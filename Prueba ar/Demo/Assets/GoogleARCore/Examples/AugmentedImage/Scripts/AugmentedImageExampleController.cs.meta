@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 492cc0813c4064ed79f2671a7c2633fc
+timeCreated: 1521315943
+licenseType: Pro
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AugmentedImageVisualizerPrefab: {fileID: 114993385522223132, guid: 75c27bf47f501a74fa5723911612c226,
+      type: 2}
+  - FitToScanOverlay: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

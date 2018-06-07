@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 645
-  m_MinSize: {x: 881, y: 471}
-  m_MaxSize: {x: 14004, y: 14021}
+  m_MinSize: {x: 879, y: 471}
+  m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 67
+  controlID: 57
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 277
     height: 645
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_MinSize: {x: 604, y: 471}
   m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
-  controlID: 34
+  controlID: 58
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 604, y: 200}
   m_MaxSize: {x: 6052, y: 4000}
   vertical: 0
-  controlID: 82
+  controlID: 28
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,9 +370,9 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 123}
-    m_SelectedIDs: 12340000
-    m_LastClickedID: 13330
-    m_ExpandedIDs: 6e290000062e0000542e0000762e0000bc300000983100001a33000000ca9a3bffffff7f
+    m_SelectedIDs: 082a0000
+    m_LastClickedID: 10760
+    m_ExpandedIDs: 00000000302900008a2900009229000098290000c0290000f2290000e02a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -400,7 +400,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000302900008a2900009229000098290000c0290000f2290000e02a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -482,7 +482,7 @@ MonoBehaviour:
     width: 275
     height: 624
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 124.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160
@@ -518,9 +518,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b62d0000
+    m_SelectedIDs: 80290000
     m_LastClickedID: 0
-    m_ExpandedIDs: 7281feff0a82feff3683feffbe89feff568afeff828bfeff3c9cfeffd49cfeff009efeff8eb7feff22b8feff4ab9feffbad2feff54d3feff82d4feff4ae0feffaee0feffdce1feffd0e6feff82e9feffe6e9feff14ebfeff580bffffd20bfffff60cffff6a24ffffe424ffff1226ffff303dffffae3dffffd03effff8663ffff3064ffffbc65ffff86b8fffffeb8ffff1cbaffffa8c2ffff84c4ffff36f0ffff84fbffff00000000
+    m_ExpandedIDs: c4daffff24dbffff4edcffff18ddffff44fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
