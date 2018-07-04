@@ -1,0 +1,93 @@
+% Definición de la clase del documento
+\documentclass[a4paper, 11pt]{book} % A4 paper and 11pt font size
+
+% Entrada y salida de texto
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[sfdefault]{roboto} % Option 'sfdefault' only if the base font of the document is to be sans serif
+
+% Idioma
+\usepackage[spanish, es-tabla]{babel} % Selecciona el español y el uso de la palabra "tabla" en lugar de "cuadro"
+
+% Información reutilizable
+\newcommand{\asunto}{Trabajo de Fin de Grado}
+\newcommand{\titulo}{Juego de mesa Cluedo basado en tecnología ARCore}
+\newcommand{\tituloEng}{Cluedo board game based on ARCore technology}
+\newcommand{\subtitulo}{Desarrollo del juego de mesa Cluedo mediante uso de tecnologías de realidad aumentada}
+\newcommand{\subtituloEng}{Development of Cluedo game using augmented reality technologies}
+\newcommand{\grado}{Grado en Ingeniería Informática}
+\newcommand{\autor}{Miguel Ángel Torres López}
+\newcommand{\email}{matl1995@correo.ugr.es}
+\newcommand{\tutor}{Francisco Luis Gutiérrez Vela}
+\newcommand{\escuela}{Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación}
+\newcommand{\departamento}{Departamento de Lenguajes y Sistemas Informáticos}
+\newcommand{\universidad}{Universidad de Granada}
+\newcommand{\ciudad}{Granada}
+\providecommand{\keywords}{ARCore, Unity, Android, juegos de mesa}
+\providecommand{\keywordsEng}{ARCore, Unity, Android, board games}
+
+% Otros paquetes importantes para el proyecto
+\usepackage{url}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage[hidelinks]{hyperref}
+
+% Añade aquí las carpetas de imágenes para que el compilador las pueda analizar
+\graphicspath{{../images/}{../screenshots/}}
+
+% Información del archivo
+\hypersetup{
+  pdfauthor = {\autor\ (\email)},
+  pdftitle = {\titulo: \subtitulo},
+  pdfsubject = {\asunto},
+  pdfkeywords = {\keywords},
+  pdfcreator = {LaTeX, con la distribución TeX Live},
+  pdfproducer = {pdflatex}
+}
+
+% Modificación para que las páginas en blanco no tengan cabecera
+\makeatletter
+\def\clearpage{
+  \ifvmode
+    \ifnum \@dbltopnum = \m@ne
+      \ifdim \pagetotal < \topskip
+        \hbox{}
+      \fi
+    \fi
+  \fi
+  \newpage
+  \thispagestyle{empty}
+  \write\m@ne{}
+  \vbox{}
+  \penalty -\@Mi
+}
+\makeatother
+
+% Definición del estilo de las cabeceras
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[RO,LE]{\textbf{\thepage}}
+\setlength{\headheight}{1.5\headheight}
+
+% Definición de colores
+\definecolor{Gray}{gray}{0.9}
+
+% Redefinición de comandos
+\renewcommand{\chaptermark}[1]{\markboth{\textbf{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\textbf{\thesection. #1}}{}}
+% \renewcommand{\lstlistingname}{Fragmento de código}
+% \renewcommand{\lstlistlistingname}{Índice de fragmentos de código}
+
+% Creación de comandos
+% \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% \newcommand{\bigrule}{\titlerule[0.5mm]}
+
+% Ajuste para minimizar el fragmentado de listados
+% \lstnewenvironment{listing}[1][]
+%   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
