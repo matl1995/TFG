@@ -22,8 +22,6 @@ GameObject:
   - component: {fileID: 33587730122951210}
   - component: {fileID: 65799875840723928}
   - component: {fileID: 23436531645781328}
-  - component: {fileID: 114154320506466648}
-  - component: {fileID: 114298362983090182}
   m_Layer: 0
   m_Name: SiguienteButton
   m_TagString: Untagged
@@ -185,26 +183,3 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
---- !u!114 &114154320506466648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1364802594666018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 1364802594666018}
---- !u!114 &114298362983090182
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1364802594666018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624869f41264b9144a81e2c0a7f97909, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

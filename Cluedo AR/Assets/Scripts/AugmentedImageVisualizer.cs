@@ -47,15 +47,15 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// </summary>
         public virtual void Update()
         {
-            /*if (Image == null || Image.TrackingState != TrackingState.Tracking)
+            if (Image == null || Image.TrackingState != TrackingState.Tracking)
             {
                 cube.SetActive(false);
                 return;
             }
 
-            float height=0.5f;
+            float height=0f;
             cube.transform.localPosition = (height * Vector3.up);
-            cube.SetActive(true);*/
+            cube.SetActive(true);
         }
     }
 }

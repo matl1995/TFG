@@ -39,8 +39,6 @@ GameObject:
   - component: {fileID: 33925346550070864}
   - component: {fileID: 65619558261604100}
   - component: {fileID: 23230058070201028}
-  - component: {fileID: 114203577210542622}
-  - component: {fileID: 114326778475904722}
   m_Layer: 0
   m_Name: NotasButton
   m_TagString: Untagged
@@ -183,26 +181,3 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
---- !u!114 &114203577210542622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646951447449966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 1646951447449966}
---- !u!114 &114326778475904722
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1646951447449966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624869f41264b9144a81e2c0a7f97909, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
