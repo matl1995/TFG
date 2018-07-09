@@ -42,25 +42,20 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// </summary>
         public GameObject cube;
 
-        void Start ()
-        {
-            cube.name="Cube";
-        }
-
         /// <summary>
         /// The Unity Update method.
         /// </summary>
         public virtual void Update()
         {
-            if (Image == null || Image.TrackingState != TrackingState.Tracking)
+            /*if (Image == null || Image.TrackingState != TrackingState.Tracking)
             {
                 cube.SetActive(false);
                 return;
             }
 
-            float height=2f;
+            float height=0.5f;
             cube.transform.localPosition = (height * Vector3.up);
-            cube.SetActive(true);
+            cube.SetActive(true);*/
         }
     }
 }
