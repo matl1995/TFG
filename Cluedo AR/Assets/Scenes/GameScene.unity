@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492cc0813c4064ed79f2671a7c2633fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AugmentedImageVisualizerPrefab: {fileID: 114671169828516828, guid: bea952c911527a6419cf86a2431e3b3c,
+  AugmentedImageVisualizerPrefab: {fileID: 114272829837065466, guid: 04a969672fe9db24bb38fe35997f02d4,
     type: 2}
   FitToScanOverlay: {fileID: 1622737808}
   menuPanel: {fileID: 0}
