@@ -6,7 +6,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - cube: {fileID: 1630657783561902, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Scene: {instanceID: 0}
+  - CharacterBlue: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

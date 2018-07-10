@@ -32,30 +32,96 @@ namespace GoogleARCore.Examples.AugmentedImage
     /// </summary>
     public class AugmentedImageVisualizer : MonoBehaviour
     {
-        /// <summary>
-        /// The AugmentedImage to visualize.
-        /// </summary>
         public AugmentedImage Image;
 
-        /// <summary>
-        /// A model for the lower left corner of the frame to place when an image is detected.
-        /// </summary>
-        public GameObject cube;
+        public GameObject Scene;
 
-        /// <summary>
-        /// The Unity Update method.
-        /// </summary>
+        public GameObject CharacterBlue;
+
+        public GameObject Player1;
+
+        public GameObject Player2;
+
+        public GameObject Player3;
+
+        public GameObject Player4;
+
+        public GameObject Player5;
+
+        public GameObject Player6;
+
+        public GameObject PlayerDef1=null;
+
+        public GameObject PlayerDef2=null;
+
+        public virtual void Start()
+        {
+            if(ButtonsController.Character1.Equals("Toggle1"))
+                PlayerDef1=Player1;
+            else if(ButtonsController.Character2.Equals("Toggle1"))
+                PlayerDef2=Player1;
+            else
+                Player1.SetActive(false);
+
+            if(ButtonsController.Character1.Equals("Toggle2"))
+                PlayerDef1=Player2;
+            else if(ButtonsController.Character2.Equals("Toggle2"))
+                PlayerDef2=Player2;
+            else
+                Player2.SetActive(false);
+
+            if(ButtonsController.Character1.Equals("Toggle3"))
+                PlayerDef1=Player3;
+            else if(ButtonsController.Character2.Equals("Toggle3"))
+                PlayerDef2=Player3;
+            else
+                Player3.SetActive(false);
+
+            if(ButtonsController.Character1.Equals("Toggle4"))
+                PlayerDef1=Player4;
+            else if(ButtonsController.Character2.Equals("Toggle4"))
+                PlayerDef2=Player4;
+            else
+                Player4.SetActive(false);
+
+            if(ButtonsController.Character1.Equals("Toggle5"))
+                PlayerDef1=Player5;
+            else if(ButtonsController.Character2.Equals("Toggle5"))
+                PlayerDef2=Player5;
+            else
+                Player5.SetActive(false);
+
+            if(ButtonsController.Character1.Equals("Toggle6"))
+                PlayerDef1=Player6;
+            else if(ButtonsController.Character2.Equals("Toggle6"))
+                PlayerDef2=Player6;
+            else
+                Player6.SetActive(false);
+
+            PlayerDef1.SetActive(true);
+            PlayerDef2.SetActive(true);
+        }
+
         public virtual void Update()
         {
             if (Image == null || Image.TrackingState != TrackingState.Tracking)
             {
-                cube.SetActive(false);
+                Scene.SetActive(false);
+                CharacterBlue.SetActive(false);
+                PlayerDef1.SetActive(false);
+                PlayerDef2.SetActive(false);
                 return;
             }
 
             float height=0f;
-            cube.transform.localPosition = (height * Vector3.up);
-            cube.SetActive(true);
+            Scene.transform.localPosition = (height * Vector3.up);
+            Scene.SetActive(true);
+
+            
+            float CharacterBlueX=3.1f;
+            float CharacterBlueZ=3.5f;
+            CharacterBlue.transform.localPosition = (CharacterBlueX * Vector3.left) + (CharacterBlueZ * Vector3.back);
+            CharacterBlue.SetActive(true);
         }
     }
 }

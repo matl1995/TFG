@@ -6,8 +6,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - AugmentedImageVisualizerPrefab: {fileID: 114272829837065466, guid: 04a969672fe9db24bb38fe35997f02d4,
-      type: 2}
+  - AugmentedImageVisualizerPrefab: {instanceID: 0}
   - FitToScanOverlay: {instanceID: 0}
   - menuPanel: {instanceID: 0}
   executionOrder: 0

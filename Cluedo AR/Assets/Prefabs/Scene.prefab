@@ -7771,7 +7771,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4680399167790020}
-  - component: {fileID: 114570040761809526}
   m_Layer: 0
   m_Name: Blue
   m_TagString: Untagged
@@ -17534,19 +17533,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1630657783561902}
---- !u!114 &114570040761809526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1965129640525874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 655793353707240a195aee929b80d41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 1965129640525874}
+  Scene: {fileID: 1630657783561902}
+  CharacterBlue: {fileID: 1965129640525874}
+  Player1: {fileID: 1926064207442006}
+  Player2: {fileID: 1122561643033684}
+  Player3: {fileID: 1562328140794968}
+  Player4: {fileID: 1234108506681280}
+  Player5: {fileID: 1075860584466644}
+  Player6: {fileID: 1919689209867540}
+  PlayerDef1: {fileID: 0}
+  PlayerDef2: {fileID: 0}
 --- !u!114 &114625672863127084
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,6 +7,8 @@ public class ButtonsController : MonoBehaviour {
 
 	static private int num_select;
 
+    private Button PlayButton;
+
 	private Toggle Toggle1;
 	private Toggle Toggle2;
 	private Toggle Toggle3;
@@ -14,13 +16,18 @@ public class ButtonsController : MonoBehaviour {
 	private Toggle Toggle5;
 	private Toggle Toggle6;
 
-	static public string Character1=null;
-	static public string Character2=null;
+	static public string Character1;
+	static public string Character2;
 
 
 	// Use this for initialization
 	void Start () {
 		num_select=0;
+
+        Character1=null;
+        Character2=null;
+
+        PlayButton=GameObject.Find("PlayButton").GetComponent<Button>();
 
 		Toggle1=GameObject.Find("Toggle1").GetComponent<Toggle>();
 		Toggle2=GameObject.Find("Toggle2").GetComponent<Toggle>();
@@ -104,6 +111,8 @@ public class ButtonsController : MonoBehaviour {
     			{
     				Toggle6.enabled=false;
     			}
+
+                PlayButton.interactable=true;
     		}
     	}
     	else
@@ -148,6 +157,8 @@ public class ButtonsController : MonoBehaviour {
 			{
 				Toggle6.enabled=true;
 			}
+
+            PlayButton.interactable=false;
     	}
     }
 }
