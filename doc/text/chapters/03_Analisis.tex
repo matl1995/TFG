@@ -2,5 +2,28 @@
 \label{ch:analisis}
 
 \section{Concepto inicial del juego}
+El juego contará con 2 jugadores.\\
+
+Para empezar hay 3 cartas que contienen quien lo hizo, con que arma y donde, estas serán establecidas de forma aleatoria.\\
+
+Hay una distancia x entre habitaciones, por la que podrás ir de una habitación a otra si obtienes esa distancia, en caso de obtener una distancia que no permite ir a ninguna habitación, esta se almacena y en el siguiente turno cuando tires al dado se indicará a qué habitaciones puedes ir.\\
+
+Para hacer acusación tienes que poner en fila las 3 cartas de la solución y escanearlas, en caso de que sean correctas has ganado, en otro caso se indica que has fallado y se cambia al turno del siguiente jugador.\\
+
+Para marcar tu información para ir averiguando quien es el asesino se pueden tomar notas, se muestra al usuario una lista de personajes, ubicaciones y armas, que va vas seleccionando para tachar o poner en interrogación, y dejando libre los que pueden ser la solución. Estas listas se muestran al pulsar un botón que se muestre en pantalla con el texto "Notas".\\
+
+En pantalla se mostrarán, sin ocupar mucho espacio en pantalla cuatro botones:
+\begin{itemize}
+  \item \textbf{Primer botón}: Para tirar el dado, esto nos devolverá un número con las casillas que podemos recorrer.
+  \item \textbf{Segundo botón}: Pasar turno, al pulsarlo es el turno del siguiente jugador.
+  \item \textbf{Tercer botón}: Apuntar, aparece una lista donde se puede marcar que personajes, armas o habitaciones no forman parte del asesinato, o cuales se tienen en duda.
+  \item \textbf{Cuarto botón}: Un botón “home” que permite salir de la partida actual.
+\end{itemize}
+
+Las cartas que te son asignadas se mostrarán debajo del tablero, en cada habitación se mostrará un modelo 3D del personaje y de las armas que hay en dicha habitación.\\
+
+Los peones de los jugadores se establecen en habitaciones aleatorias.\\
+
+Cada turno o dos turnos se muestra una pista al jugador que será sobre la habitación actual en la que se encuentra, los personajes que contiene esa habitación o las armas que contiene esa habitación.\\
 
 \section{Narrativa}
