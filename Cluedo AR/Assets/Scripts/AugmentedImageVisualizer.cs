@@ -36,7 +36,35 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public GameObject Scene;
 
+        //Personajes
+
         public GameObject CharacterBlue;
+
+        public GameObject CharacterRed;
+
+        public GameObject CharacterGreen;
+
+        public GameObject CharacterYellow;
+
+        public GameObject CharacterPurple;
+
+        public GameObject CharacterPink;
+
+        //Armas
+
+        public GameObject Knife;
+
+        public GameObject Candle;
+
+        public GameObject Rope;
+
+        public GameObject Gun;
+
+        public GameObject Wrench;
+
+        public GameObject Pipeline;
+
+        //Jugadores
 
         public GameObject Player1;
 
@@ -107,7 +135,21 @@ namespace GoogleARCore.Examples.AugmentedImage
             if (Image == null || Image.TrackingState != TrackingState.Tracking)
             {
                 Scene.SetActive(false);
+
                 CharacterBlue.SetActive(false);
+                CharacterRed.SetActive(false);
+                CharacterGreen.SetActive(false);
+                CharacterYellow.SetActive(false);
+                CharacterPurple.SetActive(false);
+                CharacterPink.SetActive(false);
+
+                Knife.SetActive(false);
+                Rope.SetActive(false);
+                Gun.SetActive(false);
+                Pipeline.SetActive(false);
+                Candle.SetActive(false);
+                Wrench.SetActive(false);
+
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
                 return;
@@ -122,6 +164,47 @@ namespace GoogleARCore.Examples.AugmentedImage
             float CharacterBlueZ=3.5f;
             CharacterBlue.transform.localPosition = (CharacterBlueX * Vector3.left) + (CharacterBlueZ * Vector3.back);
             CharacterBlue.SetActive(true);
+
+            float CharacterRedX=-3.1f;
+            float CharacterRedZ=3.5f;
+            CharacterRed.transform.localPosition = (CharacterRedX * Vector3.left) + (CharacterRedZ * Vector3.back);
+            CharacterRed.SetActive(true);
+
+            float CharacterGreenX=-3.1f;
+            float CharacterGreenZ=-3.5f;
+            CharacterGreen.transform.localPosition = (CharacterGreenX * Vector3.left) + (CharacterGreenZ * Vector3.back);
+            CharacterGreen.SetActive(true);
+
+            float CharacterYellowX=3.1f;
+            float CharacterYellowZ=-3.5f;
+            CharacterYellow.transform.localPosition = (CharacterYellowX * Vector3.left) + (CharacterYellowZ * Vector3.back);
+            CharacterYellow.SetActive(true);
+
+            float CharacterPurpleX=-3.1f;
+            float CharacterPurpleZ=1.5f;
+            CharacterPurple.transform.localPosition = (CharacterPurpleX * Vector3.left) + (CharacterPurpleZ * Vector3.back);
+            CharacterPurple.SetActive(true);
+
+            float CharacterPinkX=-3.1f;
+            float CharacterPinkZ=-1.2f;
+            CharacterPink.transform.localPosition = (CharacterPinkX * Vector3.left) + (CharacterPinkZ * Vector3.back);
+            CharacterPink.SetActive(true);
+
+
+            float GunX=0f;
+            float GunZ=-3.2f;
+            Gun.transform.localPosition = (GunX * Vector3.left) + (GunZ * Vector3.back);
+            Gun.SetActive(true);
+
+            float KnifeX=3.1f;
+            float KnifeZ=-0.2f;
+            Knife.transform.localPosition = (KnifeX * Vector3.left) + (KnifeZ * Vector3.back);
+            Knife.SetActive(true);
+
+            float CandleX=0f;
+            float CandleZ=3.5f;
+            Candle.transform.localPosition = (CandleX * Vector3.left) + (CandleZ * Vector3.back);
+            Candle.SetActive(true);
         }
     }
 }
