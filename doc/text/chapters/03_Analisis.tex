@@ -1,31 +1,30 @@
 \chapter{Análisis inicial del problema}
 \label{ch:analisis}
-En este capítulo se recoge el concepto inicial del juego, junto con la narrativa de éste.
+En este capítulo se recoge el concepto inicial del juego, junto con la narrativa de éste, y por útlimo las primeras ideas sobre como ampliar el juego con realidad aumentada.
 
 \section{Concepto inicial del juego}
-El juego contará con 2 jugadores.\\
+El juego consistirá en un tablero que contendrá habitaciones, sobre las que los jugadores se pueden desplazar.\\
 
-Para empezar hay 3 cartas que contienen quien lo hizo, con que arma y donde, estas serán establecidas de forma aleatoria.\\
+Los jugadores tendrán que investigar los datos del crimen, al inicio del juego se establecerá aleatoriamente un asesino, un arma y una habitación, y para averiguar los datos de este crimen el usuario tendrá que indicar un personaje, una arma y una habitación. En el caso de que acierte el jugador ha ganado, en caso de que falle el jugador se pasa al turno del siguiente.\\
 
-Hay una distancia x entre habitaciones, por la que podrás ir de una habitación a otra si obtienes esa distancia, en caso de obtener una distancia que no permite ir a ninguna habitación, esta se almacena y en el siguiente turno cuando tires al dado se indicará a qué habitaciones puedes ir.\\
+Cada habitación tendrá una distancia con las otras, y el jugador lanzando los dados puede desplazarse a las habitaciones que este lanzamiento les permita. En caso de que obtenga un numero que no permite ir a ninguna habitación, se almacenará para la siguiente tirada de dados.\\
 
-Para hacer acusación tienes que poner en fila las 3 cartas de la solución y escanearlas, en caso de que sean correctas has ganado, en otro caso se indica que has fallado y se cambia al turno del siguiente jugador.\\
+El jugador tiene que desplazarse entre las distintas habitaciones para obtener diferentes pistas en cada una de ellas, y las pistas serán diferentes para los distintos jugadores. Las pistas se mostrarán únicamente cuando el jugador llega a una habitación por primera vez.\\
 
-Para marcar tu información para ir averiguando quien es el asesino se pueden tomar notas, se muestra al usuario una lista de personajes, ubicaciones y armas, que va vas seleccionando para tachar o poner en interrogación, y dejando libre los que pueden ser la solución. Estas listas se muestran al pulsar un botón que se muestre en pantalla con el texto "Notas".\\
-
-En pantalla se mostrarán, sin ocupar mucho espacio en pantalla cuatro botones:
-\begin{itemize}
-  \item \textbf{Primer botón}: Para tirar el dado, esto nos devolverá un número con las casillas que podemos recorrer.
-  \item \textbf{Segundo botón}: Pasar turno, al pulsarlo es el turno del siguiente jugador.
-  \item \textbf{Tercer botón}: Apuntar, aparece una lista donde se puede marcar que personajes, armas o habitaciones no forman parte del asesinato, o cuales se tienen en duda.
-  \item \textbf{Cuarto botón}: Un botón “home” que permite salir de la partida actual.
-\end{itemize}
-
-Las cartas que te son asignadas se mostrarán debajo del tablero, en cada habitación se mostrará un modelo 3D del personaje y de las armas que hay en dicha habitación.\\
-
-Los peones de los jugadores se establecen en habitaciones aleatorias.\\
-
-Cada turno o dos turnos se muestra una pista al jugador que será sobre la habitación actual en la que se encuentra, los personajes que contiene esa habitación o las armas que contiene esa habitación.\\
+Se podrá anotar información sobre los personajes/armas/habitaciones sospechosos, de forma que el jugador podrá marcar con una interrogación si no esta seguro o con una X si sabe seguro que ese personaje/arma/habitación, ayudando así a descubrir los datos del asesinato.
 
 \section{Narrativa}
-El jugador es un detective que tiene que resolver un asesinato, mediante el desplazamiento a habitaciones irá recibiendo pistas de que elementos forman o no parte de la solución, y mediante acusaciones irá descartando o acertando elementos que forman parte de dicha solución.
+En la mansión de un aristocrata se celebra una fiesta, el anfitrión ha invitado a sus seis mejores amigos. Durante la velada uno de los amigos del anfitrión le asesina, en una habitación y con un arma específicos, los amigos encuentran el cadaver del anfitrión en el sótano y llaman a detectives para que investiguen el asesinato, de forma que ninguno de los amigos puede salir de la mansión hasta que se haya descubierto quien es el asesino.\\
+
+El juego comienza cuando los detectives llegan a la mansión, estos detectives se tendrán que encargar de desplazarse por las diferentes habitaciones de la casa investigando hasta averiguar quien fue el asesino, con que arma cometio dicho asesinato y en que habitación.
+
+\section{Realidad aumentada}
+Este juego ofrece muchas posibilidades en la forma en la que implementarlo utilizando realidad aumentada, estas son las ideas iniciales sobre cómo implementar el juego con realidad aumentada:
+
+\begin{itemize}
+  \item Detectar el tablero de juego, y a partir de esta imagen mostrar los elementos, que incluyen personajes/habitaciones/armas 3D, en las habitaciones que le correspondan.
+  \item Mostrar cartas en 3D alrededor del tablero de juego, que muestren las pistas mostradas al jugador actual, de forma que si una carta aparece es una pista indicando que el personaje/arma/habitación no ha cometido el asesinato.
+  \item Mostrar diferente información a los difetentes jugadores, de forma que cuando se pase de turno, por ejemplo, las pistas sean diferentes para los diferentes jugadores, así tienen información diferente en función de como exploren las habitaciones cada uno.
+  \item Mostrar los botones de funcionalidad, por ejemplo, el de pasar de turno o lanzar los dados como cubos 3D, que al tocarlos realizan dicha acción.
+  \item Realizar las acusaciones con elementos físicos, es decir, que utilizando cartas reales de personajes/armas/habitaciones se pueda realizar una acusación, de forma que escaneando las 3 a la vez en la escena se realiza la acusación, permitiendo así un mejor balance entre la parte virtual del juego y la parte real.
+\end{itemize}
