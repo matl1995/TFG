@@ -55,3 +55,49 @@ Las evaluaciones del diseño al final de cada iteración coinciden con las entre
 Por tanto, este proceso es beneficioso para el usuario, ya que todo el desarrollo esta centrado en que el producto le ofrezca una buena experiencia, ya que al fin y al cabo, es el usuario el que estrá en contacto con el producto a diario. Y todo esto es posible ya que todo el proceso de desarrollo está orientado al usuario y su experiencia utilizando el producto.
 
 \section{Desarrollo de videojuegos}
+Un modelo bastante utilizado en el desarrollo de videojuegos lo podemos encontrar en \cite{pereira}, este divide dicho desarrollo en tres etapas, como se puede ver en la Figura \ref{figura-pre-pro-post}, las etapas son:
+
+\begin{itemize}
+  \item \textbf{Pre-producción}: En esta etapa se realiza una definición del juego, con sus característica mas imporantes, y como resultado se obtiene una versión inicial el GDD, que es el documento que contiene el diseño del videojuego.
+  \item \textbf{Producción}: En esta etapa se realizan varias tareas distintas:
+
+  \begin{itemize}
+    \item \textbf{Diseño artístico}: En esta etapa se desarrollan los conceptos mas relacionados con la apariencia del juego, como pueden ser la historia, sonidos, interfaz y gráficos.
+    \item \textbf{Diseño mecánico}: En esta etapa se crea la mecánica del juego, es decir, como va a ser la interacción del jugador con el juego y como va a funcionar la inteligencia artificial del juego.
+    \item \textbf{Diseño técnico}: En esta etapa se desarrolla la dinámica interna del juego, que incluye diagramas de clase, diagramas de secuencia, los estados en los que se encontrará el juego en diferentes puntos a nivel de software, etc.
+    \item \textbf{Implementación}: En esta etapa todas las partes que se han ido desarrollando por separado se unen, de forma que encajen perfectamente como una en el juego.
+    \item \textbf{Pruebas alpha}: En esta etapa se hacen pruebas sobre un producto ya terminado, para verificar que el proyecto ya está convertido en producto y se puede poner dicho producto en el mercado.
+    \item \textbf{Pruebas beta}: En esta etapa se hacen pruebas para intentar quitar todos los defectos posibles que el juego pueda tener, y que cuando el producto salga al mercado esté en perfecto estado. También se comprueban aspectos legales para asegurar que no habrá problemas con las normativas de los distintos paises en los que se publicará.
+    \item \textbf{Gold master}: Es la copia del juego definitiva una vez finalizado el proyecto.
+  \end{itemize}
+
+  \item \textbf{Post-producción}: Esta etapa ocurre una vez el juego ya está en el mercado, aqui se hace un seguimiento de como esta funcionando el producto, si hay que cambiar de estrategía o buscar formas de explotarlo más.
+
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{pre-pro-post}
+  \caption{Imagen que muestra el proceso de desarrollo de un videojuego separado en las etapas de pre-producción, producción y post-producción.\protect\footnotemark}
+  \label{figura-pre-pro-post}
+\end{figure}
+
+\footnotetext{Pereira, A. M. M., {\em El proceso productivo del videojuego: fases de producción/The production process of the game: production phases}. Historia y Comunicación Social, 19, 791-805. (2014).}
+
+\newpage
+
+Como se puede ver en este método de desarrollo de videojuegos, el documento de diseño de videojuegos es un elemento central.\\
+
+El GDD es la base del desarrollo del videojuego, ya que este contiene toda la información acerca de como tiene que ser cada aspecto de este, generalmente contiene los siguientes elementos entre otros:
+
+\begin{itemize}
+  \item Género
+  \item Jugadores
+  \item Historia
+  \item Interfaz de usuario
+  \item Objetivos
+  \item Reglas
+  \item Etc
+\end{itemize}
+
+Como se puede comprobar por los elementos que se encuentran en el GDD, este documento contiene toda la información sobre el juego que es relevante para la implementación, por lo que es fundamental en el desarrollo, para una vez estemos implementando adherirnos a la lo descrito en el GDD y consultar cualquier duda en él.
