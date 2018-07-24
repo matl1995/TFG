@@ -36,6 +36,8 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public GameObject Scene;
 
+        public GameObject Dice;
+
         //Personajes
 
         public GameObject CharacterBlue;
@@ -128,6 +130,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             PlayerDef1.SetActive(true);
             PlayerDef2.SetActive(true);
+            Dice.SetActive(false);
         }
 
         public virtual void Update()
@@ -165,9 +168,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             CharacterBlue.transform.localPosition = (CharacterBlueX * Vector3.left) + (CharacterBlueZ * Vector3.back);
             CharacterBlue.SetActive(true);
 
-            float CharacterRedX=-3.1f;
-            float CharacterRedZ=3.5f;
-            CharacterRed.transform.localPosition = (CharacterRedX * Vector3.left) + (CharacterRedZ * Vector3.back);
+            CharacterRed.transform.localPosition = (GameLogic.Red.PositionX * Vector3.left) + (GameLogic.Red.PositionZ * Vector3.back);
             CharacterRed.SetActive(true);
 
             float CharacterGreenX=-3.1f;
@@ -191,7 +192,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             CharacterPink.SetActive(true);
 
 
-            float GunX=0f;
+            float GunX=1f;
             float GunZ=-3.2f;
             Gun.transform.localPosition = (GunX * Vector3.left) + (GunZ * Vector3.back);
             Gun.SetActive(true);
@@ -205,6 +206,16 @@ namespace GoogleARCore.Examples.AugmentedImage
             float CandleZ=3.5f;
             Candle.transform.localPosition = (CandleX * Vector3.left) + (CandleZ * Vector3.back);
             Candle.SetActive(true);
+
+            float Character1X=1f;
+            float Character1Z=3.5f;
+            PlayerDef1.transform.localPosition = (Character1X * Vector3.left) + (Character1Z * Vector3.back);
+            PlayerDef1.SetActive(true);
+
+            float Character2X=-1f;
+            float Character2Z=3.5f;
+            PlayerDef2.transform.localPosition = (Character2X * Vector3.left) + (Character2Z * Vector3.back);
+            PlayerDef2.SetActive(true);
         }
     }
 }
