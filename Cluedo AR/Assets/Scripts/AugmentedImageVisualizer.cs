@@ -163,58 +163,47 @@ namespace GoogleARCore.Examples.AugmentedImage
             Scene.SetActive(true);
 
             
-            float CharacterBlueX=3.1f;
-            float CharacterBlueZ=3.5f;
-            CharacterBlue.transform.localPosition = (CharacterBlueX * Vector3.left) + (CharacterBlueZ * Vector3.back);
+            CharacterBlue.transform.localPosition = (GameLogic.Blue.GetElementPositionX() * Vector3.left) + (GameLogic.Blue.GetElementPositionZ() * Vector3.back);
             CharacterBlue.SetActive(true);
 
-            CharacterRed.transform.localPosition = (GameLogic.Red.PositionX * Vector3.left) + (GameLogic.Red.PositionZ * Vector3.back);
+            CharacterRed.transform.localPosition = (GameLogic.Red.GetElementPositionX() * Vector3.left) + (GameLogic.Red.GetElementPositionZ() * Vector3.back);
             CharacterRed.SetActive(true);
 
-            float CharacterGreenX=-3.1f;
-            float CharacterGreenZ=-3.5f;
-            CharacterGreen.transform.localPosition = (CharacterGreenX * Vector3.left) + (CharacterGreenZ * Vector3.back);
+            CharacterGreen.transform.localPosition = (GameLogic.Green.GetElementPositionX()* Vector3.left) + (GameLogic.Green.GetElementPositionZ() * Vector3.back);
             CharacterGreen.SetActive(true);
 
-            float CharacterYellowX=3.1f;
-            float CharacterYellowZ=-3.5f;
-            CharacterYellow.transform.localPosition = (CharacterYellowX * Vector3.left) + (CharacterYellowZ * Vector3.back);
+            CharacterYellow.transform.localPosition = (GameLogic.Yellow.GetElementPositionX() * Vector3.left) + (GameLogic.Yellow.GetElementPositionZ() * Vector3.back);
             CharacterYellow.SetActive(true);
 
-            float CharacterPurpleX=-3.1f;
-            float CharacterPurpleZ=1.5f;
-            CharacterPurple.transform.localPosition = (CharacterPurpleX * Vector3.left) + (CharacterPurpleZ * Vector3.back);
+            CharacterPurple.transform.localPosition = (GameLogic.Purple.GetElementPositionX() * Vector3.left) + (GameLogic.Purple.GetElementPositionZ() * Vector3.back);
             CharacterPurple.SetActive(true);
 
-            float CharacterPinkX=-3.1f;
-            float CharacterPinkZ=-1.2f;
-            CharacterPink.transform.localPosition = (CharacterPinkX * Vector3.left) + (CharacterPinkZ * Vector3.back);
+            CharacterPink.transform.localPosition = (GameLogic.Pink.GetElementPositionX() * Vector3.left) + (GameLogic.Pink.GetElementPositionZ() * Vector3.back);
             CharacterPink.SetActive(true);
 
 
-            float GunX=1f;
-            float GunZ=-3.2f;
-            Gun.transform.localPosition = (GunX * Vector3.left) + (GunZ * Vector3.back);
+            Gun.transform.localPosition = (GameLogic.Gun.GetElementPositionX() * Vector3.left) + (GameLogic.Gun.GetElementPositionZ() * Vector3.back);
             Gun.SetActive(true);
 
-            float KnifeX=3.1f;
-            float KnifeZ=-0.2f;
-            Knife.transform.localPosition = (KnifeX * Vector3.left) + (KnifeZ * Vector3.back);
+            Knife.transform.localPosition = (GameLogic.Knife.GetElementPositionX() * Vector3.left) + (GameLogic.Knife.GetElementPositionZ() * Vector3.back);
             Knife.SetActive(true);
 
-            float CandleX=0f;
-            float CandleZ=3.5f;
-            Candle.transform.localPosition = (CandleX * Vector3.left) + (CandleZ * Vector3.back);
+            Candle.transform.localPosition = (GameLogic.Candle.GetElementPositionX() * Vector3.left) + (GameLogic.Candle.GetElementPositionZ() * Vector3.back);
             Candle.SetActive(true);
 
-            float Character1X=1f;
-            float Character1Z=3.5f;
-            PlayerDef1.transform.localPosition = (Character1X * Vector3.left) + (Character1Z * Vector3.back);
+            Rope.transform.localPosition = (GameLogic.Rope.GetElementPositionX() * Vector3.left) + (GameLogic.Rope.GetElementPositionZ() * Vector3.back);
+            Rope.SetActive(true);
+
+            Pipeline.transform.localPosition = (GameLogic.Pipeline.GetElementPositionX() * Vector3.left) + (GameLogic.Pipeline.GetElementPositionZ() * Vector3.back);
+            Pipeline.SetActive(true);
+
+            Wrench.transform.localPosition = (GameLogic.Wrench.GetElementPositionX() * Vector3.left) + (GameLogic.Wrench.GetElementPositionZ() * Vector3.back);
+            Wrench.SetActive(true);
+
+            PlayerDef1.transform.localPosition = (GameLogic.Player1.GetElementPositionX() * Vector3.left) + (GameLogic.Player1.GetElementPositionZ() * Vector3.back);
             PlayerDef1.SetActive(true);
 
-            float Character2X=-1f;
-            float Character2Z=3.5f;
-            PlayerDef2.transform.localPosition = (Character2X * Vector3.left) + (Character2Z * Vector3.back);
+            PlayerDef2.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back);
             PlayerDef2.SetActive(true);
         }
     }
