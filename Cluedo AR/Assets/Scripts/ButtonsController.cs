@@ -22,6 +22,7 @@ public class ButtonsController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Screen.sleepTimeout=SleepTimeout.NeverSleep;
 		num_select=0;
 
         Character1=null;

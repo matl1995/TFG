@@ -130,7 +130,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             PlayerDef1.SetActive(true);
             PlayerDef2.SetActive(true);
-            Dice.SetActive(false);
+            Dice.SetActive(true);
         }
 
         public virtual void Update()
@@ -155,6 +155,8 @@ namespace GoogleARCore.Examples.AugmentedImage
 
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
+
+                Dice.SetActive(false);
                 return;
             }
 
