@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Dice : MonoBehaviour {
+public class CurrentDieValue : MonoBehaviour
+{
 
-	public GameObject dice;
-
-	public float Force=10.0f;
-
-	public float Torque=10.0f;
-
-	public ForceMode forceMode;
+	public static CurrentDieValue obj;
 
 	public LayerMask dieValueColliderLayer=-1;
 
@@ -21,11 +16,10 @@ public class Dice : MonoBehaviour {
 
 	private Rigidbody rigid;
 
-	// Use this for initialization
-	void Start () {
-		rigid = dice.GetComponent<Rigidbody>();
+	void Start() {
+		rigid = GetComponent<Rigidbody>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		RaycastHit hit;
@@ -40,14 +34,14 @@ public class Dice : MonoBehaviour {
 			rollComplete=false;
 			SceneManager.LoadScene(currentValue.ToString());
 		}
+		else if(!rigid.IsSleeping())
+		{
+			rollComplete=true;
+		}
 	}
 
-	void OnMouseDown()
+	static public void SetRoll(bool complete)
 	{
-		dice.GetComponent<Rigidbody>().AddForce(transform.up*Force,forceMode);
-		dice.GetComponent<Rigidbody>().AddTorque(Random.onUnitSphere*Torque,forceMode);
-		Collider c=GetComponent<Collider>();
-		c.enabled=false;
-		rollComplete=true;
+		obj.rollComplete=complete;
 	}
 }
