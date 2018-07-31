@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GoogleARCore.Examples.AugmentedImage;
+
 
 public class Dice : MonoBehaviour {
 
 	public GameObject dice;
-
-	public GameObject selector;
 
 	public float Force=10.0f;
 
@@ -26,7 +26,6 @@ public class Dice : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigid = dice.GetComponent<Rigidbody>();
-		selector.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -41,7 +40,8 @@ public class Dice : MonoBehaviour {
 		if(rigid.IsSleeping() && rollComplete)
 		{
 			rollComplete=false;
-			selector.SetActive(true);
+			GameLogic.Dice1.SetThrown(true);
+			GameLogic.Dice1.SetValue(currentValue);
 		}
 	}
 

@@ -4,6 +4,39 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour {
 
+	public class Dice
+	{
+		public int currentValue;
+
+		public bool thrown;
+
+		public Dice()
+		{
+			currentValue=0;
+			thrown=false;
+		}
+
+		public void SetValue(int value)
+		{
+			currentValue=value;
+		}
+
+		public int GetValue()
+		{
+			return currentValue;
+		}
+
+		public void SetThrown(bool value)
+		{
+			thrown=value;
+		}
+
+		public bool GetThrown()
+		{
+			return thrown;
+		}
+	}
+
 	public class Room
 	{
 		public float PositionX;
@@ -58,6 +91,8 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	public int turn=0;
+
+	static public Dice Dice1=new Dice();
 
 	static public Room Kitchen=new Room(3.1f,-3.5f);
 	static public Room Office=new Room(-3.1f,3.5f);

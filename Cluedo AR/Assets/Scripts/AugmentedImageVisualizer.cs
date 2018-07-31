@@ -38,6 +38,29 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public GameObject Dice;
 
+        //Seleccion habitacion
+
+        public GameObject TextRooms;
+
+        public GameObject Kitchen;
+
+        public GameObject LivingRoom;
+
+        public GameObject Office;
+
+        public GameObject GreenHouse;
+
+        public GameObject DinningRoom;
+
+        public GameObject Library;
+
+        public GameObject Lobby;
+
+        public GameObject DanceRoom;
+
+        public GameObject GamesRoom;
+
+
         //Personajes
 
         public GameObject CharacterBlue;
@@ -131,6 +154,20 @@ namespace GoogleARCore.Examples.AugmentedImage
             PlayerDef1.SetActive(true);
             PlayerDef2.SetActive(true);
             Dice.SetActive(true);
+
+            TextRooms.SetActive(false);
+            Kitchen.SetActive(false);
+            LivingRoom.SetActive(false);
+            Office.SetActive(false);
+            GreenHouse.SetActive(false);
+            DinningRoom.SetActive(false);
+            Library.SetActive(false);
+            Lobby.SetActive(false);
+            DanceRoom.SetActive(false);
+            GamesRoom.SetActive(false);
+            
+            TextMesh textObject=TextRooms.GetComponent<TextMesh>();
+            textObject.text=GameLogic.Dice1.GetValue().ToString();
         }
 
         public virtual void Update()
@@ -138,6 +175,17 @@ namespace GoogleARCore.Examples.AugmentedImage
             if (Image == null || Image.TrackingState != TrackingState.Tracking)
             {
                 Scene.SetActive(false);
+
+                TextRooms.SetActive(false);
+                Kitchen.SetActive(false);
+                LivingRoom.SetActive(false);
+                Office.SetActive(false);
+                GreenHouse.SetActive(false);
+                DinningRoom.SetActive(false);
+                Library.SetActive(false);
+                Lobby.SetActive(false);
+                DanceRoom.SetActive(false);
+                GamesRoom.SetActive(false);
 
                 CharacterBlue.SetActive(false);
                 CharacterRed.SetActive(false);
@@ -159,6 +207,24 @@ namespace GoogleARCore.Examples.AugmentedImage
                 Dice.SetActive(false);
                 return;
             }
+
+            if(GameLogic.Dice1.GetThrown())
+            {
+                TextMesh textObject=TextRooms.GetComponent<TextMesh>();
+                textObject.text=GameLogic.Dice1.GetValue().ToString();
+
+                TextRooms.SetActive(true);
+                Kitchen.SetActive(true);
+                LivingRoom.SetActive(true);
+                Office.SetActive(true);
+                GreenHouse.SetActive(true);
+                DinningRoom.SetActive(true);
+                Library.SetActive(true);
+                Lobby.SetActive(true);
+                DanceRoom.SetActive(true);
+                GamesRoom.SetActive(true);
+            }
+
 
             float height=0f;
             Scene.transform.localPosition = (height * Vector3.up);
