@@ -165,9 +165,6 @@ namespace GoogleARCore.Examples.AugmentedImage
             Lobby.SetActive(false);
             DanceRoom.SetActive(false);
             GamesRoom.SetActive(false);
-            
-            TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-            textObject.text=GameLogic.Dice1.GetValue().ToString();
         }
 
         public virtual void Update()
