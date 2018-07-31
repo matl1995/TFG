@@ -7,6 +7,8 @@ public class Dice : MonoBehaviour {
 
 	public GameObject dice;
 
+	public GameObject selector;
+
 	public float Force=10.0f;
 
 	public float Torque=10.0f;
@@ -24,6 +26,7 @@ public class Dice : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigid = dice.GetComponent<Rigidbody>();
+		selector.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -38,7 +41,7 @@ public class Dice : MonoBehaviour {
 		if(rigid.IsSleeping() && rollComplete)
 		{
 			rollComplete=false;
-			SceneManager.LoadScene(currentValue.ToString());
+			selector.SetActive(true);
 		}
 	}
 

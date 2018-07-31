@@ -20160,6 +20160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice: {fileID: 1009659483775798}
+  selector: {fileID: 0}
   Force: 1.5
   Torque: 30
   forceMode: 2
@@ -20329,6 +20330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dice: {fileID: 0}
+  selector: {fileID: 1940141117230946, guid: 81fcd07c69a51e843a7dac93f62964a7, type: 2}
   Force: 10
   Torque: 10
   forceMode: 0
