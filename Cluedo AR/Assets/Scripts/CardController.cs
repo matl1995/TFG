@@ -194,6 +194,22 @@ public class CardController : MonoBehaviour {
 					if(GameLogic.Player1.Cards[11]==0)
 						GameLogic.Player1.Cards[11]=1;
 					else if(GameLogic.Player1.Cards[11]==1)
+						GameLogic.Player1.Cards[11]=0;
+				}
+				else
+				{
+					if(GameLogic.Player2.Cards[11]==0)
+						GameLogic.Player2.Cards[11]=1;
+					else if(GameLogic.Player2.Cards[11]==1)
+						GameLogic.Player2.Cards[11]=0;
+				}
+		        break;
+		    case Card.Lib:
+		    	if(GameLogic.turn%2==1)
+				{
+					if(GameLogic.Player1.Cards[12]==0)
+						GameLogic.Player1.Cards[12]=1;
+					else if(GameLogic.Player1.Cards[12]==1)
 						GameLogic.Player1.Cards[12]=0;
 				}
 				else
@@ -204,7 +220,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[12]=0;
 				}
 		        break;
-		    case Card.Lib:
+		    case Card.Kit:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[13]==0)
@@ -220,7 +236,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[13]=0;
 				}
 		        break;
-		    case Card.Kit:
+		    case Card.Din:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[14]==0)
@@ -236,7 +252,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[14]=0;
 				}
 		        break;
-		    case Card.Din:
+		    case Card.Off:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[15]==0)
@@ -252,7 +268,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[15]=0;
 				}
 		        break;
-		    case Card.Off:
+		    case Card.Gre:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[16]==0)
@@ -268,7 +284,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[16]=0;
 				}
 		        break;
-		    case Card.Gre:
+		    case Card.Dan:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[17]==0)
@@ -284,7 +300,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[17]=0;
 				}
 		        break;
-		    case Card.Dan:
+		    case Card.Gam:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[18]==0)
@@ -300,7 +316,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[18]=0;
 				}
 		        break;
-		    case Card.Gam:
+		    case Card.Liv:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[19]==0)
@@ -316,7 +332,7 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[19]=0;
 				}
 		        break;
-		    case Card.Liv:
+		    case Card.Lob:
 		    	if(GameLogic.turn%2==1)
 				{
 					if(GameLogic.Player1.Cards[20]==0)
@@ -330,22 +346,6 @@ public class CardController : MonoBehaviour {
 						GameLogic.Player2.Cards[20]=1;
 					else if(GameLogic.Player2.Cards[20]==1)
 						GameLogic.Player2.Cards[20]=0;
-				}
-		        break;
-		    case Card.Lob:
-		    	if(GameLogic.turn%2==1)
-				{
-					if(GameLogic.Player1.Cards[21]==0)
-						GameLogic.Player1.Cards[21]=1;
-					else if(GameLogic.Player1.Cards[21]==1)
-						GameLogic.Player1.Cards[21]=0;
-				}
-				else
-				{
-					if(GameLogic.Player2.Cards[21]==0)
-						GameLogic.Player2.Cards[21]=1;
-					else if(GameLogic.Player2.Cards[21]==1)
-						GameLogic.Player2.Cards[21]=0;
 				}
 		        break;
 		}
