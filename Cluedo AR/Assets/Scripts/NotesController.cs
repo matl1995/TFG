@@ -6,7 +6,7 @@ public class NotesController : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		if(GameLogic.turn%2==1)
+		if(GameLogic.turn%2!=0)
 		{
 			if(GameLogic.Player1.Notes==true)
 				GameLogic.Player1.Notes=false;

@@ -1023,6 +1023,7 @@ GameObject:
   - component: {fileID: 33735441671195262}
   - component: {fileID: 65538383161332252}
   - component: {fileID: 23497352031964342}
+  - component: {fileID: 114215704892736914}
   m_Layer: 0
   m_Name: SiguienteButton
   m_TagString: Untagged
@@ -7657,8 +7658,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4306257489783856}
   - component: {fileID: 33441520873923498}
-  - component: {fileID: 65298424077277536}
   - component: {fileID: 23509672084191768}
+  - component: {fileID: 65500245323651142}
   - component: {fileID: 114642015198951192}
   m_Layer: 0
   m_Name: NotasButton
@@ -19713,18 +19714,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.93, y: 10.980002, z: 0.20000005}
   m_Center: {x: 0.0000076293945, y: 0, z: 0}
---- !u!65 &65298424077277536
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1870869427334330}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65304523329689898
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -19809,6 +19798,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.67, y: 10.630003, z: 0.20000005}
   m_Center: {x: 0, y: -0.0000038146973, z: 0}
+--- !u!65 &65500245323651142
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870869427334330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65538383161332252
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -20747,6 +20748,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624869f41264b9144a81e2c0a7f97909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114215704892736914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136713077838344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c389ec4dada530448aa7768bee10b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114225366863852126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20808,48 +20820,48 @@ MonoBehaviour:
   - {fileID: 1987691397492386}
   cardsNotesSpriteNormal:
   - {fileID: 21300000, guid: ddbb94a24a59c624e86c05c8e4db2832, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 1ff7f5a2ed945ee43901bfca986cbdfc, type: 3}
+  - {fileID: 21300000, guid: b0cc7ef88bcfda84e8b1bfd8bb008ef4, type: 3}
+  - {fileID: 21300000, guid: 396341e0642d25b408050a244693703d, type: 3}
+  - {fileID: 21300000, guid: 162f968fd96b846459eaaa65e6659d9c, type: 3}
+  - {fileID: 21300000, guid: 608568ad38ec33a499c07a2541d3d691, type: 3}
+  - {fileID: 21300000, guid: 3ead7df56da052d41ab4b6ed9892d7c4, type: 3}
+  - {fileID: 21300000, guid: 4ae30d4b5648beb4ca0acaaab693b99a, type: 3}
+  - {fileID: 21300000, guid: 5e25699b4a8aee94c9147d7656e53782, type: 3}
+  - {fileID: 21300000, guid: f32ff72da256e80498726f143de784ac, type: 3}
+  - {fileID: 21300000, guid: 37c3e08921b99bc46ac3063d315b98ec, type: 3}
+  - {fileID: 21300000, guid: f72aaab7ef7f95c468270d668ce897fc, type: 3}
+  - {fileID: 21300000, guid: 27562e9927d38534096586947f6c17ff, type: 3}
+  - {fileID: 21300000, guid: 6c9ce1dfbe7b7a44ca1d3e6d49c44d28, type: 3}
+  - {fileID: 21300000, guid: 986275fae997b0f47945ce70421c5062, type: 3}
+  - {fileID: 21300000, guid: 86da1f897c0315647a577ca9fd2a9c39, type: 3}
+  - {fileID: 21300000, guid: 678cedbecc688b44d8b722d55beb1bae, type: 3}
+  - {fileID: 21300000, guid: 3512c72178e90d843ac4a111137b1161, type: 3}
+  - {fileID: 21300000, guid: 9ab4d6b5404adee498c9f7d69f6d39c8, type: 3}
+  - {fileID: 21300000, guid: 1e405544965e4bc4ebb23852143a95a8, type: 3}
+  - {fileID: 21300000, guid: eb9cae144c9ecca4c8e57abe8d01bdf1, type: 3}
   cardsNotesSpriteCross:
   - {fileID: 21300000, guid: 636e750636decc142b5c4d71e2bb24dd, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 65555332a51da6746929b6838073edec, type: 3}
+  - {fileID: 21300000, guid: 73c78479b59c3ae429d87f5c83bc9f89, type: 3}
+  - {fileID: 21300000, guid: 6bebe57f3ec8b814b950371733b77542, type: 3}
+  - {fileID: 21300000, guid: 24ae6197f8237e149aae0e6c3bd4ba2d, type: 3}
+  - {fileID: 21300000, guid: 40dfe4b86d3c0014893a7608385ca363, type: 3}
+  - {fileID: 21300000, guid: 9f9d2f76a356a3e4caef039347543614, type: 3}
+  - {fileID: 21300000, guid: 68590db36f949914093a2c963fcdc705, type: 3}
+  - {fileID: 21300000, guid: e68872beced3149428c289b73b42bb8f, type: 3}
+  - {fileID: 21300000, guid: 44e3fc5d10493a344bddca1315e18039, type: 3}
+  - {fileID: 21300000, guid: 6442bb493af6a1d4b88502f221fc33f8, type: 3}
+  - {fileID: 21300000, guid: 8047cbb5b37439e40ab53affd8514033, type: 3}
+  - {fileID: 21300000, guid: 8ac20c526fdcc504e81a70c489dcc20d, type: 3}
+  - {fileID: 21300000, guid: 09d563c81da45ea40a8b617169590e20, type: 3}
+  - {fileID: 21300000, guid: e38f6d6ecb527a04b95d03808f4a3e83, type: 3}
+  - {fileID: 21300000, guid: 6d7f101b4f3326a4f8abfa0aa70a262d, type: 3}
+  - {fileID: 21300000, guid: 2502c11915310c547b44340fa62114b6, type: 3}
+  - {fileID: 21300000, guid: a6a6544824b823244a00fc1a7e6fac95, type: 3}
+  - {fileID: 21300000, guid: 0f233adb5d30fe942abdeda127b1ab56, type: 3}
+  - {fileID: 21300000, guid: 30588779884f9dc44a06b60273ff39bc, type: 3}
+  - {fileID: 21300000, guid: 11249c8b1b687a44a8b1c9f2139278f7, type: 3}
   TextRooms: {fileID: 1609370091551580}
   Kitchen: {fileID: 1971936449253800}
   LivingRoom: {fileID: 1309193504687102}

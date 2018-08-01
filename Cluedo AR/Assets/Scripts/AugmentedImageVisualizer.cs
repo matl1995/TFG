@@ -143,6 +143,11 @@ namespace GoogleARCore.Examples.AugmentedImage
             Lobby.SetActive(false);
             DanceRoom.SetActive(false);
             GamesRoom.SetActive(false);
+
+            for(int i=0;i<21;i++)
+            {
+                cardsNotes[i].SetActive(false);
+            }
         }
 
         /*************************************************UPDATE**************************************************/
@@ -179,6 +184,11 @@ namespace GoogleARCore.Examples.AugmentedImage
 
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
+
+                for(int i=0;i<21;i++)
+                {
+                    cardsNotes[i].SetActive(false);
+                }
 
                 Dice.SetActive(false);
                 return;
@@ -264,40 +274,69 @@ namespace GoogleARCore.Examples.AugmentedImage
             }
 
             /*************************************************CARTAS NOTAS**************************************************/
-            if(GameLogic.turn%2==1)
+            if(GameLogic.turn%2!=0)
             {
-
-                for(int i=0;i<21;i++)
+                if(GameLogic.Player1.Notes)
                 {
-                    if(GameLogic.Player1.Cards[i]==0)
-                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
-                    else if(GameLogic.Player1.Cards[i]==1)
-                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
-                    else
+                    for(int i=0;i<21;i++)
                     {
-                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
-                        cardsNotes[i].GetComponent<Collider>().enabled=false;
-                        tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
-                        tmp.a=1f;
-                        cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                        cardsNotes[i].SetActive(true);
+                    }
+
+                    for(int i=0;i<21;i++)
+                    {
+                        if(GameLogic.Player1.Cards[i]==0)
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                        else if(GameLogic.Player1.Cards[i]==1)
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                        else
+                        {
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=false;
+                            tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                            tmp.a=1f;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                        }
+                    }
+                }
+                else
+                {
+                    for(int i=0;i<21;i++)
+                    {
+                        cardsNotes[i].SetActive(false);
                     }
                 }
             }
             else
             {
-                for(int i=0;i<21;i++)
+                if(GameLogic.Player2.Notes)
                 {
-                    if(GameLogic.Player2.Cards[i]==0)
-                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
-                    else if(GameLogic.Player2.Cards[i]==1)
-                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
-                    else
+                    for(int i=0;i<21;i++)
                     {
-                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
-                        cardsNotes[i].GetComponent<Collider>().enabled=false;
-                        tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
-                        tmp.a=1f;
-                        cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                        cardsNotes[i].SetActive(true);
+                    }
+
+                    for(int i=0;i<21;i++)
+                    {
+                        if(GameLogic.Player2.Cards[i]==0)
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                        else if(GameLogic.Player2.Cards[i]==1)
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                        else
+                        {
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=false;
+                            tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                            tmp.a=1f;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                        }
+                    }
+                }
+                else
+                {
+                    for(int i=0;i<21;i++)
+                    {
+                        cardsNotes[i].SetActive(false);
                     }
                 }
             }
