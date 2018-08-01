@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour {
 
+	public class Tuple<T1, T2>
+	{
+	    public T1 First { get; private set; }
+	    public T2 Second { get; private set; }
+	    internal Tuple(T1 first, T2 second)
+	    {
+	        First = first;
+	        Second = second;
+	    }
+	}
+
+	public enum Hab {Off, Lib, Liv, Din, Dan, Gam, Gre, Lob, Kit};
+
 	public class Dice
 	{
 		public int currentValue;
@@ -42,11 +55,26 @@ public class GameLogic : MonoBehaviour {
 		public float PositionX;
 		public float PositionZ;
 		public int Elementos;
+		public string name;
 
-		public Room(float positionx, float positionz)
+		public Hab[] Distances=new Hab[8]; 
+
+		public Room(string name,float positionx, float positionz, Hab h1, Hab h2, Hab h3, Hab h4, Hab h5, Hab h6)
 	    {
 	        PositionX=positionx;
 	        PositionZ=positionz;
+	        Distances[0]=h1;
+	        Distances[1]=h2;
+	        Distances[2]=h3;
+	        Distances[3]=h4;
+	        Distances[4]=h5;
+	        Distances[5]=h6;
+	        Elementos=0;
+	    }
+
+	    public string GetName()
+	    {
+	    	return name;
 	    }
 	}
 
@@ -79,6 +107,31 @@ public class GameLogic : MonoBehaviour {
 	        Room.Elementos++;
 	    }
 
+	    public void ChangeRoom(Room room)
+	    {
+	    	Room.Elementos--;
+
+	    	Room=room;
+
+	    	if(Room.Elementos==0)
+	        {
+	        	PositionX=-0.7f;
+	        	PositionZ=0f;
+	        }
+	        else if(Room.Elementos==1)
+	        {
+	        	PositionX=0f;
+	        	PositionZ=0f;
+	        }
+	        else
+	        {
+	        	PositionX=0.7f;
+	        	PositionZ=0f;
+	        }
+
+	        Room.Elementos++;
+	    }
+
 	    public float GetElementPositionX()
 	    {
 	    	return PositionX+Room.PositionX;
@@ -90,19 +143,28 @@ public class GameLogic : MonoBehaviour {
 	    }
 	}
 
-	public int turn=0;
+	static public int turn=1;
 
 	static public Dice Dice1=new Dice();
 
-	static public Room Kitchen=new Room(3.1f,-3.5f);
-	static public Room Office=new Room(-3.1f,3.5f);
-	static public Room LivingRoom=new Room(3.1f,3.5f);
-	static public Room GreenHouse=new Room(-3.1f,-3.5f);
-	static public Room DinningRoom=new Room(3.1f,0f);
-	static public Room Library=new Room(-3.1f,1.5f);
-	static public Room Lobby=new Room(0f,3.5f);
-	static public Room GamesRoom=new Room(-3.1f,-1.2f);
-	static public Room DanceRoom=new Room(0f,-3.5f);
+	static public Room Kitchen=new Room("Kitchen",3.1f,-3.5f,Hab.Din,Hab.Dan,Hab.Liv,Hab.Gre,Hab.Lob,Hab.Gam);
+
+	static public Room Office=new Room("Office",-3.1f,3.5f,Hab.Lib,Hab.Lob,Hab.Liv,Hab.Gam,Hab.Din,Hab.Gre);
+
+	static public Room LivingRoom=new Room("LivingRoom",3.1f,3.5f,Hab.Din,Hab.Lob,Hab.Off,Hab.Kit,Hab.Lib,Hab.Dan);
+
+	static public Room GreenHouse=new Room("GreenHOuse",-3.1f,-3.5f,Hab.Gam,Hab.Dan,Hab.Lib,Hab.Kit,Hab.Din,Hab.Off);
+
+	static public Room DinningRoom=new Room("DinningRoom",3.1f,0f,Hab.Liv,Hab.Kit,Hab.Dan,Hab.Lob,Hab.Gre,Hab.Gam);
+
+	static public Room Library=new Room("Library",-3.1f,1.5f,Hab.Gam,Hab.Off,Hab.Lob,Hab.Gre,Hab.Dan,Hab.Liv);
+
+	static public Room Lobby=new Room("Lobby",0f,3.5f,Hab.Liv,Hab.Off,Hab.Lib,Hab.Din,Hab.Gam,Hab.Gre);
+
+	static public Room GamesRoom=new Room("GamesRoom",-3.1f,-1.2f,Hab.Lib,Hab.Gre,Hab.Dan,Hab.Off,Hab.Kit,Hab.Lob);
+
+	static public Room DanceRoom=new Room("DanceRoom",0f,-3.5f,Hab.Gre,Hab.Kit,Hab.Gam,Hab.Din,Hab.Lib,Hab.Liv);
+
 
 	static public Element Red=new Element(Office);
 	static public Element Blue=new Element(GamesRoom);

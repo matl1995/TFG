@@ -220,6 +220,75 @@ namespace GoogleARCore.Examples.AugmentedImage
                 Lobby.SetActive(true);
                 DanceRoom.SetActive(true);
                 GamesRoom.SetActive(true);
+
+                int dicevalue=GameLogic.Dice1.GetValue();
+                GameLogic.Room r;
+                int pl;
+
+                if(GameLogic.turn%2!=0)
+                {
+                    r=GameLogic.Player1.Room;
+                    pl=1;
+                }
+                else
+                {
+                    r=GameLogic.Player2.Room;
+                    pl=2;
+                }
+
+                Color tmp;
+
+                for(int i=0;i<dicevalue;i++)
+                {
+                    switch (r.Distances[i])
+                    {
+                        case GameLogic.Hab.Kit: 
+                            tmp = Kitchen.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            Kitchen.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Off:
+                            tmp = Office.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            Office.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Din: 
+                            tmp = DinningRoom.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            DinningRoom.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Liv:
+                            tmp = LivingRoom.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            LivingRoom.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Lob: 
+                            tmp = Lobby.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            Lobby.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Lib:
+                            tmp = Library.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            Library.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Gre: 
+                            tmp = GreenHouse.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            GreenHouse.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Gam:
+                            tmp = GamesRoom.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            GamesRoom.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                        case GameLogic.Hab.Dan: 
+                            tmp = DanceRoom.GetComponent<SpriteRenderer>().color;
+                            tmp.a = 1f;
+                            DanceRoom.GetComponent<SpriteRenderer>().color = tmp;
+                            break;
+                    }
+                }
             }
 
 
