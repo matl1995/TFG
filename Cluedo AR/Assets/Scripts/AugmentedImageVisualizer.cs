@@ -290,10 +290,11 @@ namespace GoogleARCore.Examples.AugmentedImage
                     }
                 }
             }
-            else
+
+            if(GameLogic.Dice1.GetFinished())
             {
                 TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text="0";
+                textObject.text=GameLogic.Dice1.GetValue().ToString();
 
                 TextRooms.SetActive(false);
                 Kitchen.SetActive(false);
@@ -305,6 +306,8 @@ namespace GoogleARCore.Examples.AugmentedImage
                 Lobby.SetActive(false);
                 DanceRoom.SetActive(false);
                 GamesRoom.SetActive(false);
+
+                GameLogic.Dice1.SetFinished(false);
             }
 
 

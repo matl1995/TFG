@@ -66,6 +66,7 @@ public class RoomController : MonoBehaviour {
 	            break;
 	    }
 
-	    GameLogic.Dice1.SetThrown(false);
+	    GameLogic.Dice1.Restart();
+	    GameLogic.Dice1.SetFinished(true);
 	}
 }

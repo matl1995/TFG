@@ -23,10 +23,13 @@ public class GameLogic : MonoBehaviour {
 
 		public bool thrown;
 
+		public bool finished;
+
 		public Dice()
 		{
 			currentValue=0;
 			thrown=false;
+			finished=false;
 		}
 
 		public void SetValue(int value)
@@ -47,6 +50,22 @@ public class GameLogic : MonoBehaviour {
 		public bool GetThrown()
 		{
 			return thrown;
+		}
+
+		public void Restart()
+		{
+			currentValue=0;
+			thrown=false;
+		}
+
+		public void SetFinished(bool value)
+		{
+			finished=value;
+		}
+
+		public bool GetFinished()
+		{
+			return finished;
 		}
 	}
 
