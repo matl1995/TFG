@@ -40,8 +40,8 @@ public class Dice : MonoBehaviour {
 		if(rigid.IsSleeping() && rollComplete)
 		{
 			rollComplete=false;
-			GameLogic.Dice1.SetThrown(true);
-			GameLogic.Dice1.SetValue(currentValue);
+			GameLogic.Dice1.thrown=true;
+			GameLogic.Dice1.currentValue=currentValue;
 		}
 	}
 

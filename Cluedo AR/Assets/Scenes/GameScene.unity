@@ -3711,7 +3711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492cc0813c4064ed79f2671a7c2633fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AugmentedImageVisualizerPrefab: {fileID: 114814286784216434, guid: cb936f52601af0e419b6e1ac72e66c41,
+  AugmentedImageVisualizerPrefab: {fileID: 114238081401839876, guid: 9eb43da16dca1a04fa6f31c2cce51437,
     type: 2}
   FitToScanOverlay: {fileID: 1622737808}
   menuPanel: {fileID: 0}
@@ -3739,7 +3739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e095eb85c13bef4689ebc19fafc32f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn: 0
 --- !u!1 &2061469483
 GameObject:
   m_ObjectHideFlags: 0

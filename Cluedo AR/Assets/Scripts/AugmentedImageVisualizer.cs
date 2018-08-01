@@ -33,80 +33,83 @@ namespace GoogleARCore.Examples.AugmentedImage
     public class AugmentedImageVisualizer : MonoBehaviour
     {
         public AugmentedImage Image;
-
         public GameObject Scene;
-
         public GameObject Dice;
+
+        /*************************************************CARTAS HABITACIONES**************************************************/
+        //Armas
+        public GameObject PipelineC;
+        public GameObject WrenchC;
+        public GameObject CandleC;
+        public GameObject GunC;
+        public GameObject KnifeC;
+        public GameObject RopeC;
+
+        public GameObject[] array=new GameObject[10];
+
+        //Personajes
+        public GameObject RedC;
+        public GameObject YellowC;
+        public GameObject GreenC;
+        public GameObject BlueC;
+        public GameObject PinkC;
+        public GameObject PurpleC;
+
+        //Habitaciones
+        public GameObject KitchenC;
+        public GameObject OfficeC;
+        public GameObject LivingC;
+        public GameObject LobbyC;
+        public GameObject GreenHouseC;
+        public GameObject LibraryC;
+        public GameObject DanceC;
+        public GameObject GamesC;
+        public GameObject DinningC;
 
         //Seleccion habitacion
 
         public GameObject TextRooms;
-
         public GameObject Kitchen;
-
         public GameObject LivingRoom;
-
         public GameObject Office;
-
         public GameObject GreenHouse;
-
         public GameObject DinningRoom;
-
         public GameObject Library;
-
         public GameObject Lobby;
-
         public GameObject DanceRoom;
-
         public GameObject GamesRoom;
 
 
         //Personajes
 
         public GameObject CharacterBlue;
-
         public GameObject CharacterRed;
-
         public GameObject CharacterGreen;
-
         public GameObject CharacterYellow;
-
         public GameObject CharacterPurple;
-
         public GameObject CharacterPink;
 
         //Armas
 
         public GameObject Knife;
-
         public GameObject Candle;
-
         public GameObject Rope;
-
         public GameObject Gun;
-
         public GameObject Wrench;
-
         public GameObject Pipeline;
 
         //Jugadores
 
         public GameObject Player1;
-
         public GameObject Player2;
-
         public GameObject Player3;
-
         public GameObject Player4;
-
         public GameObject Player5;
-
         public GameObject Player6;
-
         public GameObject PlayerDef1=null;
-
         public GameObject PlayerDef2=null;
 
+        /*************************************************START**************************************************/
         public virtual void Start()
         {
             if(ButtonsController.Character1.Equals("Toggle1"))
@@ -167,6 +170,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             GamesRoom.SetActive(false);
         }
 
+        /*************************************************UPDATE**************************************************/
         public virtual void Update()
         {
             if (Image == null || Image.TrackingState != TrackingState.Tracking)
@@ -205,10 +209,11 @@ namespace GoogleARCore.Examples.AugmentedImage
                 return;
             }
 
-            if(GameLogic.Dice1.GetThrown())
+            /*************************************************SI DADO LANZADO**************************************************/
+            if(GameLogic.Dice1.thrown)
             {
                 TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text=GameLogic.Dice1.GetValue().ToString();
+                textObject.text=GameLogic.Dice1.currentValue.ToString();
 
                 TextRooms.SetActive(true);
                 Kitchen.SetActive(true);
@@ -221,80 +226,53 @@ namespace GoogleARCore.Examples.AugmentedImage
                 DanceRoom.SetActive(true);
                 GamesRoom.SetActive(true);
 
-                int dicevalue=GameLogic.Dice1.GetValue();
+                int dicevalue=GameLogic.Dice1.currentValue;
                 GameLogic.Room r;
-                int pl;
 
                 if(GameLogic.turn%2!=0)
                 {
                     r=GameLogic.Player1.Room;
-                    pl=1;
                 }
                 else
                 {
                     r=GameLogic.Player2.Room;
-                    pl=2;
                 }
 
                 Color tmp;
 
-                for(int i=0;i<dicevalue;i++)
+                GameLogic.Hab[] roomsArray={GameLogic.Hab.Off, GameLogic.Hab.Lib, GameLogic.Hab.Liv, GameLogic.Hab.Din, GameLogic.Hab.Dan, GameLogic.Hab.Gam, GameLogic.Hab.Gre, GameLogic.Hab.Lob, GameLogic.Hab.Kit};
+
+                GameObject[] habs={Office,Library,LivingRoom,DinningRoom,DanceRoom,GamesRoom,GreenHouse,Lobby,Kitchen};
+
+                for(int i=0;i<9;i++)
                 {
-                    switch (r.Distances[i])
+                    bool inside=false;
+                    for(int j=0;j<dicevalue && inside==false;j++)
                     {
-                        case GameLogic.Hab.Kit: 
-                            tmp = Kitchen.GetComponent<SpriteRenderer>().color;
+                        if(roomsArray[i]==r.Distances[j])
+                        {
+                            habs[i].GetComponent<Collider>().enabled=true;
+                            tmp = habs[i].GetComponent<SpriteRenderer>().color;
                             tmp.a = 1f;
-                            Kitchen.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Off:
-                            tmp = Office.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            Office.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Din: 
-                            tmp = DinningRoom.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            DinningRoom.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Liv:
-                            tmp = LivingRoom.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            LivingRoom.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Lob: 
-                            tmp = Lobby.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            Lobby.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Lib:
-                            tmp = Library.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            Library.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Gre: 
-                            tmp = GreenHouse.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            GreenHouse.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Gam:
-                            tmp = GamesRoom.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            GamesRoom.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
-                        case GameLogic.Hab.Dan: 
-                            tmp = DanceRoom.GetComponent<SpriteRenderer>().color;
-                            tmp.a = 1f;
-                            DanceRoom.GetComponent<SpriteRenderer>().color = tmp;
-                            break;
+                            habs[i].GetComponent<SpriteRenderer>().color = tmp;
+                            inside=true;
+                        }
+                    }
+                    if(inside==false)
+                    {
+                        habs[i].GetComponent<Collider>().enabled=false;
+                        tmp = habs[i].GetComponent<SpriteRenderer>().color;
+                        tmp.a = 0.5f;
+                        habs[i].GetComponent<SpriteRenderer>().color = tmp;
                     }
                 }
             }
 
-            if(GameLogic.Dice1.GetFinished())
+            /*************************************************SI MOVIDO DE HABITACION*******************************************/
+            if(GameLogic.Dice1.finished)
             {
                 TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text=GameLogic.Dice1.GetValue().ToString();
+                textObject.text=GameLogic.Dice1.currentValue.ToString();
 
                 TextRooms.SetActive(false);
                 Kitchen.SetActive(false);
@@ -307,10 +285,11 @@ namespace GoogleARCore.Examples.AugmentedImage
                 DanceRoom.SetActive(false);
                 GamesRoom.SetActive(false);
 
-                GameLogic.Dice1.SetFinished(false);
+                GameLogic.Dice1.finished=false;
             }
 
 
+            /*************************************************ELEMENTOS DE TABLERO**************************************************/
             float height=0f;
             Scene.transform.localPosition = (height * Vector3.up);
             Scene.SetActive(true);
