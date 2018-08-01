@@ -290,6 +290,22 @@ namespace GoogleARCore.Examples.AugmentedImage
                     }
                 }
             }
+            else
+            {
+                TextMesh textObject=TextRooms.GetComponent<TextMesh>();
+                textObject.text="0";
+
+                TextRooms.SetActive(false);
+                Kitchen.SetActive(false);
+                LivingRoom.SetActive(false);
+                Office.SetActive(false);
+                GreenHouse.SetActive(false);
+                DinningRoom.SetActive(false);
+                Library.SetActive(false);
+                Lobby.SetActive(false);
+                DanceRoom.SetActive(false);
+                GamesRoom.SetActive(false);
+            }
 
 
             float height=0f;
