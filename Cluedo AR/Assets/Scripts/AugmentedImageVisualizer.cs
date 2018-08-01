@@ -335,22 +335,22 @@ namespace GoogleARCore.Examples.AugmentedImage
             CharacterPink.SetActive(true);
 
 
-            Gun.transform.localPosition = (GameLogic.Gun.GetElementPositionX() * Vector3.left) + (GameLogic.Gun.GetElementPositionZ() * Vector3.back);
+            Gun.transform.localPosition = (GameLogic.Gun.GetElementPositionX() * Vector3.left) + (GameLogic.Gun.GetElementPositionZ() * Vector3.back) + (0.1f * Vector3.up);
             Gun.SetActive(true);
 
-            Knife.transform.localPosition = (GameLogic.Knife.GetElementPositionX() * Vector3.left) + (GameLogic.Knife.GetElementPositionZ() * Vector3.back);
+            Knife.transform.localPosition = (GameLogic.Knife.GetElementPositionX() * Vector3.left) + (GameLogic.Knife.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
             Knife.SetActive(true);
 
-            Candle.transform.localPosition = (GameLogic.Candle.GetElementPositionX() * Vector3.left) + (GameLogic.Candle.GetElementPositionZ() * Vector3.back);
+            Candle.transform.localPosition = (GameLogic.Candle.GetElementPositionX() * Vector3.left) + (GameLogic.Candle.GetElementPositionZ() * Vector3.back) + (0.2f * Vector3.up);
             Candle.SetActive(true);
 
-            Rope.transform.localPosition = (GameLogic.Rope.GetElementPositionX() * Vector3.left) + (GameLogic.Rope.GetElementPositionZ() * Vector3.back);
+            Rope.transform.localPosition = (GameLogic.Rope.GetElementPositionX() * Vector3.left) + (GameLogic.Rope.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
             Rope.SetActive(true);
 
-            Pipeline.transform.localPosition = (GameLogic.Pipeline.GetElementPositionX() * Vector3.left) + (GameLogic.Pipeline.GetElementPositionZ() * Vector3.back);
+            Pipeline.transform.localPosition = (GameLogic.Pipeline.GetElementPositionX() * Vector3.left) + (GameLogic.Pipeline.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
             Pipeline.SetActive(true);
 
-            Wrench.transform.localPosition = (GameLogic.Wrench.GetElementPositionX() * Vector3.left) + (GameLogic.Wrench.GetElementPositionZ() * Vector3.back);
+            Wrench.transform.localPosition = (GameLogic.Wrench.GetElementPositionX() * Vector3.left) + (GameLogic.Wrench.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
             Wrench.SetActive(true);
 
             PlayerDef1.transform.localPosition = (GameLogic.Player1.GetElementPositionX() * Vector3.left) + (GameLogic.Player1.GetElementPositionZ() * Vector3.back);

@@ -109,18 +109,23 @@ public class GameLogic : MonoBehaviour {
 
 	        if(Room.Elementos==0)
 	        {
-	        	PositionX=-0.7f;
-	        	PositionZ=0f;
+	        	PositionX=-0.5f;
+	        	PositionZ=-0.2f;
 	        }
 	        else if(Room.Elementos==1)
 	        {
-	        	PositionX=0f;
-	        	PositionZ=0f;
+	        	PositionX=0.5f;
+	        	PositionZ=-0.2f;
+	        }
+	        else if(Room.Elementos==2)
+	        {
+	        	PositionX=-0.5f;
+	        	PositionZ=0.7f;
 	        }
 	        else
 	        {
-	        	PositionX=0.7f;
-	        	PositionZ=0f;
+	        	PositionX=0.5f;
+	        	PositionZ=0.7f;
 	        }
 
 	        Room.Elementos++;
@@ -134,18 +139,23 @@ public class GameLogic : MonoBehaviour {
 
 	    	if(Room.Elementos==0)
 	        {
-	        	PositionX=-0.7f;
-	        	PositionZ=0f;
+	        	PositionX=-0.5f;
+	        	PositionZ=-0.2f;
 	        }
 	        else if(Room.Elementos==1)
 	        {
-	        	PositionX=0f;
-	        	PositionZ=0f;
+	        	PositionX=0.5f;
+	        	PositionZ=-0.2f;
+	        }
+	        else if(Room.Elementos==2)
+	        {
+	        	PositionX=-0.5f;
+	        	PositionZ=0.7f;
 	        }
 	        else
 	        {
-	        	PositionX=0.7f;
-	        	PositionZ=0f;
+	        	PositionX=0.5f;
+	        	PositionZ=0.7f;
 	        }
 
 	        Room.Elementos++;
