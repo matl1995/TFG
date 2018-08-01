@@ -39,18 +39,6 @@ public class GameLogic : MonoBehaviour {
 		}
 	}
 
-	public class Card
-	{
-		public bool marcada;
-		public bool pista;
-
-		public Card()
-		{
-			marcada=false;
-			pista=false;
-		}
-	}
-
 	public class Room
 	{
 		public float PositionX;
@@ -126,10 +114,15 @@ public class GameLogic : MonoBehaviour {
 		public Room Room;
 		public bool Notes;
 
+		//This array contains one integer per each card, 0 means is not marked, 1 means marked, and 2 means hint
+		public int[] Cards;
+
 		public Player(Room room)
 	    {
 	    	Notes=false;
 	        Room=room;
+
+	        Cards=new int[21]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 	        if(Room.Elementos==0)
 	        {

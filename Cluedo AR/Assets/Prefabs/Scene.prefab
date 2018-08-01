@@ -20669,10 +20669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 8ac20c526fdcc504e81a70c489dcc20d, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 1
 --- !u!114 &114105210346669718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20684,10 +20681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 09d563c81da45ea40a8b617169590e20, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 8
 --- !u!114 &114132075930838400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20699,10 +20693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 9f9d2f76a356a3e4caef039347543614, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 9
 --- !u!114 &114152864999229052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20732,10 +20723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 30588779884f9dc44a06b60273ff39bc, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 2
 --- !u!114 &114198467040696260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20782,10 +20770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 73c78479b59c3ae429d87f5c83bc9f89, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 17
 --- !u!114 &114238081401839876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20799,13 +20784,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scene: {fileID: 1149764815809720}
   Dice: {fileID: 1342895577166060}
-  PipelineC: {fileID: 0}
-  WrenchC: {fileID: 0}
-  CandleC: {fileID: 0}
-  GunC: {fileID: 0}
-  KnifeC: {fileID: 0}
-  RopeC: {fileID: 0}
-  array:
+  cardsNotes:
+  - {fileID: 1457827240059482}
+  - {fileID: 1834848783960874}
+  - {fileID: 1812410991887944}
+  - {fileID: 1408765147275590}
+  - {fileID: 1097286748766372}
+  - {fileID: 1629444793525388}
+  - {fileID: 1968222801819186}
+  - {fileID: 1204314682119890}
+  - {fileID: 1786746616440948}
+  - {fileID: 1064595873176450}
+  - {fileID: 1689929137375178}
+  - {fileID: 1252712275003364}
+  - {fileID: 1824301426034638}
+  - {fileID: 1869859851136862}
+  - {fileID: 1351979025506338}
+  - {fileID: 1881703393531112}
+  - {fileID: 1640233833885192}
+  - {fileID: 1210091898755330}
+  - {fileID: 1715298444502536}
+  - {fileID: 1330174714410730}
+  - {fileID: 1987691397492386}
+  cardsNotesSpriteNormal:
+  - {fileID: 21300000, guid: ddbb94a24a59c624e86c05c8e4db2832, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -20816,21 +20818,38 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  RedC: {fileID: 0}
-  YellowC: {fileID: 0}
-  GreenC: {fileID: 0}
-  BlueC: {fileID: 0}
-  PinkC: {fileID: 0}
-  PurpleC: {fileID: 0}
-  KitchenC: {fileID: 0}
-  OfficeC: {fileID: 0}
-  LivingC: {fileID: 0}
-  LobbyC: {fileID: 0}
-  GreenHouseC: {fileID: 0}
-  LibraryC: {fileID: 0}
-  DanceC: {fileID: 0}
-  GamesC: {fileID: 0}
-  DinningC: {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cardsNotesSpriteCross:
+  - {fileID: 21300000, guid: 636e750636decc142b5c4d71e2bb24dd, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   TextRooms: {fileID: 1609370091551580}
   Kitchen: {fileID: 1971936449253800}
   LivingRoom: {fileID: 1309193504687102}
@@ -20884,10 +20903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 8047cbb5b37439e40ab53affd8514033, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 11
 --- !u!114 &114271809098177706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20923,10 +20939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 11249c8b1b687a44a8b1c9f2139278f7, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 7
 --- !u!114 &114378402220186890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20938,10 +20951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 68590db36f949914093a2c963fcdc705, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 14
 --- !u!114 &114380661429483746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20953,10 +20963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 636e750636decc142b5c4d71e2bb24dd, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 20
 --- !u!114 &114389098975489908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20968,10 +20975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: a6a6544824b823244a00fc1a7e6fac95, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 4
 --- !u!114 &114399225849760576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21030,10 +21034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 24ae6197f8237e149aae0e6c3bd4ba2d, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 15
 --- !u!114 &114510024223022890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21069,10 +21070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: e38f6d6ecb527a04b95d03808f4a3e83, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 3
 --- !u!114 &114591148871861282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21137,10 +21135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 40dfe4b86d3c0014893a7608385ca363, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 18
 --- !u!114 &114688148585247338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21152,10 +21147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 44e3fc5d10493a344bddca1315e18039, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 10
 --- !u!114 &114706714611483952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21167,10 +21159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 6d7f101b4f3326a4f8abfa0aa70a262d, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 0
 --- !u!114 &114770086816165768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21182,10 +21171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 2502c11915310c547b44340fa62114b6, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 6
 --- !u!114 &114816096809231118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21209,10 +21195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: e68872beced3149428c289b73b42bb8f, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 13
 --- !u!114 &114881691896288000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21236,10 +21219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 6bebe57f3ec8b814b950371733b77542, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 16
 --- !u!114 &114893351897904210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21251,10 +21231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 0f233adb5d30fe942abdeda127b1ab56, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 5
 --- !u!114 &114927891066175910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21266,10 +21243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 65555332a51da6746929b6838073edec, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 19
 --- !u!114 &114932853647115794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21281,10 +21255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4e511d28f4dbe4483844a51ed8373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: 6442bb493af6a1d4b88502f221fc33f8, type: 3}
-  oldSprite: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  cambio: 0
+  c: 12
 --- !u!114 &114961979428480840
 MonoBehaviour:
   m_ObjectHideFlags: 1

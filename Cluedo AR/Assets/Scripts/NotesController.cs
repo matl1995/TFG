@@ -8,11 +8,17 @@ public class NotesController : MonoBehaviour {
 	{
 		if(GameLogic.turn%2==1)
 		{
-			GameLogic.Player1.Notes ^= true;
+			if(GameLogic.Player1.Notes==true)
+				GameLogic.Player1.Notes=false;
+			else
+				GameLogic.Player1.Notes=true;
 		}
 		else
 		{
-			GameLogic.Player2.Notes ^= true;
+			if(GameLogic.Player2.Notes==true)
+				GameLogic.Player2.Notes=false;
+			else
+				GameLogic.Player2.Notes=true;
 		}
 	}
 }

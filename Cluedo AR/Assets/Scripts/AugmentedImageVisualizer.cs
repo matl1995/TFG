@@ -37,34 +37,9 @@ namespace GoogleARCore.Examples.AugmentedImage
         public GameObject Dice;
 
         /*************************************************CARTAS HABITACIONES**************************************************/
-        //Armas
-        public GameObject PipelineC;
-        public GameObject WrenchC;
-        public GameObject CandleC;
-        public GameObject GunC;
-        public GameObject KnifeC;
-        public GameObject RopeC;
-
-        public GameObject[] array=new GameObject[10];
-
-        //Personajes
-        public GameObject RedC;
-        public GameObject YellowC;
-        public GameObject GreenC;
-        public GameObject BlueC;
-        public GameObject PinkC;
-        public GameObject PurpleC;
-
-        //Habitaciones
-        public GameObject KitchenC;
-        public GameObject OfficeC;
-        public GameObject LivingC;
-        public GameObject LobbyC;
-        public GameObject GreenHouseC;
-        public GameObject LibraryC;
-        public GameObject DanceC;
-        public GameObject GamesC;
-        public GameObject DinningC;
+        public GameObject[] cardsNotes=new GameObject[21];
+        public Sprite[] cardsNotesSpriteNormal=new Sprite[21];
+        public Sprite[] cardsNotesSpriteCross=new Sprite[21];
 
         //Seleccion habitacion
 
@@ -210,6 +185,8 @@ namespace GoogleARCore.Examples.AugmentedImage
             }
 
             /*************************************************SI DADO LANZADO**************************************************/
+            Color tmp;
+
             if(GameLogic.Dice1.thrown)
             {
                 TextMesh textObject=TextRooms.GetComponent<TextMesh>();
@@ -237,8 +214,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     r=GameLogic.Player2.Room;
                 }
-
-                Color tmp;
 
                 GameLogic.Hab[] roomsArray={GameLogic.Hab.Off, GameLogic.Hab.Lib, GameLogic.Hab.Liv, GameLogic.Hab.Din, GameLogic.Hab.Dan, GameLogic.Hab.Gam, GameLogic.Hab.Gre, GameLogic.Hab.Lob, GameLogic.Hab.Kit};
 
@@ -286,6 +261,45 @@ namespace GoogleARCore.Examples.AugmentedImage
                 GamesRoom.SetActive(false);
 
                 GameLogic.Dice1.finished=false;
+            }
+
+            /*************************************************CARTAS NOTAS**************************************************/
+            if(GameLogic.turn%2==1)
+            {
+
+                for(int i=0;i<21;i++)
+                {
+                    if(GameLogic.Player1.Cards[i]==0)
+                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                    else if(GameLogic.Player1.Cards[i]==1)
+                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                    else
+                    {
+                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                        cardsNotes[i].GetComponent<Collider>().enabled=false;
+                        tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                        tmp.a=1f;
+                        cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                    }
+                }
+            }
+            else
+            {
+                for(int i=0;i<21;i++)
+                {
+                    if(GameLogic.Player2.Cards[i]==0)
+                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                    else if(GameLogic.Player2.Cards[i]==1)
+                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                    else
+                    {
+                        cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                        cardsNotes[i].GetComponent<Collider>().enabled=false;
+                        tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                        tmp.a=1f;
+                        cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                    }
+                }
             }
 
 

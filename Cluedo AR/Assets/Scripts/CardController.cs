@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class CardController : MonoBehaviour {
 
-	public Sprite newSprite;
+	public enum Card {Off, Lib, Liv, Din, Dan, Gam, Gre, Lob, Kit, Red, Yell, Pin, Pur, Gree, Blu, Wre, Pip, Can, Rop, Gun, Kni};
 
-	public Sprite oldSprite;
-
-	public SpriteRenderer spriteRenderer;
-
-	public int cambio=0;
-
-	// Use this for initialization
-	void Start ()
-	{
-		spriteRenderer=GetComponent<SpriteRenderer>();
-		oldSprite=spriteRenderer.sprite;
-	}
+	public Card c;
 
 	void OnMouseDown()
 	{
-		if(cambio%2==0)
+		switch (c)
 		{
-			spriteRenderer.sprite=newSprite;
-			cambio++;
-		}
-		else
-		{
-			spriteRenderer.sprite=oldSprite;
-			cambio++;
+		    case Card.Kni:
+		        if(GameLogic.turn%2==1)
+				{
+					if(GameLogic.Player1.Cards[0]==0)
+						GameLogic.Player1.Cards[0]=1;
+					else if(GameLogic.Player1.Cards[0]==1)
+						GameLogic.Player1.Cards[0]=0;
+				}
+				else
+				{
+					if(GameLogic.Player2.Cards[0]==0)
+						GameLogic.Player2.Cards[0]=1;
+					else if(GameLogic.Player2.Cards[0]==1)
+						GameLogic.Player2.Cards[0]=0;
+				}
+		        break;
+		    case Card.Gun:
+		        break;
 		}
 	}
 }
