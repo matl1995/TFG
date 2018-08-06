@@ -3711,9 +3711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492cc0813c4064ed79f2671a7c2633fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AugmentedBoardVisualizerPrefab: {fileID: 114238081401839876, guid: 9eb43da16dca1a04fa6f31c2cce51437,
+  AugmentedBoardVisualizerPrefab: {fileID: 114686153387641854, guid: af1aa80bd0cac1943900274414549b9c,
     type: 2}
-  AugmentedCardsVisualizerPrefab: {fileID: 114593722036028002, guid: 50f05ad1420b1ca45aa11a2a7b3c64b7,
+  AugmentedCardsVisualizerPrefab: {fileID: 114524057217550446, guid: 50f05ad1420b1ca45aa11a2a7b3c64b7,
     type: 2}
   FitToScanOverlay: {fileID: 1622737808}
   menuPanel: {fileID: 0}

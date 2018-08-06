@@ -336,6 +336,8 @@ public class GameLogic : MonoBehaviour {
 
 	static public int turn=1;
 
+	static public bool turnFinished=false;
+
 	static public Dice Dice1=new Dice();
 
 	static public Solution sol=new Solution();
@@ -412,6 +414,7 @@ public class GameLogic : MonoBehaviour {
 			else
 			{
 				turn++;
+				Dice1.ActivateColl();
 				sol.r.SetActive(false);
 				sol.c.SetActive(false);
 				sol.g.SetActive(false);

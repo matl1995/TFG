@@ -63,6 +63,14 @@ namespace GoogleARCore.Examples.AugmentedImage
         public GameObject PlayerDef1=null;
         public GameObject PlayerDef2=null;
 
+        public GameObject NextTurnText;
+        public GameObject NextTurnButton;
+
+        public GameObject ThrowButton;
+        public GameObject NotesButton;
+        public GameObject NextButton;
+        public GameObject FinishButton;
+
         /*************************************************START**************************************************/
         public virtual void Start()
         {
@@ -123,6 +131,9 @@ namespace GoogleARCore.Examples.AugmentedImage
             DanceRoom.SetActive(false);
             GamesRoom.SetActive(false);
 
+            NextTurnText.SetActive(false);
+            NextTurnButton.SetActive(false);
+
             for(int i=0;i<21;i++)
             {
                 cardsNotes[i].SetActive(false);
@@ -135,6 +146,9 @@ namespace GoogleARCore.Examples.AugmentedImage
             if (Image == null || Image.TrackingState != TrackingState.Tracking)
             {
                 Scene.SetActive(false);
+
+                NextTurnText.SetActive(false);
+                NextTurnButton.SetActive(false);
 
                 TextRooms.SetActive(false);
                 Kitchen.SetActive(false);
@@ -161,6 +175,11 @@ namespace GoogleARCore.Examples.AugmentedImage
                 Candle.SetActive(false);
                 Wrench.SetActive(false);
 
+                ThrowButton.SetActive(false);
+                NotesButton.SetActive(false);
+                NextButton.SetActive(false);
+                FinishButton.SetActive(false);
+
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
 
@@ -179,7 +198,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             if(GameLogic.Dice1.thrown)
             {
                 TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text=GameLogic.Dice1.currentValue.ToString();
+                textObject.text="Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString();
 
                 TextRooms.SetActive(true);
                 Kitchen.SetActive(true);
@@ -232,11 +251,71 @@ namespace GoogleARCore.Examples.AugmentedImage
                 }
             }
 
+            /*************************************************SI TURNO TERMINADO*******************************************/
+            if(GameLogic.turnFinished)
+            {
+                TextMesh textObject=NextTurnText.GetComponent<TextMesh>();
+                if(GameLogic.turn%2!=0)
+                    textObject.text="Turno del Jugador 2";
+                else
+                    textObject.text="Turno del Jugador 1";
+
+                ThrowButton.SetActive(false);
+                NotesButton.SetActive(false);
+                NextButton.SetActive(false);
+                FinishButton.SetActive(false);
+
+                CharacterBlue.SetActive(false);
+                CharacterRed.SetActive(false);
+                CharacterGreen.SetActive(false);
+                CharacterYellow.SetActive(false);
+                CharacterPurple.SetActive(false);
+                CharacterPink.SetActive(false);
+                Gun.SetActive(false);
+                Knife.SetActive(false);
+                Candle.SetActive(false);
+                Rope.SetActive(false);
+                Pipeline.SetActive(false);
+                Wrench.SetActive(false);
+                Dice.SetActive(false);
+                PlayerDef1.SetActive(false);
+                PlayerDef2.SetActive(false);
+
+                NextTurnText.SetActive(true);
+                NextTurnButton.SetActive(true);
+            }
+            else
+            {
+                ThrowButton.SetActive(true);
+                NotesButton.SetActive(true);
+                NextButton.SetActive(true);
+                FinishButton.SetActive(true);
+
+                CharacterBlue.SetActive(true);
+                CharacterRed.SetActive(true);
+                CharacterGreen.SetActive(true);
+                CharacterYellow.SetActive(true);
+                CharacterPurple.SetActive(true);
+                CharacterPink.SetActive(true);
+                Gun.SetActive(true);
+                Knife.SetActive(true);
+                Candle.SetActive(true);
+                Rope.SetActive(true);
+                Pipeline.SetActive(true);
+                Wrench.SetActive(true);
+                Dice.SetActive(true);
+                PlayerDef1.SetActive(true);
+                PlayerDef1.SetActive(true);
+
+                NextTurnText.SetActive(false);
+                NextTurnButton.SetActive(false);
+            }
+
             /*************************************************SI MOVIDO DE HABITACION*******************************************/
             if(GameLogic.Dice1.finished)
             {
                 TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text=GameLogic.Dice1.currentValue.ToString();
+                textObject.text="Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString();
 
                 TextRooms.SetActive(false);
                 Kitchen.SetActive(false);
@@ -255,7 +334,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             /*************************************************CARTAS NOTAS**************************************************/
             if(GameLogic.turn%2!=0)
             {
-                if(GameLogic.Player1.Notes)
+                if(GameLogic.Player1.Notes && !GameLogic.turnFinished)
                 {
                     for(int i=0;i<21;i++)
                     {
@@ -288,7 +367,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             }
             else
             {
-                if(GameLogic.Player2.Notes)
+                if(GameLogic.Player2.Notes && !GameLogic.turnFinished)
                 {
                     for(int i=0;i<21;i++)
                     {
@@ -326,49 +405,51 @@ namespace GoogleARCore.Examples.AugmentedImage
             Scene.transform.localPosition = (height * Vector3.up);
             Scene.SetActive(true);
 
-            
-            CharacterBlue.transform.localPosition = (GameLogic.Blue.GetElementPositionX() * Vector3.left) + (GameLogic.Blue.GetElementPositionZ() * Vector3.back);
-            CharacterBlue.SetActive(true);
+            if(!GameLogic.turnFinished)
+            {
+                CharacterBlue.transform.localPosition = (GameLogic.Blue.GetElementPositionX() * Vector3.left) + (GameLogic.Blue.GetElementPositionZ() * Vector3.back);
+                CharacterBlue.SetActive(true);
 
-            CharacterRed.transform.localPosition = (GameLogic.Red.GetElementPositionX() * Vector3.left) + (GameLogic.Red.GetElementPositionZ() * Vector3.back);
-            CharacterRed.SetActive(true);
+                CharacterRed.transform.localPosition = (GameLogic.Red.GetElementPositionX() * Vector3.left) + (GameLogic.Red.GetElementPositionZ() * Vector3.back);
+                CharacterRed.SetActive(true);
 
-            CharacterGreen.transform.localPosition = (GameLogic.Green.GetElementPositionX()* Vector3.left) + (GameLogic.Green.GetElementPositionZ() * Vector3.back);
-            CharacterGreen.SetActive(true);
+                CharacterGreen.transform.localPosition = (GameLogic.Green.GetElementPositionX()* Vector3.left) + (GameLogic.Green.GetElementPositionZ() * Vector3.back);
+                CharacterGreen.SetActive(true);
 
-            CharacterYellow.transform.localPosition = (GameLogic.Yellow.GetElementPositionX() * Vector3.left) + (GameLogic.Yellow.GetElementPositionZ() * Vector3.back);
-            CharacterYellow.SetActive(true);
+                CharacterYellow.transform.localPosition = (GameLogic.Yellow.GetElementPositionX() * Vector3.left) + (GameLogic.Yellow.GetElementPositionZ() * Vector3.back);
+                CharacterYellow.SetActive(true);
 
-            CharacterPurple.transform.localPosition = (GameLogic.Purple.GetElementPositionX() * Vector3.left) + (GameLogic.Purple.GetElementPositionZ() * Vector3.back);
-            CharacterPurple.SetActive(true);
+                CharacterPurple.transform.localPosition = (GameLogic.Purple.GetElementPositionX() * Vector3.left) + (GameLogic.Purple.GetElementPositionZ() * Vector3.back);
+                CharacterPurple.SetActive(true);
 
-            CharacterPink.transform.localPosition = (GameLogic.Pink.GetElementPositionX() * Vector3.left) + (GameLogic.Pink.GetElementPositionZ() * Vector3.back);
-            CharacterPink.SetActive(true);
+                CharacterPink.transform.localPosition = (GameLogic.Pink.GetElementPositionX() * Vector3.left) + (GameLogic.Pink.GetElementPositionZ() * Vector3.back);
+                CharacterPink.SetActive(true);
 
 
-            Gun.transform.localPosition = (GameLogic.Gun.GetElementPositionX() * Vector3.left) + (GameLogic.Gun.GetElementPositionZ() * Vector3.back) + (0.1f * Vector3.up);
-            Gun.SetActive(true);
+                Gun.transform.localPosition = (GameLogic.Gun.GetElementPositionX() * Vector3.left) + (GameLogic.Gun.GetElementPositionZ() * Vector3.back) + (0.1f * Vector3.up);
+                Gun.SetActive(true);
 
-            Knife.transform.localPosition = (GameLogic.Knife.GetElementPositionX() * Vector3.left) + (GameLogic.Knife.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
-            Knife.SetActive(true);
+                Knife.transform.localPosition = (GameLogic.Knife.GetElementPositionX() * Vector3.left) + (GameLogic.Knife.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
+                Knife.SetActive(true);
 
-            Candle.transform.localPosition = (GameLogic.Candle.GetElementPositionX() * Vector3.left) + (GameLogic.Candle.GetElementPositionZ() * Vector3.back) + (0.2f * Vector3.up);
-            Candle.SetActive(true);
+                Candle.transform.localPosition = (GameLogic.Candle.GetElementPositionX() * Vector3.left) + (GameLogic.Candle.GetElementPositionZ() * Vector3.back) + (0.2f * Vector3.up);
+                Candle.SetActive(true);
 
-            Rope.transform.localPosition = (GameLogic.Rope.GetElementPositionX() * Vector3.left) + (GameLogic.Rope.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
-            Rope.SetActive(true);
+                Rope.transform.localPosition = (GameLogic.Rope.GetElementPositionX() * Vector3.left) + (GameLogic.Rope.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
+                Rope.SetActive(true);
 
-            Pipeline.transform.localPosition = (GameLogic.Pipeline.GetElementPositionX() * Vector3.left) + (GameLogic.Pipeline.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
-            Pipeline.SetActive(true);
+                Pipeline.transform.localPosition = (GameLogic.Pipeline.GetElementPositionX() * Vector3.left) + (GameLogic.Pipeline.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
+                Pipeline.SetActive(true);
 
-            Wrench.transform.localPosition = (GameLogic.Wrench.GetElementPositionX() * Vector3.left) + (GameLogic.Wrench.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
-            Wrench.SetActive(true);
+                Wrench.transform.localPosition = (GameLogic.Wrench.GetElementPositionX() * Vector3.left) + (GameLogic.Wrench.GetElementPositionZ() * Vector3.back) + (0.5f * Vector3.up);
+                Wrench.SetActive(true);
 
-            PlayerDef1.transform.localPosition = (GameLogic.Player1.GetElementPositionX() * Vector3.left) + (GameLogic.Player1.GetElementPositionZ() * Vector3.back);
-            PlayerDef1.SetActive(true);
+                PlayerDef1.transform.localPosition = (GameLogic.Player1.GetElementPositionX() * Vector3.left) + (GameLogic.Player1.GetElementPositionZ() * Vector3.back);
+                PlayerDef1.SetActive(true);
 
-            PlayerDef2.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back);
-            PlayerDef2.SetActive(true);
+                PlayerDef2.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back);
+                PlayerDef2.SetActive(true);
+            }
         }
     }
 }

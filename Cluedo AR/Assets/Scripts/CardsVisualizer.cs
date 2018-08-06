@@ -13,7 +13,7 @@ namespace GoogleARCore.Examples.AugmentedImage
     public class CardsVisualizer : AugmentedImageVisualizer
     {
         //Habitaciones
-        /*public GameObject Kitchen;
+        public GameObject Kitchen;
         public GameObject LivingRoom;
         public GameObject Office;
         public GameObject GreenHouse;
@@ -21,7 +21,7 @@ namespace GoogleARCore.Examples.AugmentedImage
         public GameObject Library;
         public GameObject Lobby;
         public GameObject DanceRoom;
-        public GameObject GamesRoom;*/
+        public GameObject GamesRoom;
 
 
         //Personajes
@@ -42,7 +42,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public virtual void Start()
         {
-            /*Kitchen.SetActive(false);
+            Kitchen.SetActive(false);
             LivingRoom.SetActive(false);
             DinningRoom.SetActive(false);
             Lobby.SetActive(false);
@@ -50,7 +50,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             DanceRoom.SetActive(false);
             Office.SetActive(false);
             Library.SetActive(false);
-            GreenHouse.SetActive(false);*/
+            GreenHouse.SetActive(false);
 
             CharacterPink.SetActive(false);
             CharacterPurple.SetActive(false);
@@ -71,16 +71,6 @@ namespace GoogleARCore.Examples.AugmentedImage
         {
             if (Image == null || Image.TrackingState != TrackingState.Tracking)
             {
-                /*Kitchen.SetActive(false);
-                LivingRoom.SetActive(false);
-                DinningRoom.SetActive(false);
-                Lobby.SetActive(false);
-                GamesRoom.SetActive(false);
-                DanceRoom.SetActive(false);
-                Office.SetActive(false);
-                Library.SetActive(false);
-                GreenHouse.SetActive(false);*/
-
                 switch(Image.Name)
                 {
                     case "amarillo":
@@ -147,6 +137,16 @@ namespace GoogleARCore.Examples.AugmentedImage
                         GameLogic.sol.room=GameLogic.Hab.Emp;
                         break;
                 }
+
+                Kitchen.SetActive(false);
+                LivingRoom.SetActive(false);
+                DinningRoom.SetActive(false);
+                Lobby.SetActive(false);
+                GamesRoom.SetActive(false);
+                DanceRoom.SetActive(false);
+                Office.SetActive(false);
+                Library.SetActive(false);
+                GreenHouse.SetActive(false);
 
                 CharacterPink.SetActive(false);
                 CharacterPurple.SetActive(false);
@@ -241,31 +241,58 @@ namespace GoogleARCore.Examples.AugmentedImage
                     GameLogic.sol.SetGun(Pipeline);
                     break;
                 case "cocina":
+                    Kitchen.transform.localPosition = (height * 3 * Vector3.up);
+                    Kitchen.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Kit;
+                    GameLogic.sol.SetRoom(Kitchen);
                     break;
                 case "comedor":
+                    DinningRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    DinningRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Din;
+                    GameLogic.sol.SetRoom(DinningRoom);
                     break;
                 case "estudio":
+                    Office.transform.localPosition = (height * 3 * Vector3.up);
+                    Office.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Off;
+                    GameLogic.sol.SetRoom(Office);
                     break;
                 case "invernadero":
+                    GreenHouse.transform.localPosition = (height * 3 * Vector3.up);
+                    GreenHouse.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Gre;
+                    GameLogic.sol.SetRoom(GreenHouse);
                     break;
                 case "salabaile":
+                    DanceRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    DanceRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Dan;
+                    GameLogic.sol.SetRoom(DanceRoom);
                     break;
                 case "salabillar":
+                    GamesRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    GamesRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Gam;
+                    GameLogic.sol.SetRoom(GamesRoom);
                     break;
                 case "salon":
+                    LivingRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    LivingRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Liv;
+                    GameLogic.sol.SetRoom(LivingRoom);
                     break;
                 case "vestibulo":
+                    Lobby.transform.localPosition = (height * 3 * Vector3.up);
+                    Lobby.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Lob;
+                    GameLogic.sol.SetRoom(Lobby);
                     break;
                 case "biblioteca":
+                    Library.transform.localPosition = (height * 3 * Vector3.up);
+                    Library.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Liv;
+                    GameLogic.sol.SetRoom(Library);
                     break;
             }
         }
