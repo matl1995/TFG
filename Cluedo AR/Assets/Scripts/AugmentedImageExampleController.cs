@@ -32,9 +32,14 @@ namespace GoogleARCore.Examples.AugmentedImage
     public class AugmentedImageExampleController : MonoBehaviour
     {
         /// <summary>
-        /// A prefab for visualizing an AugmentedImage.
+        /// A prefab for visualizing the board.
         /// </summary>
-        public AugmentedImageVisualizer AugmentedImageVisualizerPrefab;
+        public BoardVisualizer AugmentedBoardVisualizerPrefab;
+
+        /// <summary>
+        /// A prefab for visualizing the cards
+        /// </summary>
+        public CardsVisualizer AugmentedCardsVisualizerPrefab;
 
         /// <summary>
         /// The overlay containing the fit to scan user guide.
@@ -81,7 +86,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             // Create visualizers and anchors for updated augmented images that are tracking and do not previously
             // have a visualizer. Remove visualizers for stopped images.
-            foreach (var image in m_TempAugmentedImages)
+            foreach (AugmentedImage image in m_TempAugmentedImages)
             {
                 AugmentedImageVisualizer visualizer = null;
                 m_Visualizers.TryGetValue(image.DatabaseIndex, out visualizer);
@@ -89,7 +94,10 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
-                    visualizer = (AugmentedImageVisualizer)Instantiate(AugmentedImageVisualizerPrefab, anchor.transform);
+                    if(image.Name=="tablero")
+                        visualizer = (BoardVisualizer)Instantiate(AugmentedBoardVisualizerPrefab, anchor.transform);
+                    else
+                        visualizer = (CardsVisualizer)Instantiate(AugmentedCardsVisualizerPrefab, anchor.transform);
                     visualizer.Image = image;
                     m_Visualizers.Add(image.DatabaseIndex, visualizer);
                 }

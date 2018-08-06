@@ -8,7 +8,7 @@ public class RoomController : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		switch (r)
+		switch(r)
 	    {
 	        case GameLogic.Hab.Kit:
 	        	if(GameLogic.turn%2!=0)

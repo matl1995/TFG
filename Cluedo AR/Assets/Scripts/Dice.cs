@@ -49,8 +49,8 @@ public class Dice : MonoBehaviour {
 	{
 		dice.GetComponent<Rigidbody>().AddForce(transform.up*Force,forceMode);
 		dice.GetComponent<Rigidbody>().AddTorque(Random.onUnitSphere*Torque,forceMode);
-		Collider c=GetComponent<Collider>();
-		c.enabled=false;
+		GameLogic.Dice1.SetCollider(GetComponent<Collider>());
+		GameLogic.Dice1.DeactivateColl();
 		rollComplete=true;
 	}
 }

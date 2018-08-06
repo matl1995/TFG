@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: 655793353707240a195aee929b80d41a
+timeCreated: 1521058274
+licenseType: Pro
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Scene: {fileID: 1630657783561902, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - CharacterBlue: {fileID: 1965129640525874, guid: 04a969672fe9db24bb38fe35997f02d4,
+      type: 2}
+  - CharacterRed: {fileID: 1438701171716222, guid: 04a969672fe9db24bb38fe35997f02d4,
+      type: 2}
+  - CharacterGreen: {fileID: 1283801499205868, guid: 04a969672fe9db24bb38fe35997f02d4,
+      type: 2}
+  - CharacterYellow: {fileID: 1264006028345598, guid: 04a969672fe9db24bb38fe35997f02d4,
+      type: 2}
+  - CharacterPurple: {fileID: 1444831162718366, guid: 04a969672fe9db24bb38fe35997f02d4,
+      type: 2}
+  - CharacterPink: {fileID: 1352215589419424, guid: 04a969672fe9db24bb38fe35997f02d4,
+      type: 2}
+  - Knife: {fileID: 1739378090682282, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Candle: {fileID: 1552090358695118, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Rope: {fileID: 1786582472447608, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Gun: {fileID: 1516708963393538, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Wrench: {fileID: 1112305538398912, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Pipeline: {fileID: 1676281599435948, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Player1: {fileID: 1926064207442006, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Player2: {fileID: 1122561643033684, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Player3: {fileID: 1562328140794968, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Player4: {fileID: 1234108506681280, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Player5: {fileID: 1075860584466644, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - Player6: {fileID: 1919689209867540, guid: 04a969672fe9db24bb38fe35997f02d4, type: 2}
+  - PlayerDef1: {instanceID: 0}
+  - PlayerDef2: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

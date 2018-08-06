@@ -7,5 +7,6 @@ public class TurnController : MonoBehaviour {
 	void OnMouseDown()
 	{
 		GameLogic.turn++;
+		GameLogic.Dice1.ActivateColl();
 	}
 }

@@ -2884,8 +2884,6 @@ GameObject:
   - component: {fileID: 23466608433525824}
   - component: {fileID: 65576413121534200}
   - component: {fileID: 54884724859191256}
-  - component: {fileID: 114427547009165442}
-  - component: {fileID: 114017576683856486}
   - component: {fileID: 114602482763269240}
   m_Layer: 0
   m_Name: d6
@@ -20648,17 +20646,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114017576683856486
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1342895577166060}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114086444723901346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -21000,17 +20987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 4
---- !u!114 &114427547009165442
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1342895577166060}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114429031632561384
 MonoBehaviour:
   m_ObjectHideFlags: 1

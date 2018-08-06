@@ -25,6 +25,8 @@ public class GameLogic : MonoBehaviour {
 
 		public bool finished;
 
+		public Collider c;
+
 		public Dice()
 		{
 			currentValue=0;
@@ -36,6 +38,21 @@ public class GameLogic : MonoBehaviour {
 		{
 			currentValue=0;
 			thrown=false;
+		}
+
+		public void SetCollider(Collider value)
+		{
+			c=value;
+		}
+
+		public void ActivateColl()
+		{
+			c.enabled=true;
+		}
+
+		public void DeactivateColl()
+		{
+			c.enabled=false;
 		}
 	}
 
