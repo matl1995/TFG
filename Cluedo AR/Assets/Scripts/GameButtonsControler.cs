@@ -8,5 +8,12 @@ public class GameButtonsControler : MonoBehaviour {
 	void OnMouseDown()
 	{
 		SceneManager.LoadScene("MenuScene");
+		GameLogic.Restart();
+	}
+
+	public void Cambiar(string scene)
+	{
+		SceneManager.LoadScene(scene);
+		GameLogic.Restart();
 	}
 }

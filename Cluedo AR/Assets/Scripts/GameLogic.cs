@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using GoogleARCore.Examples.AugmentedImage;
 
 public class GameLogic : MonoBehaviour {
 
@@ -15,7 +17,68 @@ public class GameLogic : MonoBehaviour {
 	    }
 	}
 
-	public enum Hab {Off, Lib, Liv, Din, Dan, Gam, Gre, Lob, Kit};
+	public enum Hab {Emp, Off, Lib, Liv, Din, Dan, Gam, Gre, Lob, Kit};
+	public enum Car {Emp, Red, Blu, Gree, Yel, Pur, Pin};
+	public enum Arm {Emp, Gun, Kni, Can, Pip, Wre, Rop};
+
+	public class Solution
+	{
+		public Hab solRoom;
+		public Car solCharacter;
+		public Arm solGun;
+
+		public Hab room;
+		public Car character;
+		public Arm gun;
+
+		public GameObject r;
+		public GameObject c;
+		public GameObject g;
+
+		public Solution()
+		{
+			solRoom=Hab.Dan;
+			solCharacter=Car.Gree;
+			solGun=Arm.Wre;
+
+			room=Hab.Emp;
+			character=Car.Emp;
+			gun=Arm.Emp;
+
+			r=null;
+			c=null;
+			g=null;
+		}
+
+		public void Restart()
+		{
+			room=Hab.Emp;
+			character=Car.Emp;
+			gun=Arm.Emp;
+
+			r=null;
+			c=null;
+			g=null;
+		}
+
+		public void SetRoom(GameObject value)
+		{
+			r.SetActive(false);
+			r=value;
+		}
+
+		public void SetCharacter(GameObject value)
+		{
+			c.SetActive(false);
+			c=value;
+		}
+
+		public void SetGun(GameObject value)
+		{
+			g.SetActive(false);
+			g=value;
+		}
+	}
 
 	public class Dice
 	{
@@ -38,6 +101,7 @@ public class GameLogic : MonoBehaviour {
 		{
 			currentValue=0;
 			thrown=false;
+			finished=false;
 		}
 
 		public void SetCollider(Collider value)
@@ -76,6 +140,11 @@ public class GameLogic : MonoBehaviour {
 	        Distances[5]=h6;
 	        Elementos=0;
 	    }
+
+	    public void Restart()
+	    {
+	    	Elementos=0;
+	    }
 	}
 
 	public class Element
@@ -87,6 +156,34 @@ public class GameLogic : MonoBehaviour {
 		public Element(Room room)
 	    {
 	    	
+	        Room=room;
+
+	        if(Room.Elementos==0)
+	        {
+	        	PositionX=-0.5f;
+	        	PositionZ=-0.2f;
+	        }
+	        else if(Room.Elementos==1)
+	        {
+	        	PositionX=0.5f;
+	        	PositionZ=-0.2f;
+	        }
+	        else if(Room.Elementos==2)
+	        {
+	        	PositionX=-0.5f;
+	        	PositionZ=0.7f;
+	        }
+	        else
+	        {
+	        	PositionX=0.5f;
+	        	PositionZ=0.7f;
+	        }
+
+	        Room.Elementos++;
+	    }
+
+	    public void Restart(Room room)
+	    {
 	        Room=room;
 
 	        if(Room.Elementos==0)
@@ -195,6 +292,37 @@ public class GameLogic : MonoBehaviour {
 	        Room.Elementos++;
 	    }
 
+	    public void Restart(Room room)
+	    {
+	    	Notes=false;
+	        Room=room;
+
+	        Cards=new int[21]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+	        if(Room.Elementos==0)
+	        {
+	        	PositionX=-0.5f;
+	        	PositionZ=-0.2f;
+	        }
+	        else if(Room.Elementos==1)
+	        {
+	        	PositionX=0.5f;
+	        	PositionZ=-0.2f;
+	        }
+	        else if(Room.Elementos==2)
+	        {
+	        	PositionX=-0.5f;
+	        	PositionZ=0.7f;
+	        }
+	        else
+	        {
+	        	PositionX=0.5f;
+	        	PositionZ=0.7f;
+	        }
+
+	        Room.Elementos++;
+	    }
+
 	    public float GetElementPositionX()
 	    {
 	    	return PositionX+Room.PositionX;
@@ -210,10 +338,12 @@ public class GameLogic : MonoBehaviour {
 
 	static public Dice Dice1=new Dice();
 
+	static public Solution sol=new Solution();
+
 	static public Room Kitchen=new Room("Kitchen",3.3f,-3.5f,Hab.Din,Hab.Dan,Hab.Liv,Hab.Gre,Hab.Lob,Hab.Gam);
 	static public Room Office=new Room("Office",-3.1f,3.7f,Hab.Lib,Hab.Lob,Hab.Liv,Hab.Gam,Hab.Din,Hab.Gre);
 	static public Room LivingRoom=new Room("LivingRoom",3.1f,3.5f,Hab.Din,Hab.Lob,Hab.Off,Hab.Kit,Hab.Lib,Hab.Dan);
-	static public Room GreenHouse=new Room("GreenHOuse",-3.3f,-3.5f,Hab.Gam,Hab.Dan,Hab.Lib,Hab.Kit,Hab.Din,Hab.Off);
+	static public Room GreenHouse=new Room("GreenHouse",-3.3f,-3.5f,Hab.Gam,Hab.Dan,Hab.Lib,Hab.Kit,Hab.Din,Hab.Off);
 	static public Room DinningRoom=new Room("DinningRoom",3.1f,0f,Hab.Liv,Hab.Kit,Hab.Dan,Hab.Lob,Hab.Gre,Hab.Gam);
 	static public Room Library=new Room("Library",-3.1f,1.3f,Hab.Gam,Hab.Off,Hab.Lob,Hab.Gre,Hab.Dan,Hab.Liv);
 	static public Room Lobby=new Room("Lobby",0f,3.5f,Hab.Liv,Hab.Off,Hab.Lib,Hab.Din,Hab.Gam,Hab.Gre);
@@ -237,4 +367,58 @@ public class GameLogic : MonoBehaviour {
 
 	static public Player Player1=new Player(Lobby);
 	static public Player Player2=new Player(Lobby);
+
+	public static void Restart()
+	{
+		Player1.Restart(Lobby);
+		Player2.Restart(Lobby);
+		turn=1;
+		Dice1.Restart();
+		sol.Restart();
+
+		Kitchen.Restart();
+		Office.Restart();
+		LivingRoom.Restart();
+		GreenHouse.Restart();
+		DinningRoom.Restart();
+		Library.Restart();
+		Lobby.Restart();
+		GamesRoom.Restart();
+		DanceRoom.Restart();
+
+		Red.Restart(Office);
+		Blue.Restart(GamesRoom);
+		Green.Restart(LivingRoom);
+		Purple.Restart(GreenHouse);
+		Pink.Restart(DinningRoom);
+		Yellow.Restart(DanceRoom);
+
+		Knife.Restart(Office);
+		Gun.Restart(Kitchen);
+		Pipeline.Restart(LivingRoom);
+		Wrench.Restart(GreenHouse);
+		Candle.Restart(Library);
+		Rope.Restart(DanceRoom);
+	}
+
+	public virtual void Update()
+	{
+		if(sol.room!=Hab.Emp && sol.character!=Car.Emp && sol.gun!=Arm.Emp)
+		{
+			if(sol.room==sol.solRoom && sol.character==sol.solCharacter && sol.gun==sol.solGun)
+			{
+				SceneManager.LoadScene("EndScene");
+			}
+			else
+			{
+				turn++;
+				sol.r.SetActive(false);
+				sol.c.SetActive(false);
+				sol.g.SetActive(false);
+				sol.r=null;
+				sol.c=null;
+				sol.g=null;
+			}
+		}
+	}
 }

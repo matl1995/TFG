@@ -81,6 +81,73 @@ namespace GoogleARCore.Examples.AugmentedImage
                 Library.SetActive(false);
                 GreenHouse.SetActive(false);*/
 
+                switch(Image.Name)
+                {
+                    case "amarillo":
+                        GameLogic.sol.character=GameLogic.Car.Emp;
+                        break;
+                    case "azul":
+                        GameLogic.sol.character=GameLogic.Car.Emp;
+                        break;
+                    case "rojo":
+                        GameLogic.sol.character=GameLogic.Car.Emp;
+                        break;
+                    case "verde":
+                        GameLogic.sol.character=GameLogic.Car.Emp;
+                        break;
+                    case "morado":
+                        GameLogic.sol.character=GameLogic.Car.Emp;
+                        break;
+                    case "rosa":
+                        GameLogic.sol.character=GameLogic.Car.Emp;
+                        break;
+                    case "candelabro":
+                        GameLogic.sol.gun=GameLogic.Arm.Emp;
+                        break;
+                    case "cuerda":
+                        GameLogic.sol.gun=GameLogic.Arm.Emp;
+                        break;
+                    case "herramienta":
+                        GameLogic.sol.gun=GameLogic.Arm.Emp;
+                        break;
+                    case "knife":
+                        GameLogic.sol.gun=GameLogic.Arm.Emp;
+                        break;
+                    case "pistola":
+                        GameLogic.sol.gun=GameLogic.Arm.Emp;
+                        break;
+                    case "tuberia":
+                        GameLogic.sol.gun=GameLogic.Arm.Emp;
+                        break;
+                    case "cocina":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "comedor":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "estudio":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "invernadero":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "salabaile":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "salabillar":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "salon":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "vestibulo":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                    case "biblioteca":
+                        GameLogic.sol.room=GameLogic.Hab.Emp;
+                        break;
+                }
+
                 CharacterPink.SetActive(false);
                 CharacterPurple.SetActive(false);
                 CharacterYellow.SetActive(false);
@@ -104,26 +171,101 @@ namespace GoogleARCore.Examples.AugmentedImage
                 case "amarillo":
                     CharacterYellow.transform.localPosition = (height * Vector3.up);
                     CharacterYellow.SetActive(true);
+                    GameLogic.sol.character=GameLogic.Car.Yel;
+                    GameLogic.sol.SetCharacter(CharacterYellow);
                     break;
                 case "azul":
                     CharacterBlue.transform.localPosition = (height * Vector3.up);
                     CharacterBlue.SetActive(true);
+                    GameLogic.sol.character=GameLogic.Car.Blu;
+                    GameLogic.sol.SetCharacter(CharacterBlue);
                     break;
                 case "rojo":
                     CharacterRed.transform.localPosition = (height * Vector3.up);
                     CharacterRed.SetActive(true);
+                    GameLogic.sol.character=GameLogic.Car.Red;
+                    GameLogic.sol.SetCharacter(CharacterRed);
                     break;
                 case "verde":
                     CharacterGreen.transform.localPosition = (height * Vector3.up);
                     CharacterGreen.SetActive(true);
+                    GameLogic.sol.character=GameLogic.Car.Gree;
+                    GameLogic.sol.SetCharacter(CharacterGreen);
                     break;
                 case "morado":
                     CharacterPurple.transform.localPosition = (height * Vector3.up);
                     CharacterPurple.SetActive(true);
+                    GameLogic.sol.character=GameLogic.Car.Pur;
+                    GameLogic.sol.SetCharacter(CharacterPurple);
                     break;
                 case "rosa":
                     CharacterPink.transform.localPosition = (height * Vector3.up);
                     CharacterPink.SetActive(true);
+                    GameLogic.sol.character=GameLogic.Car.Pin;
+                    GameLogic.sol.SetCharacter(CharacterPink);
+                    break;
+                case "candelabro":
+                    Candle.transform.localPosition = (height * Vector3.up);
+                    Candle.SetActive(true);
+                    GameLogic.sol.gun=GameLogic.Arm.Can;
+                    GameLogic.sol.SetGun(Candle);
+                    break;
+                case "cuerda":
+                    Rope.transform.localPosition = (height * 3 * Vector3.up);
+                    Rope.SetActive(true);
+                    GameLogic.sol.gun=GameLogic.Arm.Rop;
+                    GameLogic.sol.SetGun(Rope);
+                    break;
+                case "herramienta":
+                    Wrench.transform.localPosition = (height * Vector3.up);
+                    Wrench.SetActive(true);
+                    GameLogic.sol.gun=GameLogic.Arm.Wre;
+                    GameLogic.sol.SetGun(Wrench);
+                    break;
+                case "knife":
+                    Knife.transform.localPosition = (height * Vector3.up);
+                    Knife.SetActive(true);
+                    GameLogic.sol.gun=GameLogic.Arm.Kni;
+                    GameLogic.sol.SetGun(Knife);
+                    break;
+                case "pistola":
+                    Gun.transform.localPosition = (height * Vector3.up);
+                    Gun.SetActive(true);
+                    GameLogic.sol.gun=GameLogic.Arm.Gun;
+                    GameLogic.sol.SetGun(Gun);
+                    break;
+                case "tuberia":
+                    Pipeline.transform.localPosition = (height * Vector3.up);
+                    Pipeline.SetActive(true);
+                    GameLogic.sol.gun=GameLogic.Arm.Pip;
+                    GameLogic.sol.SetGun(Pipeline);
+                    break;
+                case "cocina":
+                    GameLogic.sol.room=GameLogic.Hab.Kit;
+                    break;
+                case "comedor":
+                    GameLogic.sol.room=GameLogic.Hab.Din;
+                    break;
+                case "estudio":
+                    GameLogic.sol.room=GameLogic.Hab.Off;
+                    break;
+                case "invernadero":
+                    GameLogic.sol.room=GameLogic.Hab.Gre;
+                    break;
+                case "salabaile":
+                    GameLogic.sol.room=GameLogic.Hab.Dan;
+                    break;
+                case "salabillar":
+                    GameLogic.sol.room=GameLogic.Hab.Gam;
+                    break;
+                case "salon":
+                    GameLogic.sol.room=GameLogic.Hab.Liv;
+                    break;
+                case "vestibulo":
+                    GameLogic.sol.room=GameLogic.Hab.Lob;
+                    break;
+                case "biblioteca":
+                    GameLogic.sol.room=GameLogic.Hab.Liv;
                     break;
             }
         }
