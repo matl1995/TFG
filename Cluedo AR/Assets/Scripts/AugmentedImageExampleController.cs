@@ -46,11 +46,6 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// </summary>
         public GameObject FitToScanOverlay;
 
-        /// <summary>
-        /// The panel with the buttons for the game
-        /// </summary>
-        public GameObject menuPanel;
-
         private Dictionary<int, AugmentedImageVisualizer> m_Visualizers
             = new Dictionary<int, AugmentedImageVisualizer>();
 
@@ -60,8 +55,6 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// The Unity Start method.
         /// </summary>
         void Start () {
-             menuPanel=GameObject.FindGameObjectWithTag("MainPanel");
-             menuPanel.SetActive(false);
         }
 
         /// <summary>
@@ -114,7 +107,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                 if (visualizer.Image.TrackingState == TrackingState.Tracking)
                 {
                     FitToScanOverlay.SetActive(false);
-                    menuPanel.SetActive(true);
                     return;
                 }
             }
