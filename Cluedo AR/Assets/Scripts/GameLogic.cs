@@ -375,6 +375,7 @@ public class GameLogic : MonoBehaviour {
 		Player1.Restart(Lobby);
 		Player2.Restart(Lobby);
 		turn=1;
+		turnFinished=false;
 		Dice1.Restart();
 		sol.Restart();
 
@@ -413,14 +414,13 @@ public class GameLogic : MonoBehaviour {
 			}
 			else
 			{
-				turn++;
-				Dice1.ActivateColl();
-				sol.r.SetActive(false);
+				/*sol.r.SetActive(false);
 				sol.c.SetActive(false);
-				sol.g.SetActive(false);
-				sol.r=null;
-				sol.c=null;
-				sol.g=null;
+				sol.g.SetActive(false);*/
+				sol.room=Hab.Emp;
+				sol.character=Car.Emp;
+				sol.gun=Arm.Emp;
+				GameLogic.turnFinished=true;
 			}
 		}
 	}

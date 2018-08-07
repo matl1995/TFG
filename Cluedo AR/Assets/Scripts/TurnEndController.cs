@@ -6,8 +6,8 @@ public class TurnEndController : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		GameLogic.turnFinished=false;
 		GameLogic.turn++;
 		GameLogic.Dice1.ActivateColl();
-		GameLogic.turnFinished=false;
 	}
 }

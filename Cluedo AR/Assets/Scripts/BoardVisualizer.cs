@@ -251,6 +251,27 @@ namespace GoogleARCore.Examples.AugmentedImage
                 }
             }
 
+            /*************************************************SI MOVIDO DE HABITACION*******************************************/
+            if(GameLogic.Dice1.finished)
+            {
+                TextMesh textObject=TextRooms.GetComponent<TextMesh>();
+                textObject.text="Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString();
+
+                TextRooms.SetActive(false);
+                Kitchen.SetActive(false);
+                LivingRoom.SetActive(false);
+                Office.SetActive(false);
+                GreenHouse.SetActive(false);
+                DinningRoom.SetActive(false);
+                Library.SetActive(false);
+                Lobby.SetActive(false);
+                DanceRoom.SetActive(false);
+                GamesRoom.SetActive(false);
+
+                GameLogic.Dice1.finished=false;
+            }
+
+
             /*************************************************SI TURNO TERMINADO*******************************************/
             if(GameLogic.turnFinished)
             {
@@ -280,6 +301,9 @@ namespace GoogleARCore.Examples.AugmentedImage
                 Dice.SetActive(false);
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
+
+                GameLogic.Dice1.finished=true;
+                GameLogic.Dice1.thrown=false;
 
                 NextTurnText.SetActive(true);
                 NextTurnButton.SetActive(true);
@@ -311,25 +335,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                 NextTurnButton.SetActive(false);
             }
 
-            /*************************************************SI MOVIDO DE HABITACION*******************************************/
-            if(GameLogic.Dice1.finished)
-            {
-                TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text="Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString();
-
-                TextRooms.SetActive(false);
-                Kitchen.SetActive(false);
-                LivingRoom.SetActive(false);
-                Office.SetActive(false);
-                GreenHouse.SetActive(false);
-                DinningRoom.SetActive(false);
-                Library.SetActive(false);
-                Lobby.SetActive(false);
-                DanceRoom.SetActive(false);
-                GamesRoom.SetActive(false);
-
-                GameLogic.Dice1.finished=false;
-            }
 
             /*************************************************CARTAS NOTAS**************************************************/
             if(GameLogic.turn%2!=0)

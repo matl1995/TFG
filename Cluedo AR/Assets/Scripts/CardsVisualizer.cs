@@ -241,55 +241,55 @@ namespace GoogleARCore.Examples.AugmentedImage
                     GameLogic.sol.SetGun(Pipeline);
                     break;
                 case "cocina":
-                    Kitchen.transform.localPosition = (height * 3 * Vector3.up);
+                    Kitchen.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     Kitchen.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Kit;
                     GameLogic.sol.SetRoom(Kitchen);
                     break;
                 case "comedor":
-                    DinningRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    DinningRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     DinningRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Din;
                     GameLogic.sol.SetRoom(DinningRoom);
                     break;
                 case "estudio":
-                    Office.transform.localPosition = (height * 3 * Vector3.up);
+                    Office.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     Office.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Off;
                     GameLogic.sol.SetRoom(Office);
                     break;
                 case "invernadero":
-                    GreenHouse.transform.localPosition = (height * 3 * Vector3.up);
+                    GreenHouse.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     GreenHouse.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Gre;
                     GameLogic.sol.SetRoom(GreenHouse);
                     break;
                 case "salabaile":
-                    DanceRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    DanceRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     DanceRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Dan;
                     GameLogic.sol.SetRoom(DanceRoom);
                     break;
                 case "salabillar":
-                    GamesRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    GamesRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     GamesRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Gam;
                     GameLogic.sol.SetRoom(GamesRoom);
                     break;
                 case "salon":
-                    LivingRoom.transform.localPosition = (height * 3 * Vector3.up);
+                    LivingRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     LivingRoom.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Liv;
                     GameLogic.sol.SetRoom(LivingRoom);
                     break;
                 case "vestibulo":
-                    Lobby.transform.localPosition = (height * 3 * Vector3.up);
+                    Lobby.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     Lobby.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Lob;
                     GameLogic.sol.SetRoom(Lobby);
                     break;
                 case "biblioteca":
-                    Library.transform.localPosition = (height * 3 * Vector3.up);
+                    Library.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
                     Library.SetActive(true);
                     GameLogic.sol.room=GameLogic.Hab.Liv;
                     GameLogic.sol.SetRoom(Library);
