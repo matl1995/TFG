@@ -12,6 +12,8 @@ namespace GoogleARCore.Examples.AugmentedImage
     /// </summary>
     public class CardsVisualizer : AugmentedImageVisualizer
     {
+        public bool firstTime;
+
         //Habitaciones
         public GameObject Kitchen;
         public GameObject LivingRoom;
@@ -42,6 +44,8 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public virtual void Start()
         {
+            firstTime=true;
+
             Kitchen.SetActive(false);
             LivingRoom.SetActive(false);
             DinningRoom.SetActive(false);
@@ -165,114 +169,138 @@ namespace GoogleARCore.Examples.AugmentedImage
                 return;
             }
 
-            float height=0.2f;
-            switch(Image.Name)
+            if(firstTime)
             {
-                case "amarillo":
-                    CharacterYellow.transform.localPosition = (height * Vector3.up);
-                    CharacterYellow.SetActive(true);
-                    GameLogic.sol.SetCharacter(GameLogic.Car.Yel);
-                    break;
-                case "azul":
-                    CharacterBlue.transform.localPosition = (height * Vector3.up);
-                    CharacterBlue.SetActive(true);
-                    GameLogic.sol.SetCharacter(GameLogic.Car.Blu);
-                    break;
-                case "rojo":
-                    CharacterRed.transform.localPosition = (height * Vector3.up);
-                    CharacterRed.SetActive(true);
-                    GameLogic.sol.SetCharacter(GameLogic.Car.Red);
-                    break;
-                case "verde":
-                    CharacterGreen.transform.localPosition = (height * Vector3.up);
-                    CharacterGreen.SetActive(true);
-                    GameLogic.sol.SetCharacter(GameLogic.Car.Gree);
-                    break;
-                case "morado":
-                    CharacterPurple.transform.localPosition = (height * Vector3.up);
-                    CharacterPurple.SetActive(true);
-                    GameLogic.sol.SetCharacter(GameLogic.Car.Pur);
-                    break;
-                case "rosa":
-                    CharacterPink.transform.localPosition = (height * Vector3.up);
-                    CharacterPink.SetActive(true);
-                    GameLogic.sol.SetCharacter(GameLogic.Car.Pin);
-                    break;
-                case "candelabro":
-                    Candle.transform.localPosition = (height * Vector3.up);
-                    Candle.SetActive(true);
-                    GameLogic.sol.SetGun(GameLogic.Arm.Can);
-                    break;
-                case "cuerda":
-                    Rope.transform.localPosition = (height * 3 * Vector3.up);
-                    Rope.SetActive(true);
-                    GameLogic.sol.SetGun(GameLogic.Arm.Rop);
-                    break;
-                case "herramienta":
-                    Wrench.transform.localPosition = (height * Vector3.up);
-                    Wrench.SetActive(true);
-                    GameLogic.sol.SetGun(GameLogic.Arm.Wre);
-                    break;
-                case "knife":
-                    Knife.transform.localPosition = (height * Vector3.up);
-                    Knife.SetActive(true);
-                    GameLogic.sol.SetGun(GameLogic.Arm.Kni);
-                    break;
-                case "pistola":
-                    Gun.transform.localPosition = (height * Vector3.up);
-                    Gun.SetActive(true);
-                    GameLogic.sol.SetGun(GameLogic.Arm.Gun);
-                    break;
-                case "tuberia":
-                    Pipeline.transform.localPosition = (height * Vector3.up);
-                    Pipeline.SetActive(true);
-                    GameLogic.sol.SetGun(GameLogic.Arm.Pip);
-                    break;
-                case "cocina":
-                    Kitchen.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    Kitchen.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Kit);
-                    break;
-                case "comedor":
-                    DinningRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    DinningRoom.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Din);
-                    break;
-                case "estudio":
-                    Office.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    Office.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Off);
-                    break;
-                case "invernadero":
-                    GreenHouse.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    GreenHouse.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Gre);
-                    break;
-                case "salabaile":
-                    DanceRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    DanceRoom.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Dan);
-                    break;
-                case "salabillar":
-                    GamesRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    GamesRoom.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Gam);
-                    break;
-                case "salon":
-                    LivingRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    LivingRoom.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Liv);
-                    break;
-                case "vestibulo":
-                    Lobby.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    Lobby.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Lob);
-                    break;
-                case "biblioteca":
-                    Library.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
-                    Library.SetActive(true);
-                    GameLogic.sol.SetRoom(GameLogic.Hab.Liv);
-                    break;
+                float height=0.2f;
+                switch(Image.Name)
+                {
+                    case "amarillo":
+                        CharacterYellow.transform.localPosition = (height * Vector3.up);
+                        CharacterYellow.SetActive(true);
+                        GameLogic.sol.SetCharacter(GameLogic.Car.Yel);
+                        firstTime=false;
+                        break;
+                    case "azul":
+                        CharacterBlue.transform.localPosition = (height * Vector3.up);
+                        CharacterBlue.SetActive(true);
+                        GameLogic.sol.SetCharacter(GameLogic.Car.Blu);
+                        firstTime=false;
+                        break;
+                    case "rojo":
+                        CharacterRed.transform.localPosition = (height * Vector3.up);
+                        CharacterRed.SetActive(true);
+                        GameLogic.sol.SetCharacter(GameLogic.Car.Red);
+                        firstTime=false;
+                        break;
+                    case "verde":
+                        CharacterGreen.transform.localPosition = (height * Vector3.up);
+                        CharacterGreen.SetActive(true);
+                        GameLogic.sol.SetCharacter(GameLogic.Car.Gree);
+                        firstTime=false;
+                        break;
+                    case "morado":
+                        CharacterPurple.transform.localPosition = (height * Vector3.up);
+                        CharacterPurple.SetActive(true);
+                        GameLogic.sol.SetCharacter(GameLogic.Car.Pur);
+                        firstTime=false;
+                        break;
+                    case "rosa":
+                        CharacterPink.transform.localPosition = (height * Vector3.up);
+                        CharacterPink.SetActive(true);
+                        GameLogic.sol.SetCharacter(GameLogic.Car.Pin);
+                        firstTime=false;
+                        break;
+                    case "candelabro":
+                        Candle.transform.localPosition = (height * Vector3.up);
+                        Candle.SetActive(true);
+                        GameLogic.sol.SetGun(GameLogic.Arm.Can);
+                        firstTime=false;
+                        break;
+                    case "cuerda":
+                        Rope.transform.localPosition = (height * 3 * Vector3.up);
+                        Rope.SetActive(true);
+                        GameLogic.sol.SetGun(GameLogic.Arm.Rop);
+                        firstTime=false;
+                        break;
+                    case "herramienta":
+                        Wrench.transform.localPosition = (height * Vector3.up);
+                        Wrench.SetActive(true);
+                        GameLogic.sol.SetGun(GameLogic.Arm.Wre);
+                        firstTime=false;
+                        break;
+                    case "knife":
+                        Knife.transform.localPosition = (height * Vector3.up);
+                        Knife.SetActive(true);
+                        GameLogic.sol.SetGun(GameLogic.Arm.Kni);
+                        firstTime=false;
+                        break;
+                    case "pistola":
+                        Gun.transform.localPosition = (height * Vector3.up);
+                        Gun.SetActive(true);
+                        GameLogic.sol.SetGun(GameLogic.Arm.Gun);
+                        firstTime=false;
+                        break;
+                    case "tuberia":
+                        Pipeline.transform.localPosition = (height * Vector3.up);
+                        Pipeline.SetActive(true);
+                        GameLogic.sol.SetGun(GameLogic.Arm.Pip);
+                        firstTime=false;
+                        break;
+                    case "cocina":
+                        Kitchen.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        Kitchen.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Kit);
+                        firstTime=false;
+                        break;
+                    case "comedor":
+                        DinningRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        DinningRoom.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Din);
+                        firstTime=false;
+                        break;
+                    case "estudio":
+                        Office.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        Office.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Off);
+                        firstTime=false;
+                        break;
+                    case "invernadero":
+                        GreenHouse.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        GreenHouse.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Gre);
+                        firstTime=false;
+                        break;
+                    case "salabaile":
+                        DanceRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        DanceRoom.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Dan);
+                        firstTime=false;
+                        break;
+                    case "salabillar":
+                        GamesRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        GamesRoom.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Gam);
+                        firstTime=false;
+                        break;
+                    case "salon":
+                        LivingRoom.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        LivingRoom.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Liv);
+                        firstTime=false;
+                        break;
+                    case "vestibulo":
+                        Lobby.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        Lobby.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Lob);
+                        firstTime=false;
+                        break;
+                    case "biblioteca":
+                        Library.transform.localPosition = (height * 6.0f * Vector3.up) + (0.9f * Vector3.left);
+                        Library.SetActive(true);
+                        GameLogic.sol.SetRoom(GameLogic.Hab.Liv);
+                        firstTime=false;
+                        break;
+                }
             }
         }
     }

@@ -125,6 +125,8 @@ namespace GoogleARCore.Examples.AugmentedImage
                 GameLogic.sol.SetCharacter(GameLogic.Car.Emp);
                 GameLogic.sol.SetGun(GameLogic.Arm.Emp);
 
+                GameLogic.turnFinished=true;
+
                 borrar=false;
             }
 

@@ -400,10 +400,6 @@ public class GameLogic : MonoBehaviour {
 			else
 			{
 				AugmentedImageExampleController.borrar=true;
-				GameLogic.turnFinished=true;
-				sol.SetRoom(GameLogic.Hab.Emp);
-				sol.SetCharacter(GameLogic.Car.Emp);
-				sol.SetGun(GameLogic.Arm.Emp);
 			}
 		}
 	}
