@@ -31,6 +31,17 @@ namespace GoogleARCore.Examples.AugmentedImage
     /// </summary>
     public class AugmentedImageExampleController : MonoBehaviour
     {
+        public static bool borrar;
+
+        public int oldRoom;
+        public int oldCharacter;
+        public int oldGun;
+
+        public int room;
+        public int character;
+        public int gun;
+
+
         /// <summary>
         /// A prefab for visualizing the board.
         /// </summary>
@@ -55,6 +66,15 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// The Unity Start method.
         /// </summary>
         void Start () {
+            oldRoom=-1;
+            oldCharacter=-1;
+            oldGun=-1;
+
+            room=-1;
+            character=-1;
+            gun=-1;
+
+            borrar=false;
         }
 
         /// <summary>
@@ -74,6 +94,21 @@ namespace GoogleARCore.Examples.AugmentedImage
                 return;
             }
 
+            if(borrar)
+            {
+                AugmentedImageVisualizer tmp=m_Visualizers[room];
+                GameObject.Destroy(tmp.gameObject);
+                m_Visualizers.Remove(room);
+
+                tmp=m_Visualizers[character];
+                GameObject.Destroy(tmp.gameObject);
+                m_Visualizers.Remove(character);
+
+                tmp=m_Visualizers[gun];
+                GameObject.Destroy(tmp.gameObject);
+                m_Visualizers.Remove(gun);
+            }
+
             // Get updated augmented images for this frame.
             Session.GetTrackables<AugmentedImage>(m_TempAugmentedImages, TrackableQueryFilter.Updated);
 
@@ -90,7 +125,47 @@ namespace GoogleARCore.Examples.AugmentedImage
                     if(image.Name=="tablero")
                         visualizer = (BoardVisualizer)Instantiate(AugmentedBoardVisualizerPrefab, anchor.transform);
                     else
+                    {
                         visualizer = (CardsVisualizer)Instantiate(AugmentedCardsVisualizerPrefab, anchor.transform);
+
+                        if(image.Name=="rojo" || image.Name=="amarillo" || image.Name=="azul" || image.Name=="verde" || image.Name=="morado" || image.Name=="rosa")
+                        {
+                            oldCharacter=character;
+                            character=image.DatabaseIndex;
+
+                            if(oldCharacter!=-1)
+                            {
+                                AugmentedImageVisualizer tmp=m_Visualizers[oldCharacter];
+                                GameObject.Destroy(tmp.gameObject);
+                                m_Visualizers.Remove(oldCharacter);
+                            }
+                        }
+                        else if(image.Name=="candelabro" || image.Name=="cuerda" || image.Name=="herramienta" || image.Name=="knife" || image.Name=="pistola" || image.Name=="tuberia")
+                        {
+                            oldGun=gun;
+                            gun=image.DatabaseIndex;
+
+                            if(oldGun!=-1)
+                            {
+                                AugmentedImageVisualizer tmp=m_Visualizers[oldGun];
+                                GameObject.Destroy(tmp.gameObject);
+                                m_Visualizers.Remove(oldGun);
+                            }
+                        }
+                        else if(image.Name=="cocina" || image.Name=="comedor" || image.Name=="vestibulo" || image.Name=="estudio" || image.Name=="invernadero" || image.Name=="salabaile" || image.Name=="salabillar" || image.Name=="biblioteca" || image.Name=="salon")
+                        {
+                            oldRoom=room;
+                            room=image.DatabaseIndex;
+
+                            if(oldRoom!=-1)
+                            {
+                                AugmentedImageVisualizer tmp=m_Visualizers[oldRoom];
+                                GameObject.Destroy(tmp.gameObject);
+                                m_Visualizers.Remove(oldRoom);
+                            }
+                        }
+
+                    }
                     visualizer.Image = image;
                     m_Visualizers.Add(image.DatabaseIndex, visualizer);
                 }

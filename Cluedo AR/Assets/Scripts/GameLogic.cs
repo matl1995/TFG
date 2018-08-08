@@ -433,6 +433,7 @@ public class GameLogic : MonoBehaviour {
 				sol.SetCharacter(GameLogic.Car.Emp);
 				sol.SetGun(GameLogic.Arm.Emp);
 				GameLogic.turnFinished=true;
+				AugmentedImageExampleController.borrar=true;
 			}
 		}
 	}
