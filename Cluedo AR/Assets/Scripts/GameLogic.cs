@@ -31,14 +31,6 @@ public class GameLogic : MonoBehaviour {
 		public Car character;
 		public Arm gun;
 
-		public Hab oldRoom;
-		public Car oldCharacter;
-		public Arm oldGun;
-
-		public bool roomChanged;
-		public bool characterChanged;
-		public bool gunChanged;
-
 		public Solution()
 		{
 			solRoom=Hab.Dan;
@@ -48,14 +40,6 @@ public class GameLogic : MonoBehaviour {
 			room=Hab.Emp;
 			character=Car.Emp;
 			gun=Arm.Emp;
-
-			oldRoom=Hab.Emp;
-			oldCharacter=Car.Emp;
-			oldGun=Arm.Emp;
-
-			roomChanged=false;
-			characterChanged=false;
-			gunChanged=false;
 		}
 
 		public void Restart()
@@ -63,35 +47,21 @@ public class GameLogic : MonoBehaviour {
 			room=Hab.Emp;
 			character=Car.Emp;
 			gun=Arm.Emp;
-
-			oldRoom=Hab.Emp;
-			oldCharacter=Car.Emp;
-			oldGun=Arm.Emp;
-
-			roomChanged=false;
-			characterChanged=false;
-			gunChanged=false;
 		}
 
 		public void SetRoom(Hab value)
 		{
-			oldRoom=room;
 			room=value;
-			roomChanged=true;
 		}
 
 		public void SetCharacter(Car value)
 		{
-			oldCharacter=character;
 			character=value;
-			characterChanged=true;
 		}
 
 		public void SetGun(Arm value)
 		{
-			oldGun=gun;
 			gun=value;
-			gunChanged=true;
 		}
 	}
 
@@ -429,11 +399,11 @@ public class GameLogic : MonoBehaviour {
 			}
 			else
 			{
+				AugmentedImageExampleController.borrar=true;
+				GameLogic.turnFinished=true;
 				sol.SetRoom(GameLogic.Hab.Emp);
 				sol.SetCharacter(GameLogic.Car.Emp);
 				sol.SetGun(GameLogic.Arm.Emp);
-				GameLogic.turnFinished=true;
-				AugmentedImageExampleController.borrar=true;
 			}
 		}
 	}

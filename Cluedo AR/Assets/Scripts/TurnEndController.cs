@@ -8,7 +8,7 @@ public class TurnEndController : MonoBehaviour {
 	void OnMouseDown()
 	{
 		GameLogic.turnFinished=false;
-		AugmentedImageExampleController.borrar=false;
+		//AugmentedImageExampleController.borrar=false;
 		GameLogic.turn++;
 		GameLogic.Dice1.ActivateColl();
 	}
