@@ -16,26 +16,25 @@ Generar una versión de Cluedo con Realidad Aumentada que renueve la forma en qu
 \subsubsection{Justificación del juego}
 Este juego supone una reinvención de los tradicionales juegos de mesa, una industria que debido a las nuevas tecnologías se queda atrás en términos de innovación. Esto puede cambiar con iniciativas como este juego que manteniendo la esencia de un juego de mesa, lo convierte en algo tecnológico e innovador, llamando así la atención de los amantes de los juegos de mesa, y a la vez de las nuevas generaciones, que no son usuarios asiduos de los juegos de mesa tradicionales.\\
 
-Este juego es único gracias a su capacidad de a pesar de ser en su mayor parte virtual, al mismo tiempo mantener la sensación de ser un juego de mesa gracias al uso de la Realidad Aumentada, combina un factor tradicional con uno innovador, generando un nuevo concepto de los juegos de mesa que puede revolucionar el sector.
+Este juego es único gracias a su capacidad de a pesar de ser en su mayor parte virtual, al mismo tiempo mantener la sensación de ser un juego de mesa gracias al uso de la Realidad Aumentada, combina un factor tradicional con uno innovador, generando un nuevo concepto de los juegos de mesa que puede revolucionar el sector.\\
+
+Por otro lado, este juego servirá para explorar las posibilidades que la realidad aumentada, y mas concretamente ARCore pueden ofrecer a los juegos de mesa tradicionales.
 
 \subsubsection{Core gameplay}
-El jugador tendrá que moverse por el tablero y intentar resolver el asesinato. Para moverse entre habitaciones tendrá que tirar los dados y en función del número podrá ir a una habitación o otra, una vez en una habitación el jugador tiene que hacer una deducción en la que dice quien cree que cometió el asesinato y con que arma, la habitación de la deducción será en la que se encuentre el personaje actualmente. Entonces se le mostrará al jugador alguno de los 3 elementos de la deducción, en caso de al menos uno de los tres no este en el solución del asesinato, en caso de que los 3 elementos de la deducción formen parte de la solución, no se le mostrará ningún elemento.\\
+El jugador tendrá que moverse por el tablero y intentar resolver el asesinato. Para moverse entre habitaciones tendrá que tirar el dado y en función del número podrá ir a una habitación o otra, el jugador puede hacer una acusación por turno en la que dice quien cree que cometió el asesinato y con que arma, la habitación de la deducción será en la que se encuentre el personaje actualmente. Entonces se le mostrará al jugador la interfaz para cambiar de turno en caso fallido, y la interfaz de finalización de juego en caso de acierto.\\
 
-El jugador dispone de una lista de elementos en los que puede ir marcando los que ya ha visto, ya que estos no pueden ser los elementos del asesinato. Una vez el jugador crea que sabe el personaje, arma y habitación del asesinato puede hacer una acusación, si es acertada ganará, de otra manera habrá perdido.
+El jugador dispone de una lista de elementos en los que puede ir marcando los que sabe que no forman parte del asesinato. Una vez el jugador crea que sabe el personaje, arma y habitación del asesinato puede hacer una acusación, si es acertada ganará.
 
 \subsubsection{Características del juego}
 
 \paragraph{Género}\mbox{}\\
-El género de este juego es Estrategia, ya que tienes que llevar a tu personaje a las habitaciones adecuadas para resolver el crimen, en función de la nueva información que se va revelando cada turno de juego unas habitaciones serán más interesantes de visitar que otras y tienes que elaborar una buena estrategia para recorrer estas. También se hacen las deducciones de forma estratégica, para obtener antes la información del crimen, pero también para confundir a los otros jugadores.
+El género de este juego es Estrategia, ya que tienes que llevar a tu personaje a las habitaciones adecuadas para resolver el crimen, en función de la nueva información que se va revelando cada turno de juego unas habitaciones serán más interesantes de visitar que otras y tienes que elaborar una buena estrategia para recorrer estas. También se hacen las deducciones de forma estratégica, para obtener antes la información del crimen, si por ejemplo, ya sabes que un arma y una habitación frman parte del crimen, puedes hacer una acusación con dicha arma, habitación y un personaje que quieras averiguar si forma parte del crimen o no.
 
 \paragraph{Número de jugadores}\mbox{}\\
 El juego esta diseñado para ser jugado por dos jugadores, y el objetivo de ambos es descubrir el asesinato antes que el otro, o en caso de que el otro haya fallado acertar el asesinato para ser él el ganador.
 
 \paragraph{Plataforma de destino}\mbox{}\\
 Este juego está destinado a móviles con sistema operativo Android que sean capaces de ejecutar ARCore.
-
-\paragraph{Estética y arte del juego}\mbox{}\\
-La estética del juego es basada en los años 80.
 
 \paragraph{Resumen de historia}\mbox{}\\
 En una fiesta en la mansión de un adinerado señor en los años 80 ha habido un asesinato, y dicho señor ha sido la víctima. Uno de sus invitados ha sido el asesino y todos los invitados pasan la noche en la mansión hasta descubrir quién ha sido el asesino.
@@ -46,13 +45,6 @@ En una fiesta en la mansión de un adinerado señor en los años 80 ha habido un
 \textbf{Perfil 2}: Niños y niñas de entre 7-14 años que han crecido con las nuevas tecnologías y por tanto no suelen estar en contacto frecuentemente con juegos de mesa, pero que encontrarán en este una forma de jugar a algo tradicional, de una forma nueva y vistosa, que les llamará la atención gracias a los increíbles efectos visuales que aporta la Realidad Aumentada, introduciendo estos elementos virtuales en el mundo real.\\
 
 \textbf{Perfil 3}: Jóvenes de entre 15-25 años, que han crecido con las nuevas tecnologías a la vez que los juegos de mesa tradicionales, por lo que están muy atados a ambos mundos y encontrarán en este juego la mezcla perfecta de ambos, utilizando el dispositivo móvil que están acostumbrados a usar a diario pero a la vez con un ambiente de juego de mesa tradicional al que tienen un apego por su infancia. Pertenecen además a una generación que ha crecido junto a los grandes avances de la tecnología en el siglo XXI, por lo que no son fáciles de convencer para decantarse por un juego determinado, pero a los que definitivamente fascinará la Realidad Aumentada y la nostalgia de un juego de mesa de su infancía.
-
-\subsubsection{Recursos iniciales}
-Tiempo previsto: 12 semanas.
-Dinero: 0 euros.
-Número de profesionales: 1.
-Un tablero de juego de cluedo tradicional.
-Cartas con personajes, armas y habitaciones del juego tradicional.
 
 \subsection{Mecánicas}
 \subsubsection{Elementos del juego: Categorías}
@@ -90,12 +82,10 @@ Si el jugador tira el dado, mostrar los posibles destinos en función de la habi
 
 Si el jugador selecciona la habitación a la que desplazarse mover su personaje a dicha habitación.\\
 
-Si el jugador hace una deducción, comprobar si los otros jugadores tienen alguna de las cartas y enseñarla al jugador, en otro caso mostrar un mensaje al jugador de que nadie tiene ninguna de esas cartas.\\
-
-Si el jugador hace acusación, comprobar que las cartas de la solución coinciden con las indicadas por el jugador, si asi es, mostrar un mensaje indicando que ha ganado y mostrando las cartas de solución, en otro caso mostrar un mensaje de que ha perdido, si es el último jugador mostrar el resultado y terminar partida, si hay más jugadores indicarle que ha perdido y sacarle de la partida.
+Si el jugador hace acusación, comprobar que las cartas de la solución coinciden con las indicadas por el jugador, si asi es, mostrar un mensaje indicando que ha ganado, en otro caso mostrar la pantalla de cambio de turno, de forma que el realizar una acusación erronea implica el fin del turno del jugador actual.
 
 \paragraph{Reglas de interacción}\mbox{}\\
-La forma de interactuar es mediante botones, el jugador puede ir presionando los distintos botones que le permitirán tirar los dados, realizar deducciones, moverse a otra habitación, etc.
+La forma de interactuar es mediante botones, el jugador puede ir presionando los distintos botones que le permitirán tirar los dados, realizar acusaciones, moverse a otra habitación, etc.
 
 \subsubsection{Elementos del juego: Mundo}
 El mundo en este juego es tu propia realidad, al ser un juego de Realidad Aumentada, todo el mapa será tu habitación, pero no forma parte del juego, solo el tablero y sus alrededores.
@@ -119,9 +109,6 @@ La ambientación del juego tiene que incluir misterio. Dejando al usuario con un
 
 La música también debe tener ciertos toques clásicos que mantengan un ambiente sofisticado.
 
-\paragraph{Descripción de misiones, niveles o capítulos}\mbox{}\\
-En el juego no hay diferentes niveles, misiones ni capitulos, todo se basa en una partida y conseguir el objetivo principal que es descubrir los datos del asesinato.
-
 \paragraph{Detalles del juego en temática}\mbox{}\\
 Un adinerado señor de los 80 ha celebrado una fiesta en su mansión, y ha invitado a 6 amigos. Uno de estos amigos le asesina, pero nadie sabe quién ha sido, por tanto, estos 6 amigos pasan la noche en la mansión hasta averiguar quién ha sido el asesino, qué arma ha utilizado y en qué habitación lo ha hecho.\\
 
@@ -135,6 +122,7 @@ Pantallas:
   \item \textbf{Inicial}: En esta pantalla los jugadores tienen que elegir los personajes.
   \item \textbf{Instrucciones}: En esta pantalla los jugadores obitenen la información acerca del funcionamiento el juego.
   \item \textbf{Central}: Esta es la pantalla de juego, en la que se muestra a partir del tablero escaneado los elementos de juego.
+  \item \textbf{Fin de partida}: En esta pantalla se indica al jugador que es el ganador.
 \end{itemize}
 
 \subsubsection{Controles de la interfaz}
@@ -143,59 +131,19 @@ El control de la interfaz va a ser en todo momento táctil, con botones que pued
 \subsubsection{Aprendizaje del juego}
 Cada vez que un jugador juega una partida, éste va a incrementar sus capacidades de deducción y estrategia, de forma, que en cada partida el usuario elegirá mejor a qué habitaciones dirigirse según la información obtenida previamente, y por tanto, conseguirá llegar a la solución del asesinato más rápido.
 
-\subsection{Estética y Arte}
-Esta sección detalle lo que el jugador ve y oye . En esta sección se puede ampliar en caso de juegos de realidad aumentada, como la inclusión de olores o tacto. Esta parte es forma parte de la “Bbiblia de Arte y Conceptos”
-
-\subsubsection{Elementos básicos del juego}
-Describa todos los aspectos visuales/sonoros de los elementos del juego core. Incluir arte conceptual
-
-\subsubsection{Elementos del mundo}
-Describa todos los aspectos visuales/sonoros de los elementos del mundo del juego. Incluir arte conceptual
-
-\subsubsection{Elementos de registro del progreso}
-Describa todos los aspectos visuales/sonoros de los elementos de registro del juego. Incluir arte conceptual
-
-\subsubsection{Otros elementos visuales}
-Describa todos los aspectos visuales/sonoros incluidos en la otra sección elementos. Incluir arte conceptual
-
-\subsubsection{Mundo del juego}
-Describa todo el aspecto visual/sonoro de mundo del juego. Incluir arte conceptual
-
-\subsubsection{Misiones/niveles/capítulos}
-Describa todos los aspectos visuales/sonoros de las misiones , los niveles y capítulos. Incluir arte conceptual
-
-\subsubsection{Áreas especiales}
-Describa todos los aspectos visuales/sonoros de las zonas especiales.
-
-\subsubsection{Interfaz del juego}
-Describa todos los aspectos visuales/sonoros de la interfaz del juego.
-
-\subsection{Experiencia}
-Esta sección explora la cuestión relevante desde el diseño del juego y la calidad que se espera de este problema. Esto ayudará a establecer lo que es importante para la prueba y qué esperar de la prueba de los prototipos y las futuras fases de desarrollo de juegos. Analizar aspectos claves de la experiencia del usuario usando facetas y en cada una objetivos claros usando cuestiones como la jugabilidad, usabilidad o accesibilidad.
-
 \subsubsection{Jugabilidad intrínseca}
-Señale lo que es importante acerca de la dinámica y núcleo del juego : la difíccultad de los desafíos, recompensas adecuadas, objetivos claros. Y describir lo que se espera de estos aspectos importantes. Citar ejemplos
-
-\subsubsection{Jugabilidad mecánica}
-Señale lo que es importante acerca de los aspectos técnicos del juego: la calidad de las cinemáticas, la calidad del sonido o de las reacciones de colisión. Y describir lo que se espera de estos aspectos importantes. Citar ejemplos.
-
-\subsubsection{Jugabilidad interactiva}
-Señale lo que es importante acerca de los aspectos de la interfaz del juego : las habilidades o dificultades de los movimientos, auto - pausa o la gestión de inventarios. Y describir lo que se espera de estos aspectos importantes. Citar ejemplos.
+El objetivo queda muy definidio desde el comienzo del juego, el ganador será el jugador que primero resuelva el asesinato.
 
 \subsubsection{Jugabilidad artística}
-Señale lo que es importante acerca de los aspectos estéticos del juego : Los enemigos “dan miedo”, música inspirar acciones épicas o historia divertida, si se corresponde con un mundo virtual o real conocido. Y describir lo que se espera de estos aspectos importantes. Citar ejemplos
+La música inspira intriga todo el rato para mantener el ambiente de misterio.\\
+
+En el momento de ganar la música inspira euforia, generando un momento épico para el jugador.
 
 \subsubsection{Jugabilidad intrapersonal}
-Señale lo que es importante acerca de la experiencia del jugador : jugador se siente ansioso y nervioso casi todo el tiempo, el jugador siente empatía por el personaje principal de la tragedia o el reproductor se vuelve adicto porque quiere conocer el nuevo poder que ser desbloqueados. Y describir lo que se espera de estos aspectos importantes. Citar ejemplos.
+El jugador se siente intrigado todo el tiempo, y con la necesidad de descubrir quien ha cometido el asesinato.
 
 \subsubsection{Jugabilidad interpersonal}
-Señale lo que es importante acerca de la experiencia de los jugadores en el modo multijugador: jugador siente que está luchando contra otro jugador en la igualdad de terreno o reproductor sensación que tienen más posibilidades de lograr algo en el juego si se colabora con otro jugador. Y describir lo que se espera de estos aspectos importantes. Citar ejemplos
-
-\subsection{Limitaciones y supuestos}
-Esta sección describe la restricción de que el juego va a tener y debe ser tomada en consideración a la hora de tomar las decisiones de diseño de juegos.
-
-\subsubsection{Limitaciones técnicas}
-Estas limitaciones se derivan generalmente de la plataforma o las opciones de motor de juego. Describa lo que las limitaciones técnicas que el juego tiene. Algunos ejemplos de restricciones técnicas pueden ser: no hay memoria permanente o plataforma sólo tienen pantalla multi -touch.
+Los jugadores sienten rivalidad y la presión de ser el primero que descubre el asesinato, y por tanto, de ganar la partida.
 
 \subsubsection{Restricciones comerciales}
 La clasificación del juego debe ser para personas de 6 a 99 años.
@@ -203,8 +151,6 @@ La clasificación del juego debe ser para personas de 6 a 99 años.
 \subsection{Información del documento}
 \subsubsection{Definición, acrónimos y abreviaturas}
 AR: Realidad Aumentada.\\
-
-Definir todos los conceptos, acrónimos y abreviaturas necesarios para la comprensión del documento.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%TABLA PRODUCT BACKLOG%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -739,9 +685,9 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
 
 \section{Tablas de usabilidad para los bocetos} \label{tablas-usabilidad-bocetos}
 
-\begin{table}
+\begin{table}[!h]
   \begin{center}
-    \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
+    \begin{tabular}{|p{2.2cm}|p{1.9cm}|p{1.4cm}|p{1.2cm}|p{3.1cm}|p{3.1cm}|}
 
       \hline
         \rowcolor{Gray} \textbf{Escenario de uso}
@@ -752,15 +698,15 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
         & \textbf{Comentarios}\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Seleccionar ajustes iniciales
       & Éxito
       & 10 seg
       & Le cuesta seleccionar el personaje con el dedo
-      & Hacer los botones de personaje mas grandes para facilitar a los usuarios este proceso\\
+      & Hacer los botones de personaje mas grandes\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Comenzar el juego
       & Éxito
       & 5 seg
@@ -768,7 +714,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
       &\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Salir de las instrucciones
       & Éxito
       & 5 seg
@@ -776,7 +722,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
       &\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Escanear el tablero
       & Éxito
       & 10 seg
@@ -784,15 +730,15 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
       &\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Lanzar el dado
       & Éxito
       & 20 seg
       & Ninguna
-      & Añadir imagen con el nombre de la habitación para facilitar a los usuarios este proceso\\
+      & Añadir imagen con el nombre de la habitación\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Hacer apunte
       & Éxito
       & 25 seg
@@ -800,7 +746,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
       &\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Escanear acusación
       & Éxito
       & 20 seg
@@ -808,7 +754,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
       &\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Pasar de turno
       & Éxito
       & 5 seg
@@ -816,7 +762,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
       &\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Volver a la pantalla inicial
       & Fracaso
       & 15 seg
@@ -824,7 +770,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
       & Cambiar el texto del botón home por Terminar partida\\
 
       \hline
-      El usuario se encuentra jugando una partida
+      El usuario está jugando una partida
       & Finalizar después de ganar
       & Éxito
       & 5 seg
@@ -842,7 +788,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
 \end{table}
 
 
-\begin{table}
+\begin{table}[h]
   \begin{center}
     \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
 
@@ -945,7 +891,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
 \end{table}
 
 
-\begin{table}
+\begin{table}[h]
   \begin{center}
     \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
 
@@ -1047,13 +993,13 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
   \end{center}
 \end{table}
 
-\end{itemize}
+\FloatBarrier
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLAS USABILIDAD 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Tablas de usabilidad para la Entrega 2} \label{tablas-usabilidad-entrega-2}
 
-\begin{table}
+\begin{table}[h]
   \begin{center}
     \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
 
@@ -1108,7 +1054,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
 \end{table}
 
 
-\begin{table}
+\begin{table}[h]
   \begin{center}
     \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
 
@@ -1163,7 +1109,7 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
 \end{table}
 
 
-\begin{table}
+\begin{table}[h]
   \begin{center}
     \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
 
@@ -1217,4 +1163,294 @@ Las siguientes imágenes recogen los bocetos realizados previos al desarrollo de
   \end{center}
 \end{table}
 
-\end{itemize}
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLAS USABILIDAD 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Tablas de usabilidad para la Entrega 3} \label{tablas-usabilidad-entrega-3}
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
+
+      \hline
+        \rowcolor{Gray} \textbf{Escenario de uso}
+        & \textbf{Tarea}
+        & \textbf{Éxito/ Fracaso}
+        & \textbf{Tiempo}
+        & \textbf{Dificultades encontradas}
+        & \textbf{Comentarios}\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Lanzar el dado
+      & Éxito
+      & 20 seg
+      & Ninguna
+      & Añadir imagen con el nombre de la habitación para facilitar a los usuarios este proceso\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Hacer apunte
+      & Éxito
+      & 25 seg
+      & Ninguna
+      &\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Escanear acusación
+      & Éxito
+      & 20 seg
+      & Ninguna
+      &\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Volver a la pantalla inicial
+      & Fracaso
+      & 15 seg
+      & No sabe donde seleccionar terminar partida
+      & Cambiar el texto del botón home por Terminar partida\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Finalizar después de ganar
+      & Éxito
+      & 5 seg
+      & No sabe donde seleccionar para salir de esa pantalla
+      & Cambiar el texto del botón home por Continuar\\
+
+      \hline
+
+    \end{tabular}
+
+    \caption{Resultados usabilidad en la Entrega 3 con Usuario 1.}
+    \label{tabla-entrega-3-usuario1}
+
+  \end{center}
+\end{table}
+
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
+
+      \hline
+        \rowcolor{Gray} \textbf{Escenario de uso}
+        & \textbf{Tarea}
+        & \textbf{Éxito/ Fracaso}
+        & \textbf{Tiempo}
+        & \textbf{Dificultades encontradas}
+        & \textbf{Comentarios}\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Lanzar el dado
+      & Éxito
+      & 10 seg
+      & Ninguna
+      & \\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Hacer apunte
+      & Fracaso
+      & 25 seg
+      & No comprendía el funcionamiento de cómo realizar un apunte
+      & Explicar en la pantalla de instrucciones inicial como se realiza un apunte\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Escanear acusación
+      & Éxito
+      & 10 seg
+      & Ninguna
+      &\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Volver a la pantalla inicial
+      & Fracaso
+      & 7 seg
+      & No encontraba el botón de inicio
+      & Cambiar el texto del botón a español y mas grande\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Finalizar después de ganar
+      & Éxito
+      & 3 seg
+      & No sabe que significa home, el botón es pequeño y poco accesible
+      & Cambiar el texto del botón a español y mas grande\\
+
+      \hline
+
+    \end{tabular}
+
+    \caption{Resultados usabilidad en la Entrega 3 con Usuario 2.}
+    \label{tabla-entrega-3-usuario2}
+
+  \end{center}
+\end{table}
+
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
+
+      \hline
+        \rowcolor{Gray} \textbf{Escenario de uso}
+        & \textbf{Tarea}
+        & \textbf{Éxito/ Fracaso}
+        & \textbf{Tiempo}
+        & \textbf{Dificultades encontradas}
+        & \textbf{Comentarios}\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Lanzar el dado
+      & Éxito
+      & 15 seg
+      & El botón de dado no era muy descriptivo y el usuario no sabia si ahí se lanzaba
+      & Cambiar el texto del botón dado a Lanzar dado\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Hacer apunte
+      & Éxito
+      & 20 seg
+      & El botón usuario no entiende que pasa al pulsar el botón de apunte
+      & Cambiar el texto del botón de apunte a Notas\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Escanear acusación
+      & Éxito
+      & 10 seg
+      & Ninguna
+      &\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Volver a la pantalla inicial
+      & Éxito
+      & 3 seg
+      & Ninguna
+      &\\
+
+      \hline
+      El usuario se encuentra jugando una partida
+      & Finalizar después de ganar
+      & Éxito
+      & 3 seg
+      & Ninguna
+      & Camiar el texto a Continuar y cambiar su posición y tamaño\\
+
+      \hline
+
+    \end{tabular}
+
+    \caption{Resultados usabilidad en la Entrega 3 con Usuario 3.}
+    \label{tabla-entrega-3-usuario3}
+
+  \end{center}
+\end{table}
+
+\FloatBarrier
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLAS USABILIDAD 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Tablas de usabilidad para la Entrega 4} \label{tablas-usabilidad-entrega-4}
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
+
+      \hline
+        \rowcolor{Gray} \textbf{Escenario de uso}
+        & \textbf{Tarea}
+        & \textbf{Éxito/ Fracaso}
+        & \textbf{Tiempo}
+        & \textbf{Dificultades encontradas}
+        & \textbf{Comentarios}\\
+
+        \hline
+        El usuario se encuentra jugando una partida
+        & Pasar de turno
+        & Éxito
+        & 5 seg
+        & Ninguna
+        &\\
+
+      \hline
+
+    \end{tabular}
+
+    \caption{Resultados usabilidad en la Entrega 4 con Usuario 1.}
+    \label{tabla-entrega-4-usuario1}
+
+  \end{center}
+\end{table}
+
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
+
+      \hline
+        \rowcolor{Gray} \textbf{Escenario de uso}
+        & \textbf{Tarea}
+        & \textbf{Éxito/ Fracaso}
+        & \textbf{Tiempo}
+        & \textbf{Dificultades encontradas}
+        & \textbf{Comentarios}\\
+
+        \hline
+        El usuario se encuentra jugando una partida
+        & Pasar de turno
+        & Éxito
+        & 5 seg
+        & Ninguna
+        &\\
+
+      \hline
+
+    \end{tabular}
+
+    \caption{Resultados usabilidad en la Entrega 4 con Usuario 2.}
+    \label{tabla-entrega-4-usuario2}
+
+  \end{center}
+\end{table}
+
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|p{2.5cm}|p{1.75cm}|p{1.25cm}|p{1.25cm}|p{2.75cm}|p{3.5cm}|}
+
+      \hline
+        \rowcolor{Gray} \textbf{Escenario de uso}
+        & \textbf{Tarea}
+        & \textbf{Éxito/ Fracaso}
+        & \textbf{Tiempo}
+        & \textbf{Dificultades encontradas}
+        & \textbf{Comentarios}\\
+
+        \hline
+        El usuario se encuentra jugando una partida
+        & Pasar de turno
+        & Éxito
+        & 5 seg
+        & Ninguna
+        &\\
+
+      \hline
+
+    \end{tabular}
+
+    \caption{Resultados usabilidad en la Entrega 4 con Usuario 3.}
+    \label{tabla-entrega-4-usuario3}
+
+  \end{center}
+\end{table}
