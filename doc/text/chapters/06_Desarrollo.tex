@@ -239,7 +239,7 @@ Por último, se realizaron pruebas con usuarios, poniendoles en situación se le
 \subsection{Conclusiones}
 Tras la realización de esta entregá se concluye que el proyecto avanza de forma favorable, todas las tareas se han llevado a cabo dentro de plazo y no han surgido grandes problemas.\\
 
-Por otro lado, en las pruebas de usabilidad se comprueba que una vez los usuarios realizan las tareas en el dispositivo móvil en lugar de en los bocetos lo hacen con mas facilidad, ninguno de ellos muestra dificultades a la hora de realizar las tareas solicitadas, por lo que se concluye que el diseño de las pantallas llevadas a cabo en esta entrega se ha realizado de forma exitosa.
+Por otro lado, en las pruebas de usabilidad se comprueba que una vez los usuarios realizan las tareas en el dispositivo móvil en lugar de en los bocetos lo hacen con mas facilidad, ninguno de ellos muestra grandes dificultades a la hora de realizar las tareas solicitadas, por lo que se concluye que el diseño de las pantallas llevadas a cabo en esta entrega se ha realizado de forma exitosa.
 
 \section{Entrega 3}
 En esta entrega se ha completado la funcionalidad de lanzar los dados, y por tanto que se pueda mover al personaje a otra habitación, la funcionalidad de realizar una anotación y la funcionalidad de realizar una acusación. También se ha creado la pantalla de terminar partida, para complementar el funcionamiento de la acusación, de forma que si esta es correcta se finalice el juego y se indique el ganador.\\
@@ -248,7 +248,7 @@ En la Figura \ref{figura-dado-1} se pueden observar los elementos que se muestra
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.2]{dice-2}
+  \includegraphics[scale=0.17]{dice-2}
   \caption{Imagen que muestra los elementos que el juego muestra tras lanzar los dados.}
   \label{figura-dado-1}
 \end{figure}
@@ -259,7 +259,7 @@ En la Figura \ref{figura-notas-1} se pueden observar los elementos que se muestr
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.21]{notes-2}
+  \includegraphics[scale=0.25]{notes-2}
   \caption{Imagen que muestra las cartas una vez pulsado el botón de notas.}
   \label{figura-notas-1}
 \end{figure}
@@ -268,7 +268,7 @@ En la Figura \ref{figura-notas-2} se pueden observar las cartas de armas en las 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.12]{notes-3}
+  \includegraphics[scale=0.1]{notes-3}
   \caption{Imagen que muestra las cartas de armas tachadas y sin tachar.}
   \label{figura-notas-2}
 \end{figure}
@@ -319,13 +319,38 @@ Tras la realización de esta entregá se concluye que el proyecto avanza de form
 Por otro lado, en las pruebas de usabilidad se comprueba que una vez los usuarios realizan las tareas en el dispositivo móvil en lugar de en los bocetos lo hacen con mas facilidad, ninguno de ellos muestra dificultades a la hora de realizar las tareas solicitadas, por lo que se concluye que el diseño de las pantallas llevadas a cabo en esta entrega se ha realizado de forma exitosa.
 
 \section{Entrega 4}
+En esta entrega se ha completado la funcionalidad de pasar de turno, de forma que no solo se permitirá cambiar el turno pulsando un botón, si no que se ha creado toda la estructura necesaría para soportar dos jugadores en el juego con información diferente para cada uno de estos. Por otro lado también se ha desarrollado el sistema de pistas, que en función de la habitación en la que se encuentre el jugador actual se le darán pistas diferentes.\\
+
+En la Figura \ref{figura-turn-1} se pueden observar los elementos que se muestran trás pulsar el botón de cambiar de turno, de forma que todos los elementos del tablero desaparecen y solo se muestra la interfaz de cambio de turno.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.2]{turn-1}
+  \caption{Imagen que muestra la interfaz de cambio de turno.}
+  \label{figura-turn-1}
+\end{figure}
+
+\newpage
+
+En la Figura \ref{figura-pista-1} se puede observar la interfaz de la pista recibida, con la pista y un botón para salir de dicha interfaz.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.21]{pista-1}
+  \caption{Imagen que muestra la carta de la pista y el botón para salir de dicha interfaz.}
+  \label{figura-pista-1}
+\end{figure}
+
 
 \subsection{Octava iteración}
 En esta iteración se ha llevado a cabo la historia de usuario \ref{tabla-hu11}.\\
 
-En rasgos mas generales, en esta iteración se ha llevado a cabo la pantalla de juego que es la pantalla central sobre la que se desarrollará el juego, ya que es la que puede escanear el mundo real, el resultado se muestra en la \textbf{Entrega 4}.\\
+En rasgos mas generales, en esta iteración se ha llevado a cabo el sistema de cambio de turno, que no solo implica la interfaz, si no también la modificación de la lógica del juego para que sea capaz de soportar mas de un usuario, este cambio de turno implica información como las notas que es privada para cada usuario, por lo que se ha incluido una interfaz de cambio de turno en la que todos los elementos desaparecen para que una vez el usuario pasa de turno el siguiente pueda entrar en la pantalla de juego sin que se haya visto su información. Por otro lado también se ha llevado a cabo el desarrollo del sistema de pistas, este se encarda de que cuando un usuario está en una habitación se le muestren pistas sobre los elementos que en esta se encuentran así como sobre la propia habitación, el resultado se muestra en la \textbf{Entrega 4}.\\
 
-Por último, se realizaron pruebas con usuarios, poniendoles en situación se les indicaba la tarea que tenian que hacer, y se fueron apuntando los problemas que estos tenian, detectando así elementos que mejorar en las pantallas de la aplicación realizadas en esta entrega. Los resultados de estas pruebas de usabilidad se encuentran en las Tablas \ref{tabla-entrega-4-usuario1}, \ref{tabla-entrega-4-usuario2} y \ref{tabla-entrega-4-usuario3}.
+Por último, se realizaron pruebas con usuarios, poniendoles en situación se les indicaba la tarea que tenian que hacer, y se fueron apuntando los problemas que estos tenian, detectando así elementos que mejorar en las funcionalidades realizadas en esta entrega. Los resultados de estas pruebas de usabilidad se encuentran en las Tablas \ref{tabla-entrega-4-usuario1}, \ref{tabla-entrega-4-usuario2} y \ref{tabla-entrega-4-usuario3}.
 
 
 \subsection{Conclusiones}
+Tras la realización de esta entregá se concluye que el proyecto avanza de forma favorable, todas las tareas se han llevado a cabo dentro de plazo y no han surgido grandes problemas.\\
+
+Por otro lado, en las pruebas de usabilidad se comprueba que una vez los usuarios realizan las tareas en el dispositivo móvil en lugar de en los bocetos lo hacen con mas facilidad, ninguno de ellos muestra dificultades a la hora de realizar las tareas solicitadas, por lo que se concluye que el diseño de las pantallas llevadas a cabo en esta entrega se ha realizado de forma exitosa.
