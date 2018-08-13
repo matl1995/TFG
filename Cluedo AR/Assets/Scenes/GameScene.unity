@@ -3717,7 +3717,7 @@ MonoBehaviour:
   room: 0
   character: 0
   gun: 0
-  AugmentedBoardVisualizerPrefab: {fileID: 114028811781840912, guid: af1aa80bd0cac1943900274414549b9c,
+  AugmentedBoardVisualizerPrefab: {fileID: 114404138849630948, guid: af1aa80bd0cac1943900274414549b9c,
     type: 2}
   AugmentedCardsVisualizerPrefab: {fileID: 114524057217550446, guid: 50f05ad1420b1ca45aa11a2a7b3c64b7,
     type: 2}

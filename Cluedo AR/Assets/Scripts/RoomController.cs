@@ -68,5 +68,6 @@ public class RoomController : MonoBehaviour {
 
 	    GameLogic.Dice1.Restart();
 	    GameLogic.Dice1.finished=true;
+	    GameLogic.hint=true;
 	}
 }

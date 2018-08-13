@@ -72,6 +72,13 @@ namespace GoogleARCore.Examples.AugmentedImage
         public GameObject NextButton;
         public GameObject FinishButton;
 
+        /*********************************************** HINT *****************************************************/
+        public GameObject HintButton;
+        public GameObject HintCard;
+        public GameObject HintText;
+
+        public Sprite HintSprite;
+
         /*************************************************START**************************************************/
         public virtual void Start()
         {
@@ -136,6 +143,10 @@ namespace GoogleARCore.Examples.AugmentedImage
             NextTurnText.SetActive(false);
             NextTurnButton.SetActive(false);
 
+            HintText.SetActive(false);
+            HintCard.SetActive(false);
+            HintButton.SetActive(false);
+
             for(int i=0;i<21;i++)
             {
                 cardsNotes[i].SetActive(false);
@@ -185,6 +196,10 @@ namespace GoogleARCore.Examples.AugmentedImage
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
                 Indicator.SetActive(false);
+
+                HintText.SetActive(false);
+                HintCard.SetActive(false);
+                HintButton.SetActive(false);
 
                 for(int i=0;i<21;i++)
                 {
@@ -314,6 +329,30 @@ namespace GoogleARCore.Examples.AugmentedImage
             }
 
 
+            /*************************************************SI PISTA*******************************************/
+            if(GameLogic.hint)
+            {
+                ThrowButton.SetActive(false);
+                NotesButton.SetActive(false);
+                NextButton.SetActive(false);
+                FinishButton.SetActive(false);
+
+                ChangeHintSprite();
+
+                if(GameLogic.hint)
+                {
+                    HintCard.GetComponent<SpriteRenderer>().sprite=HintSprite;
+                    tmp=HintCard.GetComponent<SpriteRenderer>().color;
+                    tmp.a=1f;
+                    HintCard.GetComponent<SpriteRenderer>().color=tmp;
+                
+                    HintText.SetActive(true);
+                    HintCard.SetActive(true);
+                    HintButton.SetActive(true);
+                }
+            }
+
+
             /*************************************************CARTAS NOTAS**************************************************/
             if(GameLogic.turn%2!=0)
             {
@@ -327,9 +366,19 @@ namespace GoogleARCore.Examples.AugmentedImage
                     for(int i=0;i<21;i++)
                     {
                         if(GameLogic.Player1.Cards[i]==0)
+                        {
+                            tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                            tmp.a=0.45f;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                        }
                         else if(GameLogic.Player1.Cards[i]==1)
+                        {
+                            tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                            tmp.a=0.45f;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                        }
                         else
                         {
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
@@ -360,9 +409,19 @@ namespace GoogleARCore.Examples.AugmentedImage
                     for(int i=0;i<21;i++)
                     {
                         if(GameLogic.Player2.Cards[i]==0)
+                        {
+                            tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                            tmp.a=0.45f;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                        }
                         else if(GameLogic.Player2.Cards[i]==1)
+                        {
+                            tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
+                            tmp.a=0.45f;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                        }
                         else
                         {
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
@@ -388,12 +447,16 @@ namespace GoogleARCore.Examples.AugmentedImage
             Scene.transform.localPosition = (height * Vector3.up);
             Scene.SetActive(true);
 
-            if(!GameLogic.turnFinished)
+            if(!GameLogic.turnFinished && !GameLogic.hint)
             {
                 ThrowButton.SetActive(true);
                 NotesButton.SetActive(true);
                 NextButton.SetActive(true);
                 FinishButton.SetActive(true);
+
+                HintButton.SetActive(false);
+                HintCard.SetActive(false);
+                HintText.SetActive(false);
 
                 NextTurnText.SetActive(false);
                 NextTurnButton.SetActive(false);
@@ -452,6 +515,779 @@ namespace GoogleARCore.Examples.AugmentedImage
                 {
                     Indicator.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left + new Vector3(-0.05f,0f,0f)) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back) + (2f * Vector3.up);
                     Indicator.SetActive(true);
+                }
+            }
+            else if(!GameLogic.turnFinished)
+            {
+                PlayerDef1.transform.localPosition = (GameLogic.Player1.GetElementPositionX() * Vector3.left) + (GameLogic.Player1.GetElementPositionZ() * Vector3.back);
+                PlayerDef1.SetActive(true);
+
+                PlayerDef2.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back);
+                PlayerDef2.SetActive(true);
+
+                if(GameLogic.turn%2!=0)
+                {
+                    Indicator.transform.localPosition = (GameLogic.Player1.GetElementPositionX() * Vector3.left + new Vector3(-0.05f,0f,0f)) + (GameLogic.Player1.GetElementPositionZ() * Vector3.back) + (2f * Vector3.up);
+                    Indicator.SetActive(true);
+                }
+                else
+                {
+                    Indicator.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left + new Vector3(-0.05f,0f,0f)) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back) + (2f * Vector3.up);
+                    Indicator.SetActive(true);
+                }
+            }
+        }
+        
+        private void ChangeHintSprite()
+        {
+            GameLogic.Hin Hint;
+
+            if(GameLogic.turn%2!=0)
+            {
+                Hint=GameLogic.Player1.Hint;
+
+                switch (Hint)
+                {
+                    case GameLogic.Hin.Kit:
+                        TextMesh textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.Kitchen.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Kit)
+                            {
+                                HintSprite=cardsNotesSpriteCross[1];
+                                GameLogic.Player1.Cards[1]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Kitchen.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.Kitchen.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Gun)
+                            {
+                                HintSprite=cardsNotesSpriteCross[13];
+                                GameLogic.Player1.Cards[13]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Kitchen.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Off:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.Office.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Off)
+                            {
+                                HintSprite=cardsNotesSpriteCross[15];
+                                GameLogic.Player1.Cards[15]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Office.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.Office.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Kni)
+                            {
+                                HintSprite=cardsNotesSpriteCross[0];
+                                GameLogic.Player1.Cards[0]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Office.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.Office.HintTimePlayer1==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Red)
+                            {
+                                HintSprite=cardsNotesSpriteCross[6];
+                                GameLogic.Player1.Cards[6]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Office.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Dan:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.DanceRoom.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Dan)
+                            {
+                                HintSprite=cardsNotesSpriteCross[17];
+                                GameLogic.Player1.Cards[17]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.DanceRoom.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.DanceRoom.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Rop)
+                            {
+                                HintSprite=cardsNotesSpriteCross[5];
+                                GameLogic.Player1.Cards[5]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.DanceRoom.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.DanceRoom.HintTimePlayer1==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Yel)
+                            {
+                                HintSprite=cardsNotesSpriteCross[9];
+                                GameLogic.Player1.Cards[9]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.DanceRoom.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Din:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.DinningRoom.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Din)
+                            {
+                                HintSprite=cardsNotesSpriteCross[14];
+                                GameLogic.Player1.Cards[14]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.DinningRoom.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.DinningRoom.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Pin)
+                            {
+                                HintSprite=cardsNotesSpriteCross[11];
+                                GameLogic.Player1.Cards[11]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.DinningRoom.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Gam:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.GamesRoom.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Gam)
+                            {
+                                HintSprite=cardsNotesSpriteCross[18];
+                                GameLogic.Player1.Cards[18]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.GamesRoom.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.GamesRoom.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Blu)
+                            {
+                                HintSprite=cardsNotesSpriteCross[7];
+                                GameLogic.Player1.Cards[7]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.GamesRoom.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Liv:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.LivingRoom.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Liv)
+                            {
+                                HintSprite=cardsNotesSpriteCross[19];
+                                GameLogic.Player1.Cards[19]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.LivingRoom.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.LivingRoom.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Pip)
+                            {
+                                HintSprite=cardsNotesSpriteCross[3];
+                                GameLogic.Player1.Cards[3]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.LivingRoom.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.LivingRoom.HintTimePlayer1==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Gree)
+                            {
+                                HintSprite=cardsNotesSpriteCross[8];
+                                GameLogic.Player1.Cards[8]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.LivingRoom.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Lib:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.Library.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Lib)
+                            {
+                                HintSprite=cardsNotesSpriteCross[12];
+                                GameLogic.Player1.Cards[12]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Library.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.Library.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Can)
+                            {
+                                HintSprite=cardsNotesSpriteCross[2];
+                                GameLogic.Player1.Cards[2]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Library.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Lob:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.Lobby.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Lob)
+                            {
+                                HintSprite=cardsNotesSpriteCross[20];
+                                GameLogic.Player1.Cards[20]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Lobby.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Gre:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
+                        if(GameLogic.GreenHouse.HintTimePlayer1==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Gre)
+                            {
+                                HintSprite=cardsNotesSpriteCross[16];
+                                GameLogic.Player1.Cards[16]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.GreenHouse.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.GreenHouse.HintTimePlayer1==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Wre)
+                            {
+                                HintSprite=cardsNotesSpriteCross[4];
+                                GameLogic.Player1.Cards[4]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.GreenHouse.HintTimePlayer1++;
+                        }
+                        else if(GameLogic.GreenHouse.HintTimePlayer1==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Pur)
+                            {
+                                HintSprite=cardsNotesSpriteCross[10];
+                                GameLogic.Player1.Cards[10]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.GreenHouse.HintTimePlayer1++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                Hint=GameLogic.Player2.Hint;
+
+                switch (Hint)
+                {
+                    case GameLogic.Hin.Kit:
+                        TextMesh textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.Kitchen.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Kit)
+                            {
+                                HintSprite=cardsNotesSpriteCross[1];
+                                GameLogic.Player2.Cards[1]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Kitchen.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.Kitchen.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Gun)
+                            {
+                                HintSprite=cardsNotesSpriteCross[13];
+                                GameLogic.Player2.Cards[13]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Kitchen.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Off:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.Office.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Off)
+                            {
+                                HintSprite=cardsNotesSpriteCross[15];
+                                GameLogic.Player2.Cards[15]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Office.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.Office.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Kni)
+                            {
+                                HintSprite=cardsNotesSpriteCross[0];
+                                GameLogic.Player2.Cards[0]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Office.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.Office.HintTimePlayer2==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Red)
+                            {
+                                HintSprite=cardsNotesSpriteCross[6];
+                                GameLogic.Player2.Cards[6]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Office.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Dan:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.DanceRoom.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Dan)
+                            {
+                                HintSprite=cardsNotesSpriteCross[17];
+                                GameLogic.Player2.Cards[17]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.DanceRoom.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.DanceRoom.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Rop)
+                            {
+                                HintSprite=cardsNotesSpriteCross[5];
+                                GameLogic.Player2.Cards[5]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.DanceRoom.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.DanceRoom.HintTimePlayer2==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Yel)
+                            {
+                                HintSprite=cardsNotesSpriteCross[9];
+                                GameLogic.Player2.Cards[9]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.DanceRoom.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Din:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.DinningRoom.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Din)
+                            {
+                                HintSprite=cardsNotesSpriteCross[14];
+                                GameLogic.Player2.Cards[14]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.DinningRoom.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.DinningRoom.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Pin)
+                            {
+                                HintSprite=cardsNotesSpriteCross[11];
+                                GameLogic.Player2.Cards[11]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.DinningRoom.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Gam:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.GamesRoom.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Gam)
+                            {
+                                HintSprite=cardsNotesSpriteCross[18];
+                                GameLogic.Player2.Cards[18]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.GamesRoom.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.GamesRoom.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Blu)
+                            {
+                                HintSprite=cardsNotesSpriteCross[7];
+                                GameLogic.Player2.Cards[7]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.GamesRoom.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Liv:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.LivingRoom.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Liv)
+                            {
+                                HintSprite=cardsNotesSpriteCross[19];
+                                GameLogic.Player2.Cards[19]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.LivingRoom.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.LivingRoom.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Pip)
+                            {
+                                HintSprite=cardsNotesSpriteCross[3];
+                                GameLogic.Player2.Cards[3]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.LivingRoom.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.LivingRoom.HintTimePlayer2==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Gree)
+                            {
+                                HintSprite=cardsNotesSpriteCross[8];
+                                GameLogic.Player2.Cards[8]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.LivingRoom.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Lib:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.Library.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Lib)
+                            {
+                                HintSprite=cardsNotesSpriteCross[12];
+                                GameLogic.Player2.Cards[12]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Library.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.Library.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Can)
+                            {
+                                HintSprite=cardsNotesSpriteCross[2];
+                                GameLogic.Player2.Cards[2]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.Library.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Lob:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.Lobby.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Lob)
+                            {
+                                HintSprite=cardsNotesSpriteCross[20];
+                                GameLogic.Player2.Cards[20]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.Lobby.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
+                    case GameLogic.Hin.Gre:
+                        textObject=HintText.GetComponent<TextMesh>();
+                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
+                        if(GameLogic.GreenHouse.HintTimePlayer2==0)
+                        {
+                            if(GameLogic.sol.solRoom!=GameLogic.Hab.Gre)
+                            {
+                                HintSprite=cardsNotesSpriteCross[16];
+                                GameLogic.Player2.Cards[16]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+
+                            GameLogic.GreenHouse.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.GreenHouse.HintTimePlayer2==1)
+                        {
+                            if(GameLogic.sol.solGun!=GameLogic.Arm.Wre)
+                            {
+                                HintSprite=cardsNotesSpriteCross[4];
+                                GameLogic.Player2.Cards[4]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.GreenHouse.HintTimePlayer2++;
+                        }
+                        else if(GameLogic.GreenHouse.HintTimePlayer2==2)
+                        {
+                            if(GameLogic.sol.solCharacter!=GameLogic.Car.Pur)
+                            {
+                                HintSprite=cardsNotesSpriteCross[10];
+                                GameLogic.Player2.Cards[10]=2;
+                            }
+                            else
+                            {
+                                GameLogic.hint=false;
+                            }
+                            
+                            GameLogic.GreenHouse.HintTimePlayer2++;
+                        }
+                        else
+                        {
+                            GameLogic.hint=false;
+                        }
+                        break;
                 }
             }
         }

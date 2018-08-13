@@ -21,6 +21,8 @@ public class GameLogic : MonoBehaviour {
 	public enum Car {Emp, Red, Blu, Gree, Yel, Pur, Pin};
 	public enum Arm {Emp, Gun, Kni, Can, Pip, Wre, Rop};
 
+	public enum Hin {Emp, Off, Lib, Liv, Din, Dan, Gam, Gre, Lob, Kit, Red, Blu, Gree, Yel, Pur, Pin, Gun, Kni, Can, Pip, Wre, Rop};
+
 	public class Solution
 	{
 		public Hab solRoom;
@@ -110,11 +112,18 @@ public class GameLogic : MonoBehaviour {
 		public float PositionX;
 		public float PositionZ;
 		public int Elementos;
+		public string name;
+
+		public int HintTimePlayer1;
+		public int HintTimePlayer2;
 
 		public Hab[] Distances=new Hab[6];
 
-		public Room(string name,float positionx, float positionz, Hab h1, Hab h2, Hab h3, Hab h4, Hab h5, Hab h6)
+		public Room(string n,float positionx, float positionz, Hab h1, Hab h2, Hab h3, Hab h4, Hab h5, Hab h6)
 	    {
+	    	HintTimePlayer1=0;
+	    	HintTimePlayer2=0;
+	    	name=n;
 	        PositionX=positionx;
 	        PositionZ=positionz;
 	        Distances[0]=h1;
@@ -129,6 +138,8 @@ public class GameLogic : MonoBehaviour {
 	    public void Restart()
 	    {
 	    	Elementos=0;
+	    	HintTimePlayer1=0;
+	    	HintTimePlayer2=0;
 	    }
 	}
 
@@ -216,12 +227,16 @@ public class GameLogic : MonoBehaviour {
 		//This array contains one integer per each card, 0 means is not marked, 1 means marked, and 2 means hint
 		public int[] Cards;
 
+		public Hin Hint;
+
 		public Player(Room room)
 	    {
 	    	Notes=false;
 	        Room=room;
 
 	        Cards=new int[21]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+	        Hint=Hin.Emp;
 
 	        if(Room.Elementos==0)
 	        {
@@ -253,6 +268,37 @@ public class GameLogic : MonoBehaviour {
 
 	    	Room=room;
 
+	    	switch (room.name)
+	    	{
+	    		case "Kitchen": 
+			        Hint=Hin.Kit;
+			        break;
+			    case "Office": 
+			        Hint=Hin.Off;
+			        break;
+			    case "GreenHouse": 
+			        Hint=Hin.Gre;
+			        break;
+			    case "LivingRoom": 
+			        Hint=Hin.Liv;
+			        break;
+			    case "GamesRoom": 
+			        Hint=Hin.Gam;
+			        break;
+			    case "DanceRoom": 
+			       	Hint=Hin.Dan;
+			        break;
+			    case "Lobby": 
+			        Hint=Hin.Lob;
+			        break;
+			    case "DinningRoom": 
+			        Hint=Hin.Din;
+			        break;
+			    case "Library": 
+			        Hint=Hin.Lib;
+			        break;
+	    	}
+
 	    	if(Room.Elementos==0)
 	        {
 	        	PositionX=-0.5f;
@@ -283,6 +329,8 @@ public class GameLogic : MonoBehaviour {
 	        Room=room;
 
 	        Cards=new int[21]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+	        Hint=Hin.Emp;
 
 	        if(Room.Elementos==0)
 	        {
@@ -323,6 +371,8 @@ public class GameLogic : MonoBehaviour {
 
 	static public bool turnFinished=false;
 
+	static public bool hint=false;
+
 	static public Dice Dice1=new Dice();
 
 	static public Solution sol=new Solution();
@@ -361,6 +411,7 @@ public class GameLogic : MonoBehaviour {
 		Player2.Restart(Lobby);
 		turn=1;
 		turnFinished=false;
+		hint=false;
 		Dice1.Restart();
 		sol.Restart();
 
