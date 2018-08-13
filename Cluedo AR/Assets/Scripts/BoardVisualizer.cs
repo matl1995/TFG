@@ -14,6 +14,7 @@ namespace GoogleARCore.Examples.AugmentedImage
     {
         public GameObject Scene;
         public GameObject Dice;
+        public GameObject Indicator;
 
         /*************************************************CARTAS HABITACIONES**************************************************/
         public GameObject[] cardsNotes=new GameObject[21];
@@ -118,6 +119,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             PlayerDef1.SetActive(true);
             PlayerDef2.SetActive(true);
+            Indicator.SetActive(true);
             Dice.SetActive(true);
 
             TextRooms.SetActive(false);
@@ -182,6 +184,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
+                Indicator.SetActive(false);
 
                 for(int i=0;i<21;i++)
                 {
@@ -301,38 +304,13 @@ namespace GoogleARCore.Examples.AugmentedImage
                 Dice.SetActive(false);
                 PlayerDef1.SetActive(false);
                 PlayerDef2.SetActive(false);
+                Indicator.SetActive(false);
 
                 GameLogic.Dice1.finished=true;
                 GameLogic.Dice1.thrown=false;
 
                 NextTurnText.SetActive(true);
                 NextTurnButton.SetActive(true);
-            }
-            else
-            {
-                ThrowButton.SetActive(true);
-                NotesButton.SetActive(true);
-                NextButton.SetActive(true);
-                FinishButton.SetActive(true);
-
-                CharacterBlue.SetActive(true);
-                CharacterRed.SetActive(true);
-                CharacterGreen.SetActive(true);
-                CharacterYellow.SetActive(true);
-                CharacterPurple.SetActive(true);
-                CharacterPink.SetActive(true);
-                Gun.SetActive(true);
-                Knife.SetActive(true);
-                Candle.SetActive(true);
-                Rope.SetActive(true);
-                Pipeline.SetActive(true);
-                Wrench.SetActive(true);
-                Dice.SetActive(true);
-                PlayerDef1.SetActive(true);
-                PlayerDef1.SetActive(true);
-
-                NextTurnText.SetActive(false);
-                NextTurnButton.SetActive(false);
             }
 
 
@@ -412,6 +390,16 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             if(!GameLogic.turnFinished)
             {
+                ThrowButton.SetActive(true);
+                NotesButton.SetActive(true);
+                NextButton.SetActive(true);
+                FinishButton.SetActive(true);
+
+                NextTurnText.SetActive(false);
+                NextTurnButton.SetActive(false);
+
+                Dice.SetActive(true);
+
                 CharacterBlue.transform.localPosition = (GameLogic.Blue.GetElementPositionX() * Vector3.left) + (GameLogic.Blue.GetElementPositionZ() * Vector3.back);
                 CharacterBlue.SetActive(true);
 
@@ -454,6 +442,17 @@ namespace GoogleARCore.Examples.AugmentedImage
 
                 PlayerDef2.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back);
                 PlayerDef2.SetActive(true);
+
+                if(GameLogic.turn%2!=0)
+                {
+                    Indicator.transform.localPosition = (GameLogic.Player1.GetElementPositionX() * Vector3.left + new Vector3(-0.05f,0f,0f)) + (GameLogic.Player1.GetElementPositionZ() * Vector3.back) + (2f * Vector3.up);
+                    Indicator.SetActive(true);
+                }
+                else
+                {
+                    Indicator.transform.localPosition = (GameLogic.Player2.GetElementPositionX() * Vector3.left + new Vector3(-0.05f,0f,0f)) + (GameLogic.Player2.GetElementPositionZ() * Vector3.back) + (2f * Vector3.up);
+                    Indicator.SetActive(true);
+                }
             }
         }
     }
