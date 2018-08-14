@@ -321,6 +321,8 @@ public class GameLogic : MonoBehaviour {
 	        }
 
 	        Room.Elementos++;
+
+	        GameLogic.hint=true;
 	    }
 
 	    public void Restart(Room room)

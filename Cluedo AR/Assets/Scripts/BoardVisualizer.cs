@@ -79,6 +79,8 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public Sprite HintSprite;
 
+        public static bool primeraVezHint;
+
         /*************************************************START**************************************************/
         public virtual void Start()
         {
@@ -146,6 +148,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             HintText.SetActive(false);
             HintCard.SetActive(false);
             HintButton.SetActive(false);
+            primeraVezHint=true;
 
             for(int i=0;i<21;i++)
             {
@@ -330,7 +333,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
 
             /*************************************************SI PISTA*******************************************/
-            if(GameLogic.hint)
+            if(GameLogic.hint && primeraVezHint)
             {
                 ThrowButton.SetActive(false);
                 NotesButton.SetActive(false);
@@ -350,6 +353,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     HintCard.SetActive(true);
                     HintButton.SetActive(true);
                 }
+                primeraVezHint=false;
             }
 
 
@@ -549,8 +553,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                 switch (Hint)
                 {
                     case GameLogic.Hin.Kit:
-                        TextMesh textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.Kitchen.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Kit)
@@ -585,8 +587,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Off:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.Office.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Off)
@@ -635,8 +635,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Dan:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.DanceRoom.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Dan)
@@ -685,8 +683,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Din:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.DinningRoom.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Din)
@@ -721,8 +717,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Gam:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.GamesRoom.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Gam)
@@ -757,8 +751,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Liv:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.LivingRoom.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Liv)
@@ -807,8 +799,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Lib:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.Library.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Lib)
@@ -843,8 +833,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Lob:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.Lobby.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Lob)
@@ -865,8 +853,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Gre:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer1.ToString();
                         if(GameLogic.GreenHouse.HintTimePlayer1==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Gre)
@@ -923,8 +909,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                 switch (Hint)
                 {
                     case GameLogic.Hin.Kit:
-                        TextMesh textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.Kitchen.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Kit)
@@ -959,8 +943,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Off:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.Office.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Off)
@@ -1009,8 +991,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Dan:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.DanceRoom.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Dan)
@@ -1059,8 +1039,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Din:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.DinningRoom.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Din)
@@ -1095,8 +1073,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Gam:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.GamesRoom.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Gam)
@@ -1131,8 +1107,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Liv:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.LivingRoom.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Liv)
@@ -1181,8 +1155,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Lib:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.Library.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Lib)
@@ -1217,8 +1189,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Lob:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.Lobby.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Lob)
@@ -1239,8 +1209,6 @@ namespace GoogleARCore.Examples.AugmentedImage
                         }
                         break;
                     case GameLogic.Hin.Gre:
-                        textObject=HintText.GetComponent<TextMesh>();
-                        textObject.text=GameLogic.Library.HintTimePlayer2.ToString();
                         if(GameLogic.GreenHouse.HintTimePlayer2==0)
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Gre)
