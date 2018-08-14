@@ -352,8 +352,12 @@ namespace GoogleARCore.Examples.AugmentedImage
                     HintText.SetActive(true);
                     HintCard.SetActive(true);
                     HintButton.SetActive(true);
+
+                    primeraVezHint=false;
                 }
-                primeraVezHint=false;
+
+                GameLogic.Player1.Hint=GameLogic.Hin.Emp;
+                GameLogic.Player2.Hint=GameLogic.Hin.Emp;
             }
 
 
@@ -557,12 +561,13 @@ namespace GoogleARCore.Examples.AugmentedImage
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Kit)
                             {
-                                HintSprite=cardsNotesSpriteCross[1];
-                                GameLogic.Player1.Cards[1]=2;
+                                HintSprite=cardsNotesSpriteCross[13];
+                                GameLogic.Player1.Cards[13]=2;
                             }
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Kitchen.HintTimePlayer1++;
@@ -571,12 +576,13 @@ namespace GoogleARCore.Examples.AugmentedImage
                         {
                             if(GameLogic.sol.solGun!=GameLogic.Arm.Gun)
                             {
-                                HintSprite=cardsNotesSpriteCross[13];
-                                GameLogic.Player1.Cards[13]=2;
+                                HintSprite=cardsNotesSpriteCross[1];
+                                GameLogic.Player1.Cards[1]=2;
                             }
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Kitchen.HintTimePlayer1++;
@@ -584,6 +590,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Off:
@@ -597,6 +604,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Office.HintTimePlayer1++;
@@ -611,6 +619,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Office.HintTimePlayer1++;
@@ -625,6 +634,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Office.HintTimePlayer1++;
@@ -632,6 +642,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Dan:
@@ -645,6 +656,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.DanceRoom.HintTimePlayer1++;
@@ -659,6 +671,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.DanceRoom.HintTimePlayer1++;
@@ -673,6 +686,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.DanceRoom.HintTimePlayer1++;
@@ -680,6 +694,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Din:
@@ -693,6 +708,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.DinningRoom.HintTimePlayer1++;
@@ -707,6 +723,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.DinningRoom.HintTimePlayer1++;
@@ -714,6 +731,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Gam:
@@ -727,6 +745,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.GamesRoom.HintTimePlayer1++;
@@ -741,6 +760,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.GamesRoom.HintTimePlayer1++;
@@ -748,6 +768,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Liv:
@@ -761,6 +782,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.LivingRoom.HintTimePlayer1++;
@@ -775,6 +797,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.LivingRoom.HintTimePlayer1++;
@@ -789,6 +812,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.LivingRoom.HintTimePlayer1++;
@@ -796,6 +820,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Lib:
@@ -809,6 +834,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Library.HintTimePlayer1++;
@@ -823,6 +849,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Library.HintTimePlayer1++;
@@ -830,6 +857,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Lob:
@@ -843,6 +871,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Lobby.HintTimePlayer1++;
@@ -850,6 +879,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Gre:
@@ -863,6 +893,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.GreenHouse.HintTimePlayer1++;
@@ -877,6 +908,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.GreenHouse.HintTimePlayer1++;
@@ -891,6 +923,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.GreenHouse.HintTimePlayer1++;
@@ -898,6 +931,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                 }
@@ -913,12 +947,13 @@ namespace GoogleARCore.Examples.AugmentedImage
                         {
                             if(GameLogic.sol.solRoom!=GameLogic.Hab.Kit)
                             {
-                                HintSprite=cardsNotesSpriteCross[1];
-                                GameLogic.Player2.Cards[1]=2;
+                                HintSprite=cardsNotesSpriteCross[13];
+                                GameLogic.Player2.Cards[13]=2;
                             }
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Kitchen.HintTimePlayer2++;
@@ -927,12 +962,13 @@ namespace GoogleARCore.Examples.AugmentedImage
                         {
                             if(GameLogic.sol.solGun!=GameLogic.Arm.Gun)
                             {
-                                HintSprite=cardsNotesSpriteCross[13];
-                                GameLogic.Player2.Cards[13]=2;
+                                HintSprite=cardsNotesSpriteCross[1];
+                                GameLogic.Player2.Cards[1]=2;
                             }
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Kitchen.HintTimePlayer2++;
@@ -940,6 +976,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Off:
@@ -953,6 +990,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Office.HintTimePlayer2++;
@@ -967,6 +1005,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Office.HintTimePlayer2++;
@@ -981,6 +1020,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Office.HintTimePlayer2++;
@@ -988,6 +1028,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Dan:
@@ -1001,6 +1042,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.DanceRoom.HintTimePlayer2++;
@@ -1015,6 +1057,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.DanceRoom.HintTimePlayer2++;
@@ -1029,6 +1072,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.DanceRoom.HintTimePlayer2++;
@@ -1036,6 +1080,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Din:
@@ -1049,6 +1094,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.DinningRoom.HintTimePlayer2++;
@@ -1063,6 +1109,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.DinningRoom.HintTimePlayer2++;
@@ -1070,6 +1117,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Gam:
@@ -1083,6 +1131,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.GamesRoom.HintTimePlayer2++;
@@ -1097,6 +1146,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.GamesRoom.HintTimePlayer2++;
@@ -1104,6 +1154,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Liv:
@@ -1117,6 +1168,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.LivingRoom.HintTimePlayer2++;
@@ -1131,6 +1183,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.LivingRoom.HintTimePlayer2++;
@@ -1145,6 +1198,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.LivingRoom.HintTimePlayer2++;
@@ -1152,6 +1206,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Lib:
@@ -1165,6 +1220,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Library.HintTimePlayer2++;
@@ -1179,6 +1235,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.Library.HintTimePlayer2++;
@@ -1186,6 +1243,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Lob:
@@ -1199,6 +1257,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.Lobby.HintTimePlayer2++;
@@ -1206,6 +1265,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                     case GameLogic.Hin.Gre:
@@ -1219,6 +1279,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
 
                             GameLogic.GreenHouse.HintTimePlayer2++;
@@ -1233,6 +1294,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.GreenHouse.HintTimePlayer2++;
@@ -1247,6 +1309,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             else
                             {
                                 GameLogic.hint=false;
+                                primeraVezHint=true;
                             }
                             
                             GameLogic.GreenHouse.HintTimePlayer2++;
@@ -1254,6 +1317,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                         else
                         {
                             GameLogic.hint=false;
+                            primeraVezHint=true;
                         }
                         break;
                 }

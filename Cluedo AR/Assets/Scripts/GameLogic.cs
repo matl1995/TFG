@@ -452,6 +452,7 @@ public class GameLogic : MonoBehaviour {
 			}
 			else
 			{
+				sol.Restart();
 				AugmentedImageExampleController.borrar=true;
 			}
 		}

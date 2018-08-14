@@ -121,9 +121,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                 oldCharacter=-1;
                 oldGun=-1;
 
-                GameLogic.sol.SetRoom(GameLogic.Hab.Emp);
-                GameLogic.sol.SetCharacter(GameLogic.Car.Emp);
-                GameLogic.sol.SetGun(GameLogic.Arm.Emp);
+                GameLogic.sol.Restart();
 
                 GameLogic.turnFinished=true;
 
