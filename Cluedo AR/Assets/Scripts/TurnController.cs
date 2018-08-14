@@ -9,5 +9,6 @@ public class TurnController : MonoBehaviour {
 	{
 		GameLogic.turnFinished=true;
 		AugmentedImageExampleController.scan=false;
+		BoardVisualizer.scanwrong=false;
 	}
 }

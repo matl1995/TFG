@@ -456,6 +456,7 @@ public class GameLogic : MonoBehaviour {
 				{
 					AugmentedImageExampleController.scan=false;
 					AugmentedImageExampleController.borrar=true;
+					BoardVisualizer.scanwrong=true;
 				}
 			}
 		}

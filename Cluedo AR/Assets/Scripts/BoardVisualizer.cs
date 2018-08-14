@@ -84,6 +84,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         /********************************************** SCAN ***************************************************/
         public GameObject ScanText;
+        public static bool scanwrong;
 
         /*************************************************START**************************************************/
         public virtual void Start()
@@ -153,6 +154,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             HintCard.SetActive(false);
             HintButton.SetActive(false);
             primeraVezHint=true;
+            scanwrong=false;
 
             ScanText.SetActive(false);
 
@@ -305,11 +307,22 @@ namespace GoogleARCore.Examples.AugmentedImage
             /*************************************************SI TURNO TERMINADO*******************************************/
             if(GameLogic.turnFinished)
             {
-                TextMesh textObject=NextTurnText.GetComponent<TextMesh>();
-                if(GameLogic.turn%2!=0)
-                    textObject.text="Turno del Jugador 2";
+                if(!scanwrong)
+                {
+                    TextMesh textObject=NextTurnText.GetComponent<TextMesh>();
+                    if(GameLogic.turn%2!=0)
+                        textObject.text="Turno del Jugador 2";
+                    else
+                        textObject.text="Turno del Jugador 1";
+                }
                 else
-                    textObject.text="Turno del Jugador 1";
+                {
+                    TextMesh textObject=NextTurnText.GetComponent<TextMesh>();
+                    if(GameLogic.turn%2!=0)
+                        textObject.text="Escaneo erroneo\nTurno del Jugador 2";
+                    else
+                        textObject.text="Escaneo erroneo\nTurno del Jugador 1";
+                }
 
                 ThrowButton.SetActive(false);
                 NotesButton.SetActive(false);
