@@ -52,5 +52,6 @@ public class Dice : MonoBehaviour {
 		GameLogic.Dice1.SetCollider(GetComponent<Collider>());
 		GameLogic.Dice1.DeactivateColl();
 		rollComplete=true;
+		AugmentedImageExampleController.scan=false;
 	}
 }

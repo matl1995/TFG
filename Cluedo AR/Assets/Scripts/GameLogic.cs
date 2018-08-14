@@ -444,16 +444,19 @@ public class GameLogic : MonoBehaviour {
 
 	public virtual void Update()
 	{
-		if(sol.room!=Hab.Emp && sol.character!=Car.Emp && sol.gun!=Arm.Emp)
+		if(AugmentedImageExampleController.scan)
 		{
-			if(sol.room==sol.solRoom && sol.character==sol.solCharacter && sol.gun==sol.solGun)
+			if(sol.room!=Hab.Emp && sol.character!=Car.Emp && sol.gun!=Arm.Emp)
 			{
-				SceneManager.LoadScene("EndScene");
-			}
-			else
-			{
-				sol.Restart();
-				AugmentedImageExampleController.borrar=true;
+				if(sol.room==sol.solRoom && sol.character==sol.solCharacter && sol.gun==sol.solGun)
+				{
+					SceneManager.LoadScene("EndScene");
+				}
+				else
+				{
+					AugmentedImageExampleController.scan=false;
+					AugmentedImageExampleController.borrar=true;
+				}
 			}
 		}
 	}

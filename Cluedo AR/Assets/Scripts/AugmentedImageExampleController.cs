@@ -41,6 +41,8 @@ namespace GoogleARCore.Examples.AugmentedImage
         public int character;
         public int gun;
 
+        public static bool scan;
+
 
         /// <summary>
         /// A prefab for visualizing the board.
@@ -75,6 +77,8 @@ namespace GoogleARCore.Examples.AugmentedImage
             gun=-1;
 
             borrar=false;
+
+            scan=false;
         }
 
         /// <summary>
@@ -121,11 +125,20 @@ namespace GoogleARCore.Examples.AugmentedImage
                 oldCharacter=-1;
                 oldGun=-1;
 
-                GameLogic.sol.Restart();
+                GameLogic.sol.SetRoom(GameLogic.Hab.Emp);
+                GameLogic.sol.SetCharacter(GameLogic.Car.Emp);
+                GameLogic.sol.SetGun(GameLogic.Arm.Emp);
 
                 GameLogic.turnFinished=true;
 
                 borrar=false;
+            }
+
+            if(!scan)
+            {
+                GameLogic.sol.SetRoom(GameLogic.Hab.Emp);
+                GameLogic.sol.SetCharacter(GameLogic.Car.Emp);
+                GameLogic.sol.SetGun(GameLogic.Arm.Emp);
             }
 
             // Get updated augmented images for this frame.
@@ -143,7 +156,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
                     if(image.Name=="tablero")
                         visualizer = (BoardVisualizer)Instantiate(AugmentedBoardVisualizerPrefab, anchor.transform);
-                    else
+                    else if(scan)
                     {
                         visualizer = (CardsVisualizer)Instantiate(AugmentedCardsVisualizerPrefab, anchor.transform);
 

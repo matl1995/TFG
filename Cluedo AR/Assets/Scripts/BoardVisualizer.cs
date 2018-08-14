@@ -69,6 +69,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public GameObject ThrowButton;
         public GameObject NotesButton;
+        public GameObject AcusationButton;
         public GameObject NextButton;
         public GameObject FinishButton;
 
@@ -80,6 +81,9 @@ namespace GoogleARCore.Examples.AugmentedImage
         public Sprite HintSprite;
 
         public static bool primeraVezHint;
+
+        /********************************************** SCAN ***************************************************/
+        public GameObject ScanText;
 
         /*************************************************START**************************************************/
         public virtual void Start()
@@ -150,6 +154,8 @@ namespace GoogleARCore.Examples.AugmentedImage
             HintButton.SetActive(false);
             primeraVezHint=true;
 
+            ScanText.SetActive(false);
+
             for(int i=0;i<21;i++)
             {
                 cardsNotes[i].SetActive(false);
@@ -193,6 +199,7 @@ namespace GoogleARCore.Examples.AugmentedImage
 
                 ThrowButton.SetActive(false);
                 NotesButton.SetActive(false);
+                AcusationButton.SetActive(false);
                 NextButton.SetActive(false);
                 FinishButton.SetActive(false);
 
@@ -203,6 +210,8 @@ namespace GoogleARCore.Examples.AugmentedImage
                 HintText.SetActive(false);
                 HintCard.SetActive(false);
                 HintButton.SetActive(false);
+
+                ScanText.SetActive(false);
 
                 for(int i=0;i<21;i++)
                 {
@@ -304,8 +313,16 @@ namespace GoogleARCore.Examples.AugmentedImage
 
                 ThrowButton.SetActive(false);
                 NotesButton.SetActive(false);
+                AcusationButton.SetActive(false);
                 NextButton.SetActive(false);
                 FinishButton.SetActive(false);
+
+                HintButton.SetActive(false);
+                HintCard.SetActive(false);
+                HintText.SetActive(false);
+
+                GameLogic.hint=false;
+                primeraVezHint=true;
 
                 CharacterBlue.SetActive(false);
                 CharacterRed.SetActive(false);
@@ -337,6 +354,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             {
                 ThrowButton.SetActive(false);
                 NotesButton.SetActive(false);
+                AcusationButton.SetActive(false);
                 NextButton.SetActive(false);
                 FinishButton.SetActive(false);
 
@@ -449,6 +467,16 @@ namespace GoogleARCore.Examples.AugmentedImage
                 }
             }
 
+            /************************************ SI ESCANEANDO CARTAS **************************************************/
+            if(AugmentedImageExampleController.scan)
+            {
+                ScanText.SetActive(true);
+            }
+            else
+            {
+                ScanText.SetActive(false);
+            }
+
 
             /*************************************************ELEMENTOS DE TABLERO**************************************************/
             float height=0f;
@@ -459,6 +487,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             {
                 ThrowButton.SetActive(true);
                 NotesButton.SetActive(true);
+                AcusationButton.SetActive(true);
                 NextButton.SetActive(true);
                 FinishButton.SetActive(true);
 
