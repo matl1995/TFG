@@ -13,9 +13,11 @@ Las diferencias entre estas tres tecnologías son las siguientes \cite{intel}:
   \item \textbf{Realidad aumentada}: Es una tecnología que superpone información digital sobre elementos del mundo real. El elemento central es el mundo real, pero lo mejora con otros detalles digitales, complementando así la realidad.
 
   \item \textbf{Realidad mixta}: Es una tecnología que hace converger el mundo real y elementos digitales. En esta puedes interactuar y manipular tanto elementos físicos como virtuales. La realidad mixta te permite sumergirte en el mundo que te rodea incluso cuando tú interactúas con el entorno virtual usando tus propias manos. Esta tecnología te permite tener un pie en el mundo real y el otro en un lugar imaginario.
-\begin{itemize}
+\end{itemize}
 
 \section{Aplicaciones de la realidad aumentada}
+Para comprender mejor las posibilidades que la realidad aumentada ofrece, a continuación se muestrán diferentes aplicaciones que esta puede tener y ejemplos de dichas aplicaciones en funcionamiento que son bastante interesantes:
+
 \begin{itemize}
   \item \textbf{Medicina}: La realidad aumentada puede aportar grandes avances a la medicina, ya que permite la visualización en 3D de objetos que bien pueden ser órganos o partes del cuerpo en el mundo real, por lo que puede facilitar a los doctores muchas tareas que requieran el estudio de modelos 3D. Por ejemplo, los doctores pueden utilizar la realidad aumentada con el objetivo de prepararse para una operación como se puede observar en la Figura \ref{figura-medicina}, o simplemente para tareas de visualización médica, de igual manera que actualmente se utilizan los TAC o las resonancias magnéticas, pero los datos obtenidos con dichos escáneres se convertirían en modelos 3D que son mucho más sencillos de explorar que un conjunto de imágenes 2D. También se podría utilizar la realidad aumentada con el objetivo de entrenamiento para cirujanos que se están formando, mostrándoles instrucciones sobre un modelo 3D de cómo se debería realizar una determinada operación, ayudando así a que no necesiten consultar un manual y quitar la vista del “paciente” si no que todo sería sobre dicho “paciente” que realmente es un modelo 3D \cite{azuma}.
 
@@ -122,7 +124,7 @@ A la hora de trabajar con realidad aumentada, es necesario que la información q
 
   \newpage
 
-  \item \textbf{Vincular la información a un objeto 3D}: Lo que ocurre es que se tendrá almacenado en memoria un modelo del objeto, y con dispositivos como Kinect (mostrado en la Figura \ref{figura-kinect}) se puede reconocer dicho objeto y asociar una información a este.
+  \item \textbf{Vincular la información a un objeto 3D}: Este proceso funciona de manera que en memoria se almacena un modelo 3D, posteriormente cuando se escanea el entorno se escanean los objetos en este, y se contrasta la información obtenida del escaneo con el modelo 3D que esta en memoria (esto es posible con dispositivos como Kinect que se muestra en la Figura \ref{figura-kinect}), si el modelo 3D en memoria coincide con el objeto 3D que se encuentra en la escena se puede asociar una información virtual a dicho objeto.
 
   \begin{figure}[h]
     \centering
@@ -133,7 +135,7 @@ A la hora de trabajar con realidad aumentada, es necesario que la información q
 
   \footnotetext{ \url{https://www.vidaextra.com/hardware/kinect-esta-oficialmente-muerto}, Sergio Cejas}
 
-  \item \textbf{Vincular la información a una escena}:  Lo que hace esta técnica es escanear el mundo real y asignar coordenadas, escaneará las superficies planas horizontales y verticales, y establecerá un modelo 3D de estas, en el que establece coordenadas, y a cada una de estas coordenadas se puede asociar información con respecto a la posición de esta, como se puede ver en la Figura \ref{figura-scene}, lo que nos permitirá gracias a que se escanea el mundo en 3D que al movernos alrededor, incluso si dejamos de tener la coordenada dentro de la visión de la cámara, que al volver a mirar al punto de la coordenada la información asociada siga ahí.
+  \item \textbf{Vincular la información a una escena}:  Lo que hace esta técnica es escanear las superficies del mundo real que se percibe por la camara y asignar coordenadas a dichas superficies, a cada una de estas coordenadas se puede asociar información virtual, como se puede ver en la Figura \ref{figura-scene}, en la que a algunas coordenadas se ha asignado un modelo 3D del muñeco de android, dicho modelo es la información virtual asociada a la coordenada.
 
   \begin{figure}[h]
     \centering
@@ -251,12 +253,14 @@ Algunos ejemplos de Head-attached displays:
 
   \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.2]{head-googleglass}
+    \includegraphics[scale=0.21]{head-googleglass}
     \caption{Imagen que las gafas Google Glass.\protect\footnotemark}
     \label{figura-googleglass}
   \end{figure}
 
   \footnotetext{ \url{https://www.xataka.com/realidad-virtual-aumentada/no-estaban-muertas-google-glass-enterprise-salen-a-la-venta-y-para-esto-sirven-en-2017}, Xataka}
+
+\newpage
 
   \item \textbf{Meta glasses}: Este dispositivo entraría dentro de las pantallas ópticas transparentes, funciona igual que las Hololens, con la diferencia de que necesitan estar conectadas a un ordenador para llevar a cabo el procesamiento gráfico \cite{meta-vision}.
 
@@ -296,6 +300,7 @@ Algunos ejemplos de Head-attached displays:
 \end{itemize}
 
 \section{Desarrollo de realidad aumentada}
+El desarrollo de aplicaciones que incorporen elementos de realidad aumentada se puede llevar a cabo de dos maneras, usando un SDK o utilizando herramientas de autor. Los SDK ofrecen una librería de código que permite acceder a las funciones de realidad aumentada, como por ejemplo, detectar una imagen y asociar información a esta. Por otro lado las herramientas de autor permiten asociar la información a elementos del mundo real de una forma sencilla, como puede ser mediante una interfaz gráfica. Los SDK tienen la ventaja de ofrecer mas libertad, mientras que las herrmientas de autor ofrecen facilidad en el desarrollo.
 
 \subsection{Librerías}
 \begin{itemize}
@@ -337,6 +342,8 @@ Algunos ejemplos de Head-attached displays:
 \footnotetext{ \url{https://www.behance.net/gallery/15241153/Layar-Creator-20}, Behance}
 
 \subsection{ARCore}
+Este SDK concreto es el que se va a utilizar en el desarrollo del proyecto, por lo tanto, se expondrán con mayor profundidad sus características.\\
+
 Es la librería creada por Google para llevar la realidad aumentada a los dispositivos android que dispongan de la versión 7 o superior, esta librería se basa en el uso de tres tecnologías, motion tracking para que el telefono conozca cuál es su posición relativa al mundo real, environment understanding para que el teléfono detecte la posición y tamaño de superficies horizontales planas y light estimation para que el teléfono pueda conocer las condiciones de luz del entorno.\\
 
 La tecnología motion tracking que utiliza le permite a través de la camara identificar puntos interesantes del mundo y ver cómo estos puntos se mueven con el tiempo. Y combinando el movimiento de dichos puntos y los sensores del teléfono puede determinar la posición y orientación del teléfono conforme este se mueve por el espacio.\\
@@ -376,43 +383,55 @@ Actualmente ARCore tiene soporte para desarrollo en las siguientes plataformas:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TABLA COMPARATIVA LIBRERIAS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[h]
   \begin{center}
-    \begin{tabular}{|p{1.5cm}|p{2cm}|p{7cm}|p{2cm}|}
+    \begin{tabular}{|p{1.5cm}|p{2.3cm}|p{1.7cm}|p{2.2cm}|p{2cm}|p{2cm}|}
 
       \hline
         \rowcolor{Gray} \textbf{Librería}
-        & \textbf{Reconocimiento de Imágenes}
         & \textbf{Plataformas compatibles}
-        & \textbf{Licencia}\\
+        & \textbf{Licencia}
+        & \textbf{Detección de imágenes}
+        & \textbf{Seguimiento de imagen}
+        & \textbf{Experiencia inter-dispositivo}\\
 
       \hline
       ARKit
-      & Si
       & iOS, Xcode
-      & Libre\\
+      & Libre
+      & Si
+      & Si
+      & Si\\
 
       \hline
       Vuforia
-      & Si
       & Android, iOS, Unity
-      & Libre y Comercial\\
+      & Comercial y Libre
+      & Si
+      & Si
+      & No\\
 
       \hline
       EasyAR
-      & Si
       & Android, iOS, Unity
-      & Libre y Comercial\\
+      & Comercial y Libre
+      & Si
+      & Si
+      & No\\
 
       \hline
       Wikitude
-      & Si
       & Android, iOS, Titanium, Xamarin, Cordova, Unity
-      & Comercial\\
+      & Comercial
+      & Si
+      & Si
+      & No\\
 
       \hline
       ARCore
-      & Si
       & Android, Unity, Unreal Engine, Android Studio, iOS
-      & Libre\\
+      & Libre
+      & Si
+      & No
+      & Si\\
 
       \hline
 
@@ -424,7 +443,13 @@ Actualmente ARCore tiene soporte para desarrollo en las siguientes plataformas:
   \end{center}
 \end{table}
 
+\newpage
+
 \section{Interfaces tangibles}
+A la hora de interactuar con una aplicación de realidad aumentada para dispositivos móviles hay dos opciones, se puede interactuar mediante la pantalla del dispositivo, o mediante el uso de elementos físicos. Estos elementos físicos son considerados interfaces tangibles, ya que nos permiten interactuar con la aplicación mediante la manipulación de dichos elementos físicos.\\
+
+Las interfaces tangibles aportan una experiencia mucho mas natural para el ser humano, ya que el ser humano esta acostumbrado a interactuar con elementos físicos y le resulta mucho mas natural que realizar toques en una pantalla, que si bien es sencillo de hacer, no resulta tan realista para el usuario.\\
+
 Las interfaces tangibles son interfaces de usuario mediante las cuales el usuario interactúa con la información digital a través del entorno físico \cite{ullmer}.\\
 
 El mayor ejemplo de interfaz tangible es el ratón, en el caso de la realidad aumentada la interfaz tangible consiste en un elemento, que al entrar dentro del rango de la cámara se convierte en un elemento que puede modificar la información virtual que se está mostrando en la pantalla.\\
@@ -440,7 +465,6 @@ Como ejemplo de interfaces tangibles en realidad mixta tenemos los “Motion con
 
 \footnotetext{ \url{https://www.anandtech.com/show/11841/dells-visor-windows-mixed-reality-headset}, Anandtech}
 
-\newpage
 
 Como ejemplo de interfaces tangibles en realidad aumentada tenemos ARtalet, es un proyecto que permite reconocer la posición de un ratón puntero por unas pegatinas en la punta de éste, y recibe señales de los botones del ratón. Mediante los botones del ratón y ese puntero que reconoce la camara son capaces de manipular otros elementos virtuales que se habían situado en el entorno real que la cámara percibe \cite{ha}.\\
 
