@@ -9,21 +9,44 @@ En la Figura \ref{figura-demo-tablero} se puede observar la demo en funcionamien
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.4]{demo-tablero}
+  \includegraphics[scale=0.25]{demo-tablero}
   \caption{Imagen que muestra la demo en la que hay un objeto 3D asociado al tablero de juego.}
   \label{figura-demo-tablero}
 \end{figure}
 
+\newpage
 En la Figura \ref{figura-demo-imagenes} se puede observar la demo en funcionamiento, en ella la aplicación reconoce la imagen del tablero y las de diferentes habitaciones y asocia diferentes elementos 2D a cada una de las imágenes.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.4]{demo-imagenes}
+  \includegraphics[scale=0.25]{demo-imagenes}
   \caption{Imagen que muestra la demo en la que hay objetos 3D asociados al tablero y diferentes habitaciones.}
   \label{figura-demo-imagenes}
 \end{figure}
 
-\FloatBarrier
+A continuación se muestra en la Figura \ref{figura-codigo} un extracto de código de ARCore.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.57]{codigo-arcore}
+  \caption{Imagen que muestra código de ARCore.}
+  \label{figura-codigo}
+\end{figure}
+
+\newpage
+
+En este encontramos diferentes elementos relevantes:
+
+\begin{itemize}
+  \item \textbf{Session.GetTrackables<AugmentedImage>(mTempAugmentedImages, TrackableQueryFilter.Updated)}: Este código hace una llamada para obtener las imagenes aumentadas que han sido localizadas en la imagen percibida por la pantalla.
+
+  \item \textbf{if (image.TrackingState == TrackingState.Tracking && visualizer == null)}: Este código comprueba que se conozca la posición de la imagen en el mundo físico y en caso de asi ser y no haber situado un modelo 3D, se entra en el if.
+
+  \item \textbf{Anchor anchor = image.CreateAnchor(image.CenterPose)}: Se crea un ancla en el mundo real con la posición de la imagen, para que así la información asociada a dicha imagen se situe en el lugar adecuado.
+
+  \item \textbf{if(image.Name=="biblioteca")}: En caso de que la imagen escaneada sea una biblioteca entra en dicho if donde asignará un objeto de diferente tipo que en el else al visualizador (visualizer). Esto se hace de esta manera ya que si la imagen es de la habitación biblioteca tendrá que colocar un objeto diferente que en el resto de habitaciones, esto se puede comprobar en la Figura \ref{figura-demo-imagenes}.
+
+\end{itemize}
 
 \subsection{Primera iteración}
 En esta iteración se ha realizado la demo que se ha mostrado en la \textbf{Entrega 0}.\\
