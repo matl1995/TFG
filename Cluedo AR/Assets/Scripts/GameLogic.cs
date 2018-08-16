@@ -117,7 +117,7 @@ public class GameLogic : MonoBehaviour {
 		public int HintTimePlayer1;
 		public int HintTimePlayer2;
 
-		public Hab[] Distances=new Hab[6];
+		public Hab[] Distances;
 
 		public Room(string n,float positionx, float positionz, Hab h1, Hab h2, Hab h3, Hab h4, Hab h5, Hab h6)
 	    {
@@ -126,6 +126,7 @@ public class GameLogic : MonoBehaviour {
 	    	name=n;
 	        PositionX=positionx;
 	        PositionZ=positionz;
+	        Distances=new Hab[6];
 	        Distances[0]=h1;
 	        Distances[1]=h2;
 	        Distances[2]=h3;
@@ -148,6 +149,8 @@ public class GameLogic : MonoBehaviour {
 		public float PositionX;
 		public float PositionZ;
 		public Room Room;
+
+		public Element(){}
 
 		public Element(Room room)
 	    {
@@ -217,11 +220,8 @@ public class GameLogic : MonoBehaviour {
 	    }
 	}
 
-	public class Player
+	public class Player : Element
 	{
-		public float PositionX;
-		public float PositionZ;
-		public Room Room;
 		public bool Notes;
 
 		//This array contains one integer per each card, 0 means is not marked, 1 means marked, and 2 means hint
@@ -325,7 +325,7 @@ public class GameLogic : MonoBehaviour {
 	        GameLogic.hint=true;
 	    }
 
-	    public void Restart(Room room)
+	    public new void Restart(Room room)
 	    {
 	    	Notes=false;
 	        Room=room;
@@ -356,16 +356,6 @@ public class GameLogic : MonoBehaviour {
 	        }
 
 	        Room.Elementos++;
-	    }
-
-	    public float GetElementPositionX()
-	    {
-	    	return PositionX+Room.PositionX;
-	    }
-
-	    public float GetElementPositionZ()
-	    {
-	    	return PositionZ+Room.PositionZ;
 	    }
 	}
 
