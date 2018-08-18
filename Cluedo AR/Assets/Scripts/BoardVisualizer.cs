@@ -410,6 +410,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             tmp.a=0.45f;
                             cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=true;
                         }
                         else if(GameLogic.Player1.Cards[i]==1)
                         {
@@ -417,14 +418,16 @@ namespace GoogleARCore.Examples.AugmentedImage
                             tmp.a=0.45f;
                             cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=true;
                         }
                         else
                         {
-                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
-                            cardsNotes[i].GetComponent<Collider>().enabled=false;
                             tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
                             tmp.a=1f;
                             cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=false;
+
                         }
                     }
                 }
@@ -453,6 +456,7 @@ namespace GoogleARCore.Examples.AugmentedImage
                             tmp.a=0.45f;
                             cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteNormal[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=true;
                         }
                         else if(GameLogic.Player2.Cards[i]==1)
                         {
@@ -460,14 +464,15 @@ namespace GoogleARCore.Examples.AugmentedImage
                             tmp.a=0.45f;
                             cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
                             cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=true;
                         }
                         else
                         {
-                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
-                            cardsNotes[i].GetComponent<Collider>().enabled=false;
                             tmp=cardsNotes[i].GetComponent<SpriteRenderer>().color;
                             tmp.a=1f;
                             cardsNotes[i].GetComponent<SpriteRenderer>().color=tmp;
+                            cardsNotes[i].GetComponent<SpriteRenderer>().sprite=cardsNotesSpriteCross[i];
+                            cardsNotes[i].GetComponent<Collider>().enabled=false;
                         }
                     }
                 }
