@@ -25,6 +25,7 @@ namespace GoogleARCore.Examples.AugmentedImage
     using GoogleARCore;
     using UnityEngine;
     using UnityEngine.UI;
+    using UnityEngine.SceneManagement;
 
     /// <summary>
     /// Controller for AugmentedImage example.
@@ -132,6 +133,11 @@ namespace GoogleARCore.Examples.AugmentedImage
                 GameLogic.turnFinished=true;
 
                 borrar=false;
+
+                BoardVisualizer.primeraVezScan=false;
+
+                Scene scene=SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.name);
             }
 
             if(!scan)
