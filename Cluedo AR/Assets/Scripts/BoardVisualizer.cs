@@ -12,8 +12,6 @@ namespace GoogleARCore.Examples.AugmentedImage
     /// </summary>
     public class BoardVisualizer : AugmentedImageVisualizer
     {
-        public static bool primeraVezScan;
-
         public GameObject Scene;
         public GameObject Dice;
         public GameObject Indicator;
@@ -157,7 +155,7 @@ namespace GoogleARCore.Examples.AugmentedImage
             HintButton.SetActive(false);
             primeraVezHint=true;
 
-            if(primeraVezScan)
+            if(ButtonsController.primeraVezScan)
                 scanwrong=false;
 
             ScanText.SetActive(false);

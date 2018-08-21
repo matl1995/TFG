@@ -14,6 +14,7 @@ public class AcusController : MonoBehaviour {
 		}
 		else
 		{
+			BoardVisualizer.scanwrong=false;
 			AugmentedImageExampleController.scan=true;
 		}
 	}

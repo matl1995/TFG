@@ -101,40 +101,25 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             if(borrar)
             {
-                oldRoom=room;
+                oldRoom=-1;
                 room=-1;
 
-                oldCharacter=character;
+                oldCharacter=-1;
                 character=-1;
 
-                oldGun=gun;
-                gun=-1;
-
-                AugmentedImageVisualizer tmp=m_Visualizers[oldRoom];
-                GameObject.Destroy(tmp.gameObject);
-                m_Visualizers.Remove(oldRoom);
-
-                tmp=m_Visualizers[oldCharacter];
-                GameObject.Destroy(tmp.gameObject);
-                m_Visualizers.Remove(oldCharacter);
-
-                tmp=m_Visualizers[oldGun];
-                GameObject.Destroy(tmp.gameObject);
-                m_Visualizers.Remove(oldGun);
-
-                oldRoom=-1;
-                oldCharacter=-1;
                 oldGun=-1;
+                gun=-1;
 
                 GameLogic.sol.SetRoom(GameLogic.Hab.Emp);
                 GameLogic.sol.SetCharacter(GameLogic.Car.Emp);
                 GameLogic.sol.SetGun(GameLogic.Arm.Emp);
 
-                GameLogic.turnFinished=true;
+                if(BoardVisualizer.scanwrong)
+                    GameLogic.turnFinished=true;
 
                 borrar=false;
 
-                BoardVisualizer.primeraVezScan=false;
+                ButtonsController.primeraVezScan=false;
 
                 Scene scene=SceneManager.GetActiveScene();
                 SceneManager.LoadScene(scene.name);

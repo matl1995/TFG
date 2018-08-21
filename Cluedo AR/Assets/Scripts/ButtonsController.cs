@@ -7,6 +7,8 @@ public class ButtonsController : MonoBehaviour {
 
 	static private int num_select;
 
+    static public bool primeraVezScan;
+
     private Button PlayButton;
 
 	private Toggle Toggle1;
@@ -22,6 +24,8 @@ public class ButtonsController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        primeraVezScan=true;
+
         Screen.sleepTimeout=SleepTimeout.NeverSleep;
 		num_select=0;
 
