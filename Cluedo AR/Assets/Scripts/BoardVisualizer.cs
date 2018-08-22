@@ -226,6 +226,16 @@ namespace GoogleARCore.Examples.AugmentedImage
                 return;
             }
 
+            /************************************************ DADOS ACTIVOS O INACTIVOS **************************************/
+            if(ThrowButton.GetComponent<Collider>().enabled)
+            {
+                ThrowButton.GetComponent<Renderer>().material.color=Color.white;
+            }
+            else
+            {
+                ThrowButton.GetComponent<Renderer>().material.color=Color.grey;
+            }
+
             /*************************************************SI DADO LANZADO**************************************************/
             Color tmp;
 
