@@ -540,8 +540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -236.2}
-  m_SizeDelta: {x: -10, y: 472.4}
+  m_AnchoredPosition: {x: -0.000030517578, y: -637.5}
+  m_SizeDelta: {x: -10, y: 1275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014969115
 MonoBehaviour:
@@ -570,18 +570,22 @@ MonoBehaviour:
     m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1. Pulsar el bot\xF3n \"Lanzar dados\" para tirar los dados y asi poder
-    desplazarte a otra habitaci\xF3n.\n\n2. Pulsar el bot\xF3n \"Notas\" para anotar
-    informaci\xF3n.\n\n3. Escanear el tablero para comenzar el juego.\n\n4. Escanear
-    3 cartas con personaje, arma y habitaci\xF3n para realizar una acusaci\xF3n.\n\n5.
-    Pulsar el bot\xF3n \"Siguiente Turno\" para pasar al turno del siguiente jugador.\n\n6.
-    Pulsar el bot\xF3n \"Terminar partida\" para finalizar la partida y volver al
-    men\xFA inicial.\n\n\xA1YA EST\xC1 LISTO PARA JUGAR!\n\nPULSE CONTINUAR"
+  m_Text: "1. Escanea el tablero de juego para que aparezcan los elemtos de juego
+    encima de \xE9l.\n\n2. Podr\xE1s lanzar el dado una vez por turno. Para lanzarlos
+    pulsa el cubo \"Laznar dado\".\n\n3. Para realizar anotaciones con tus sospechas
+    sobre el asesinato pulsa el cubo \"Notas\".\n\n4. Para realizar una acusaci\xF3n
+    pulsa el cubo \"Acusaci\xF3n\", y posteriormente escanea cada carta hasta que
+    aparezca un modelo 3D sobre esta. Para escanear una acusaci\xF3n tendr\xE1s que
+    escanear una carta de habitaci\xF3n otra de arma y otra de personaje. Si el escaneo
+    es erroneo es el turno del siguiente jugador.\n\n5. Para cambiar de turno pulsa
+    el cubo \"Siguiente Turno\".\n\n6. Para finalizar la partida pulsa el cubo \"Terminar
+    partida\". Una vez terminada una partida no se puede reanudar.\n\n\xA1YA EST\xC1
+    LISTO PARA JUGAR!\n\nPULSE CONTINUAR"
 --- !u!222 &1014969116
 CanvasRenderer:
   m_ObjectHideFlags: 0
