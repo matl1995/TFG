@@ -52,8 +52,44 @@ Este juego ofrece muchas posibilidades en la forma en la que implementarlo utili
 
 \begin{itemize}
   \item Detectar el tablero de juego, y a partir de esta imagen mostrar los elementos, que incluyen personajes/habitaciones/armas 3D, en las habitaciones que le correspondan.
-  \item Mostrar cartas en 3D alrededor del tablero de juego, que muestren las pistas mostradas al jugador actual, de forma que si una carta aparece es una pista indicando que el personaje/arma/habitación no ha cometido el asesinato.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.15]{elements3d}
+    \caption{Imagen que muestra un boceto con elementos 3D sobre el tablero de juego.}
+    \label{figura-elements3d}
+  \end{figure}
+
+  \item Mostrar cartas en 3D alrededor del tablero de juego, que muestren las notas del jugador, de forma que una carta se puede marcar o desmarcar en función de las sospechas sobre ese elemento, indicando que el personaje/arma/habitación puede haber cometido el asesinato o no. Si tiene una cruz no ha podido ser ese elemento, si no tiene cruz o bien aun no se sabe o ya sa tiene claro que ese elemento forma parte del asesinato.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.15]{cards-notes}
+    \caption{Imagen que muestra un boceto con cartas alrededor del tablero de juego.}
+    \label{figura-cards-notes}
+  \end{figure}
+
+  \newpage
+
   \item Mostrar diferente información a los diferentes jugadores, de forma que cuando se pase de turno, por ejemplo, las pistas sean diferentes para los diferentes jugadores, así tienen información diferente en función de como exploren las habitaciones cada uno.
   \item Mostrar los botones de funcionalidad, por ejemplo, el de pasar de turno o lanzar los dados como cubos 3D, que al tocarlos realizan dicha acción.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.13]{cubes-button}
+    \caption{Imagen que muestra un boceto con cubos como botones sobre el tablero.}
+    \label{figura-cubes-button}
+  \end{figure}
+
+  \newpage
+
   \item Realizar las acusaciones con elementos físicos, es decir, que utilizando cartas reales de personajes/armas/habitaciones se pueda realizar una acusación, de forma que escaneando las 3 a la vez en la escena se realiza la acusación, permitiendo así un mejor balance entre la parte virtual del juego y la parte real.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.15]{cards3delement}
+    \caption{Imagen que muestra un boceto modelos 3D sobre las cartas al escanear una acusación.}
+    \label{figura-cards3delement}
+  \end{figure}
+
 \end{itemize}
