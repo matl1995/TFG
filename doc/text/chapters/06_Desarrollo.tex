@@ -381,7 +381,18 @@ En la Figura \ref{figura-pista-1} se puede observar la interfaz de la pista reci
 \subsection{Octava iteración}
 En esta iteración se ha llevado a cabo la historia de usuario \ref{tabla-hu11}.\\
 
-En rasgos mas generales, en esta iteración se ha llevado a cabo el sistema de cambio de turno, que no solo implica la interfaz, si no también la modificación de la lógica del juego para que sea capaz de soportar mas de un usuario. Este cambio de turno implica información como las notas que es privada para cada usuario, por lo que se ha incluido una interfaz de cambio de turno en la que todos los elementos desaparecen para que una vez el usuario pasa de turno el siguiente pueda entrar en la pantalla de juego sin que se haya visto su información. Por otro lado también se ha llevado a cabo el desarrollo del sistema de pistas, este se encarga de que cuando un usuario está en una habitación se le muestren pistas sobre los elementos que en esta se encuentran así como sobre la propia habitación, además de mostrarse esa pista, en la interfaz de notas la carta quedará marcada con una tonalidad diferente para que el usuario sea capaz de diferenciar dicha información como una pista, el resultado se muestra en la \textbf{Entrega 4}.\\
+En rasgos mas generales, en esta iteración se ha llevado a cabo el sistema de cambio de turno, que no solo implica la interfaz, si no también la modificación de la lógica del juego para que sea capaz de soportar mas de un usuario. Este cambio de turno implica información como las notas que es privada para cada usuario, por lo que se ha incluido una interfaz de cambio de turno en la que todos los elementos desaparecen para que una vez el usuario pasa de turno el siguiente pueda entrar en la pantalla de juego sin que se haya visto su información.\\
+
+Como se puede observar en la Figura \ref{figura-code-multiuser}, para gestionar, por ejemplo, las notas de cada jugador se comprueba la variable turno, y en función del turno actual se comprueba las variables del jugador, por ejemplo, si tiene las notas activas pues se activaran dichos elementos 3D, si no las tienen activas pues no. Posteriormente se recorre un vector contenido en por un objeto ``Player" que se corresponde al jugador actual en función del turno, este indica que cartas el jugador ha marcado o desmarcado y cuales ha recibido como pista, y cada una de estas se muestra de una forma distinta, por ejemplo, si se ha recibido como una pista se muestra a pleno color y tachada. De esta forma a través de los mismos modelos 3D y en función de la información que se almacena en cada objeto ``Player" y en la variable turno entre otras, se puede establecer como se deben mostrar dichos elementos 3D en función del jugador que esta jugando en cada momento, permitiendo así un sistema multijugador sencillo de escalar.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.45]{code-multiuser}
+  \caption{Imagen que muestra código de la gestión multiusuario.}
+  \label{figura-code-multiuser}
+\end{figure}
+
+Por otro lado también se ha llevado a cabo el desarrollo del sistema de pistas, este se encarga de que cuando un usuario está en una habitación se le muestren pistas sobre los elementos que en esta se encuentran así como sobre la propia habitación, además de mostrarse esa pista, en la interfaz de notas la carta quedará marcada con una tonalidad diferente para que el usuario sea capaz de diferenciar dicha información como una pista, el resultado se muestra en la \textbf{Entrega 4}.\\
 
 Por último, se realizaron pruebas con usuarios, poniéndoles en situación se les indicaba la tarea que tenían que hacer, y se fueron apuntando los problemas que estos tenían, detectando así elementos que mejorar en las funcionalidades realizadas en esta entrega. Los resultados de estas pruebas de usabilidad se encuentran en las Tablas \ref{tabla-entrega-4-usuario1}, \ref{tabla-entrega-4-usuario2} y \ref{tabla-entrega-4-usuario3}.
 
