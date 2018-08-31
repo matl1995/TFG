@@ -6,6 +6,7 @@ namespace GoogleARCore.Examples.AugmentedImage
     using GoogleARCore;
     using GoogleARCoreInternal;
     using UnityEngine;
+    using TMPro;
 
     /// <summary>
     /// Uses 4 frame corner objects to visualize an AugmentedImage.
@@ -241,8 +242,8 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             if(GameLogic.Dice1.thrown)
             {
-                TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text="Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString();
+                TextMeshPro textObject=TextRooms.GetComponent<TextMeshPro>();
+                textObject.SetText("Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString());
 
                 TextRooms.SetActive(true);
                 Kitchen.SetActive(true);
@@ -298,8 +299,8 @@ namespace GoogleARCore.Examples.AugmentedImage
             /*************************************************SI MOVIDO DE HABITACION*******************************************/
             if(GameLogic.Dice1.finished)
             {
-                TextMesh textObject=TextRooms.GetComponent<TextMesh>();
-                textObject.text="Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString();
+                TextMeshPro textObject=TextRooms.GetComponent<TextMeshPro>();
+                textObject.SetText("Resultado del lanzamiento: "+GameLogic.Dice1.currentValue.ToString());
 
                 TextRooms.SetActive(false);
                 Kitchen.SetActive(false);
@@ -321,19 +322,19 @@ namespace GoogleARCore.Examples.AugmentedImage
             {
                 if(!scanwrong)
                 {
-                    TextMesh textObject=NextTurnText.GetComponent<TextMesh>();
+                    TextMeshPro textObject=NextTurnText.GetComponent<TextMeshPro>();
                     if(GameLogic.turn%2!=0)
-                        textObject.text="Turno del Jugador 2";
+                        textObject.SetText("Turno del Jugador 2");
                     else
-                        textObject.text="Turno del Jugador 1";
+                        textObject.SetText("Turno del Jugador 1");
                 }
                 else
                 {
-                    TextMesh textObject=NextTurnText.GetComponent<TextMesh>();
+                    TextMeshPro textObject=NextTurnText.GetComponent<TextMeshPro>();
                     if(GameLogic.turn%2!=0)
-                        textObject.text="Escaneo erroneo\nTurno del Jugador 2";
+                        textObject.SetText("Escaneo erroneo\nTurno del Jugador 2");
                     else
-                        textObject.text="Escaneo erroneo\nTurno del Jugador 1";
+                        textObject.SetText("Escaneo erroneo\nTurno del Jugador 1");
                 }
 
                 ThrowButton.SetActive(false);

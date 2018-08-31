@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 4561879794557546}
   - component: {fileID: 23713867994607818}
   - component: {fileID: 102232889993973580}
+  - component: {fileID: 114248915380824914}
   m_Layer: 0
   m_Name: DanceRoom
   m_TagString: Untagged
@@ -606,6 +607,7 @@ GameObject:
   - component: {fileID: 4788811802590280}
   - component: {fileID: 23838951921230242}
   - component: {fileID: 102446604335371616}
+  - component: {fileID: 114137494329812520}
   m_Layer: 0
   m_Name: Kitchen
   m_TagString: Untagged
@@ -683,6 +685,7 @@ GameObject:
   - component: {fileID: 4725774235384038}
   - component: {fileID: 23178813403607158}
   - component: {fileID: 102757476333476606}
+  - component: {fileID: 114019661903021684}
   m_Layer: 0
   m_Name: DinningRoom
   m_TagString: Untagged
@@ -1064,6 +1067,7 @@ GameObject:
   - component: {fileID: 4341349659090902}
   - component: {fileID: 23101752864486074}
   - component: {fileID: 102818109496174076}
+  - component: {fileID: 114439048134959576}
   m_Layer: 0
   m_Name: GamesRoom
   m_TagString: Untagged
@@ -1216,6 +1220,7 @@ GameObject:
   - component: {fileID: 4253352747479486}
   - component: {fileID: 23533085032349168}
   - component: {fileID: 102726543868890832}
+  - component: {fileID: 114528787296488964}
   m_Layer: 0
   m_Name: Lobby
   m_TagString: Untagged
@@ -1822,6 +1827,7 @@ GameObject:
   - component: {fileID: 4197885453147314}
   - component: {fileID: 23815723920056944}
   - component: {fileID: 102712026326803784}
+  - component: {fileID: 114066240586508412}
   m_Layer: 0
   m_Name: Library
   m_TagString: Untagged
@@ -2194,6 +2200,7 @@ GameObject:
   - component: {fileID: 4163831097326966}
   - component: {fileID: 23110909934383970}
   - component: {fileID: 102788132061522778}
+  - component: {fileID: 114576801915854550}
   m_Layer: 0
   m_Name: GreenHouse
   m_TagString: Untagged
@@ -2949,6 +2956,7 @@ GameObject:
   - component: {fileID: 4691172256451792}
   - component: {fileID: 23580382400850446}
   - component: {fileID: 102633569616727938}
+  - component: {fileID: 114719308268953586}
   m_Layer: 0
   m_Name: LivingRoom
   m_TagString: Untagged
@@ -3414,6 +3422,7 @@ GameObject:
   - component: {fileID: 4785421238732040}
   - component: {fileID: 23401766744154188}
   - component: {fileID: 102722311252802422}
+  - component: {fileID: 114707808519336682}
   m_Layer: 0
   m_Name: Office
   m_TagString: Untagged
@@ -10307,6 +10316,76 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114019661903021684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140328936422066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114066240586508412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413306161145150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114137494329812520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1138464996289848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114248915380824914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025851754761454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114439048134959576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240337305374888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114524057217550446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10339,6 +10418,62 @@ MonoBehaviour:
   Gun: {fileID: 1099319765282664}
   Wrench: {fileID: 1462305719530474}
   Pipeline: {fileID: 1790312795966806}
+--- !u!114 &114528787296488964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275868580832380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114576801915854550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1486590268432694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114707808519336682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1801648464822692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &114719308268953586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698525508470780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!137 &137066987903793034
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
