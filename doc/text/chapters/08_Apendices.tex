@@ -8,7 +8,7 @@
 \subsection{Información general}
 
 \subsubsection{Resumen del juego}
-El juego consiste en una versión del juego Cluedo que utiliza la Realidad Aumentada para renovar la forma de jugar a este juego, y a los juegos de mesa en general. El juego consiste en un tablero físico, sobre el que se mostrarán los elementos del juego de forma virtual con Realidad Aumentada. En él habrá habitaciones entre las que los personajes se tienen que mover para hacer deducciones y acusaciones, armas y personajes que servirán para dichas deducciones y acusaciones. Dichas acusaciones y deducciones contienen un posible asesino (personaje), una arma del asesinato y un lugar del asesinato.
+El juego consiste en una versión del juego Cluedo que utiliza la Realidad Aumentada para renovar la forma de jugar a este juego, y a los juegos de mesa en general. El juego consiste en un tablero físico, sobre el que se mostrarán los elementos del juego de forma virtual con Realidad Aumentada. En él habrá habitaciones entre las que los personajes se tienen que mover para descubrir habitaciones, armas y personajes que servirán para realizar las acusaciones. Dichas acusaciones contienen un posible asesino (personaje), una arma del asesinato y un lugar del asesinato.
 
 \subsubsection{Objetivos a alcanzar por el juego}
 Generar una versión de Cluedo con Realidad Aumentada que renueve la forma en que los juegos de mesa se relacionan con la tecnología, de forma que no sea el mismo juego en una pantalla, perdiendo toda la esencia de un juego de mesa. Si no que utilizando la Realidad Aumentada y las posibilidades que esta ofrece, generar una experiencia que iguale o incluso mejore a la original de los juegos de mesa, haciendo los juegos de mesa atractivos, tanto para los niños que se han criado con tecnología, por lo que la Realidad Aumentada llamará su atención, tanto como para los adultos que son fieles a los juegos de mesa tradicionales, que se sorprenderán por la increíble experiencia que aplicar la Realidad Aumentada a estos puede ofrecer.
@@ -21,7 +21,7 @@ Este juego es único gracias a su capacidad de a pesar de ser en su mayor parte 
 Por otro lado, este juego servirá para explorar las posibilidades que la realidad aumentada, y mas concretamente ARCore pueden ofrecer a los juegos de mesa tradicionales.
 
 \subsubsection{Core gameplay}
-El jugador tendrá que moverse por el tablero y intentar resolver el asesinato. Para moverse entre habitaciones tendrá que tirar el dado y en función del número podrá ir a una habitación o otra, el jugador puede hacer una acusación por turno en la que dice quien cree que cometió el asesinato y con que arma, la habitación de la deducción será en la que se encuentre el personaje actualmente. Entonces se le mostrará al jugador la interfaz para cambiar de turno en caso fallido, y la interfaz de finalización de juego en caso de acierto.\\
+El jugador tendrá que moverse por el tablero y intentar resolver el asesinato. Para moverse entre habitaciones tendrá que tirar el dado y en función del número podrá ir a una habitación o otra, el jugador puede hacer una acusación por turno en la que dice quien cree que cometió el asesinato y con que arma. Entonces se le mostrará al jugador la interfaz para cambiar de turno en caso fallido, y la interfaz de finalización de juego en caso de acierto.\\
 
 Al cambiar de habitación el jugador recibirá una pista sobre la nueva habitación, dichas pistas incluyen habitación, arma y personajes que no forman parte del asesinato, y siempre serán relacionados con esa habitación, por ejemplo, si se va a dar una pista, esta tendrá que ser sobre esa habitación o sobre las armas o personajes que estén dentro de esta.
 
@@ -51,7 +51,8 @@ En una fiesta en la mansión de un adinerado señor en los años 80 ha habido un
 \subsection{Mecánicas}
 \subsubsection{Elementos del juego: Categorías}
 \textbf{Arma}: Es un objeto que puede ser utilizado herir a un personaje. El objeto pertenece a la época de los años 80.\\
-\textbf{Personaje}: Es un elemento que el jugador puede manejar o bien ser una parte más del juego. Hombre o mujer de entre 20-60 años perteneciente a los años 80. Ha ido a una fiesta en la mansión de un amigo, que ha sido asesinado durante dicha fiesta. Tiene la necesidad de descubrir quién ha sido el asesino. Puede ser el asesino.\\
+\textbf{Personaje}: Es un elemento que es una parte más del juego. Hombre o mujer de entre 20-60 años perteneciente a los años 80. Ha ido a una fiesta en la mansión de un amigo, que ha sido asesinado durante dicha fiesta.\\
+\textbf{Protagonista}: Es un elemento que el jugador maneja. Hombre o mujer de entre 20-60 años perteneciente a los años 80. Ha ido a una fiesta para investigar un asesinato.\\
 \textbf{Habitación}: Es una estancia de una mansión. Pertenece a la época de los años 80.\\
 \textbf{Útil}: Elemento del juego que ayuda al funcionamiento de éste.
 
@@ -62,6 +63,7 @@ En una fiesta en la mansión de un adinerado señor en los años 80 ha habido un
 \textbf{Coronel Rubio}: Pertenece a la categoría de elemento de juego “Personaje”. Tiene la capacidad de en caso de ser el personaje que el jugador ha elegido desplazarse entre las distintas habitaciones.\\
 \textbf{Dra. Orquídea}: Pertenece a la categoría de elemento de juego “Personaje”. Tiene la capacidad de en caso de ser el personaje que el jugador ha elegido desplazarse entre las distintas habitaciones.\\
 \textbf{Padre Prado}: Pertenece a la categoría de elemento de juego “Personaje”. Tiene la capacidad de en caso de ser el personaje que el jugador ha elegido desplazarse entre las distintas habitaciones.\\
+\textbf{Detective}: Pertenece a la categoría de elemento de juego “Protagonista”. Tiene la capacidad de desplazarse entre las distintas habitaciones.\\
 \textbf{Cuerda}: Pertenece a la categoría de elemento de juego “Arma”. Estará en una habitación y cambiará a otra cuando en una deducción sea nombrada.\\
 \textbf{Puñal}: Pertenece a la categoría de elemento de juego “Arma”. Estará en una habitación y cambiará a otra cuando en una deducción sea nombrada.\\
 \textbf{Herramienta}: Pertenece a la categoría de elemento de juego “Arma”. Estará en una habitación y cambiará a otra cuando en una deducción sea nombrada.\\
@@ -128,7 +130,7 @@ Pantallas:
 \end{itemize}
 
 \subsubsection{Controles de la interfaz}
-El control de la interfaz va a ser en todo momento táctil, con botones que pueden ser pulsados en la propia pantalla.
+El control de la interfaz va a ser tactil en su mayor parte, con elementos que será posible pulsar en la pantalla. Habrá elementos con los que se interactuará físicamente, por ejemplo, para hacer una acusación utilizando cartas reales.
 
 \subsubsection{Aprendizaje del juego}
 Cada vez que un jugador juega una partida, éste va a incrementar sus capacidades de deducción y estrategia, de forma, que en cada partida el usuario elegirá mejor a qué habitaciones dirigirse según la información obtenida previamente, y por tanto, conseguirá llegar a la solución del asesinato más rápido.
